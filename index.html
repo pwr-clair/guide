@@ -46,6 +46,7 @@ button{font-family:inherit;cursor:pointer;}
 .hero{position:relative;padding:48px 22px 26px;
   background:linear-gradient(160deg,#FBF9F4 0%,#F0ECE2 100%);
   border-bottom:1px solid var(--line);}
+.hero .logo{height:34px;width:auto;display:block;margin:0 0 12px;}
 .brandmark{font-family:var(--mono);font-weight:700;letter-spacing:3px;
   font-size:13px;color:var(--amber);text-transform:uppercase;}
 .hero h1{font-family:var(--mono);font-weight:700;font-size:27px;line-height:1.15;
@@ -219,6 +220,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       <button type="button" class="lg" data-lang="ja" title="日本語" aria-label="日本語">🇯🇵</button>
       <button type="button" class="lg" data-lang="zh" title="中文" aria-label="中文">🇨🇳</button>
     </div>
+    <img src="assets/images/PWR-logo-black.png" alt="PWR" class="logo">
     <div class="brandmark">Paradise Walk Residence</div>
     <h1 data-i18n="hero.h1">Welcome —<br>your arrival guide</h1>
     <p class="sub" data-i18n="hero.sub">A self check-in residence right by Incheon Airport Terminal 1. Everything you need for a smooth arrival is on this page.</p>
@@ -288,6 +290,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       <div class="cap" data-i18n="cap.toairstop">TO THE AIRPORT-BOUND STOP — THE STOP ON THE RIGHT (INT'L BUSINESS CENTER); ITS TIMETABLE IS BELOW ↓</div>
     </div>
 
+    <h3 data-i18n="tt.title">Timetable</h3>
     <div class="tt">
       <div class="tt-h" data-i18n="tt.head">🕒 Bus No.04 — from "Int'l Business Center" stop</div>
       <table>
@@ -526,6 +529,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "s.air.3": `<b>04번 버스</b>를 타세요.`,
       "s.air.4": `<b>T1</b> 약 5분(2정거장) · <b>T2</b> 약 25분(4정거장).`,
       "cap.toairstop": `공항행 정류장 — 지도 오른쪽 정류장(Int'l Business Center). 시간표는 아래에 있습니다 ↓`,
+      "tt.title": `시간표`,
       "tt.head": `🕒 04번 버스 — "Int'l Business Center" 정류장 출발`,
       "tt.note": `각 행은 '시', 숫자는 그 시의 '분'입니다 (05:00–12:59 구간).`,
       "taxi.k": `택시 이용`, "taxi.h": `택시를 타시나요? 🚕`, "taxi.lead": `기사님께 이 화면을 보여주세요:`,
@@ -591,6 +595,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "s.air.3": `<b>04番バス</b>に乗車。`,
       "s.air.4": `<b>T1</b> 約5分（2停留所）· <b>T2</b> 約25分（4停留所）。`,
       "cap.toairstop": `空港行きの停留所 — 地図右側の停留所（Int'l Business Center）。時刻表は下にあります ↓`,
+      "tt.title": `時刻表`,
       "tt.head": `🕒 04番バス — 「Int'l Business Center」停留所発`,
       "tt.note": `各行が「時」、数字がその時の「分」です（05:00–12:59の区間）。`,
       "taxi.k": `タクシー`, "taxi.h": `タクシーをご利用ですか？🚕`, "taxi.lead": `運転手にこの画面をお見せください：`,
@@ -656,6 +661,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "s.air.3": `乘坐<b>04路巴士</b>。`,
       "s.air.4": `<b>T1</b> 约5分钟(2站) · <b>T2</b> 约25分钟(4站)。`,
       "cap.toairstop": `前往机场的巴士站 — 地图右侧的车站（Int'l Business Center）；时刻表见下方 ↓`,
+      "tt.title": `时刻表`,
       "tt.head": `🕒 04路巴士 — 从"Int'l Business Center"站发车`,
       "tt.note": `每行代表"小时"，数字为该小时的"分钟"（涵盖05:00–12:59）。`,
       "taxi.k": `乘坐出租车`, "taxi.h": `要乘出租车吗？🚕`, "taxi.lead": `请把此屏幕给司机看：`,
