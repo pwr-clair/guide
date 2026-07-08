@@ -166,12 +166,9 @@ ol.steps li b{color:var(--ink);}
 .place{display:flex;align-items:center;gap:11px;background:var(--card);
   border:1px solid var(--line);border-radius:12px;padding:12px 13px;color:var(--ink);
   -webkit-tap-highlight-color:transparent;}
-.place:active{background:var(--paper2);}
 .place .pbd{flex:1;min-width:0;}
 .place .pn{font-weight:700;font-size:14.5px;line-height:1.3;}
 .place .pd{font-size:12.5px;color:var(--ink2);line-height:1.45;margin-top:2px;}
-.place .pgo{flex:0 0 auto;font-family:var(--mono);font-size:9.5px;letter-spacing:.5px;
-  color:var(--night);background:var(--night-soft);border-radius:100px;padding:5px 10px;white-space:nowrap;}
 
 /* ---- support & contact ---- */
 .support{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
@@ -419,51 +416,50 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
   <section id="around">
     <div class="sec-k" data-i18n="around.k">Around the Building</div>
     <div class="sec-h" data-i18n="around.h">The neighborhood 🗺️</div>
-    <p class="lead" data-i18n="around.tap">Tap any place to open it in Google Maps.</p>
 
     <h3 data-i18n="around.cat.food">🍽️ Restaurants &amp; Bars</h3>
     <div class="places">
-      <a class="place" href="https://www.google.com/maps/place/%EA%B3%B5%ED%95%AD%EB%B0%A5%EC%A7%91/data=!4m6!3m5!1s0x357b9b5a5bfa7a09:0x5584002024d412e0!8m2!3d37.4392449!4d126.460172" target="_blank" rel="noopener">
-        <div class="pbd"><div class="pn">공항밥집</div><div class="pd" data-i18n="p.food1">Korean buffet · opens early, from 6:30 AM</div></div><span class="pgo" data-i18n="map">Map ↗</span></a>
-      <a class="place" href="https://www.google.com/maps/place/%EC%8B%A0%EC%84%A4%EC%A7%81%ED%99%94%ED%99%94%EB%A1%9C%EA%B5%AC%EC%9D%B4/data=!4m6!3m5!1s0x357b9a5c9b1dfa25:0x72b9122318f91892!8m2!3d37.4388946!4d126.4598612" target="_blank" rel="noopener">
-        <div class="pbd"><div class="pn">신설직화화로구이</div><div class="pd" data-i18n="p.food2">Korean BBQ · a popular grill house</div></div><span class="pgo" data-i18n="map">Map ↗</span></a>
-      <a class="place" href="https://www.google.com/maps/place/%EC%A0%84%EC%A3%BC+%ED%98%84%EB%8C%80%EC%98%A5/data=!4m6!3m5!1s0x357b9b000063c4b1:0x6fc48c30e4f91e5c!8m2!3d37.4390746!4d126.4612952" target="_blank" rel="noopener">
-        <div class="pbd"><div class="pn">전주현대옥</div><div class="pd" data-i18n="p.food3">Korean (bean-sprout soup rice &amp; more)</div></div><span class="pgo" data-i18n="map">Map ↗</span></a>
-      <a class="place" href="https://www.google.com/maps/place/%EA%B3%A0%ED%96%A5%EC%A7%91/data=!4m6!3m5!1s0x357b9a5cc1e82523:0xbfa9849d7fc1a70b!8m2!3d37.4391694!4d126.4615741" target="_blank" rel="noopener">
-        <div class="pbd"><div class="pn">고향집</div><div class="pd" data-i18n="p.food4">Korean</div></div><span class="pgo" data-i18n="map">Map ↗</span></a>
-      <a class="place" href="https://www.google.com/maps/place/BHC%EC%B9%98%ED%82%A8+%EC%9D%B8%EC%B2%9C%EA%B3%B5%ED%95%AD%EC%A0%90/data=!4m6!3m5!1s0x357b9b8e1f298eb9:0x3084fa645a57aa47!8m2!3d37.4390646!4d126.4604993" target="_blank" rel="noopener">
-        <div class="pbd"><div class="pn">BHC치킨 인천공항점</div><div class="pd" data-i18n="p.food5">Fried-chicken franchise</div></div><span class="pgo" data-i18n="map">Map ↗</span></a>
-      <a class="place" href="https://www.google.com/maps/place/The+Cinder+Bar+(Incheon+Airport)/data=!4m6!3m5!1s0x357b9bce0a6b7013:0xbed8405b39816d74!8m2!3d37.4392883!4d126.4602785" target="_blank" rel="noopener">
-        <div class="pbd"><div class="pn">The Cinder Bar (Incheon Airport)</div><div class="pd" data-i18n="p.food6">Bar</div></div><span class="pgo" data-i18n="map">Map ↗</span></a>
-      <a class="place" href="https://www.google.com/maps/place/The+Jet+Lagged+Lizard/data=!4m6!3m5!1s0x357b9a5cd8abaa2f:0xa6d2af8e42d9da8b!8m2!3d37.4388684!4d126.4607894" target="_blank" rel="noopener">
-        <div class="pbd"><div class="pn">The Jet Lagged Lizard</div><div class="pd" data-i18n="p.food7">Western-style pub/bar · open until 2:00 AM</div></div><span class="pgo" data-i18n="map">Map ↗</span></a>
+      <div class="place">
+        <div class="pbd"><div class="pn">공항밥집</div><div class="pd" data-i18n="p.food1">Korean buffet · opens early, from 6:30 AM</div></div></div>
+      <div class="place">
+        <div class="pbd"><div class="pn">신설직화화로구이</div><div class="pd" data-i18n="p.food2">Korean BBQ · a popular grill house</div></div></div>
+      <div class="place">
+        <div class="pbd"><div class="pn">전주현대옥</div><div class="pd" data-i18n="p.food3">Korean (bean-sprout soup rice &amp; more)</div></div></div>
+      <div class="place">
+        <div class="pbd"><div class="pn">고향집</div><div class="pd" data-i18n="p.food4">Korean</div></div></div>
+      <div class="place">
+        <div class="pbd"><div class="pn">BHC치킨 인천공항점</div><div class="pd" data-i18n="p.food5">Fried-chicken franchise</div></div></div>
+      <div class="place">
+        <div class="pbd"><div class="pn">The Cinder Bar (Incheon Airport)</div><div class="pd" data-i18n="p.food6">Bar</div></div></div>
+      <div class="place">
+        <div class="pbd"><div class="pn">The Jet Lagged Lizard</div><div class="pd" data-i18n="p.food7">Western-style pub/bar · open until 2:00 AM</div></div></div>
     </div>
 
     <h3 data-i18n="around.cat.cafe">☕ Cafés</h3>
     <p class="lead" data-i18n="around.cafe.intro">Arrived before check-in (3:00 PM)? You're welcome to relax and wait at one of these cafés.</p>
     <div class="places">
-      <a class="place" href="https://www.google.com/maps/place/Han+Coffee+Shop/data=!4m6!3m5!1s0x357b9b11b57aeb77:0x91987bad30c3a049!8m2!3d37.4391126!4d126.4606511" target="_blank" rel="noopener">
-        <div class="pbd"><div class="pn">Han Coffee Shop</div><div class="pd" data-i18n="p.cafe1">1F of our building · opens 6:30 AM</div></div><span class="pgo" data-i18n="map">Map ↗</span></a>
-      <a class="place" href="https://www.google.com/maps/place/%EB%A9%94%EA%B0%80%EC%BB%A4%ED%94%BC+%EC%98%81%EC%A2%85%ED%95%A9%EB%8F%99%EC%B2%AD%EC%82%AC%EC%A0%90/data=!4m6!3m5!1s0x357b9b96d8949f39:0xb8ff15233c49f623!8m2!3d37.4391067!4d126.4608154" target="_blank" rel="noopener">
-        <div class="pbd"><div class="pn">메가커피 영종합동청사점</div><div class="pd" data-i18n="p.cafe2">1F of the building right next door</div></div><span class="pgo" data-i18n="map">Map ↗</span></a>
+      <div class="place">
+        <div class="pbd"><div class="pn">Han Coffee Shop</div><div class="pd" data-i18n="p.cafe1">1F of our building · opens 6:30 AM</div></div></div>
+      <div class="place">
+        <div class="pbd"><div class="pn">메가커피 영종합동청사점</div><div class="pd" data-i18n="p.cafe2">1F of the building right next door</div></div></div>
     </div>
 
     <h3 data-i18n="around.cat.pharm">💊 Pharmacy &amp; Clinic</h3>
     <div class="places">
-      <a class="place" href="https://www.google.com/maps/place/Yonsei+Pharmacy/data=!4m6!3m5!1s0x357b9b7469298051:0xb81310f835baf614!8m2!3d37.4384955!4d126.4621167" target="_blank" rel="noopener">
-        <div class="pbd"><div class="pn">연세약국 (Yonsei Pharmacy)</div><div class="pd" data-i18n="p.pharm1">B1 of the LG Eclat building</div></div><span class="pgo" data-i18n="map">Map ↗</span></a>
-      <a class="place" href="https://www.google.com/maps/place/%EC%97%B0%EC%84%B8%EA%B3%B5%ED%95%AD%EC%9D%98%EC%9B%90/data=!4m6!3m5!1s0x357b9a5a7330667b:0xb0a795904fa221ac!8m2!3d37.4387644!4d126.461993" target="_blank" rel="noopener">
-        <div class="pbd"><div class="pn">연세공항의원</div><div class="pd" data-i18n="p.pharm2">General practitioner (family medicine)</div></div><span class="pgo" data-i18n="map">Map ↗</span></a>
+      <div class="place">
+        <div class="pbd"><div class="pn">연세약국 (Yonsei Pharmacy)</div><div class="pd" data-i18n="p.pharm1">B1 of the LG Eclat building</div></div></div>
+      <div class="place">
+        <div class="pbd"><div class="pn">연세공항의원</div><div class="pd" data-i18n="p.pharm2">General practitioner (family medicine)</div></div></div>
     </div>
 
     <h3 data-i18n="around.cat.conv">🏪 Convenience Stores</h3>
     <div class="places">
-      <a class="place" href="https://www.google.com/maps/place/emart24/data=!4m6!3m5!1s0x357b9b007c24109d:0x4e93306c6608111c!8m2!3d37.439024!4d126.4597057" target="_blank" rel="noopener">
-        <div class="pbd"><div class="pn">emart24</div><div class="pd" data-i18n="p.conv1">1F of our building</div></div><span class="pgo" data-i18n="map">Map ↗</span></a>
-      <a class="place" href="https://www.google.com/maps/place/CU+market/data=!4m6!3m5!1s0x357b9bd3d39e26e9:0x54b9872c7bff4f59!8m2!3d37.4392082!4d126.461139" target="_blank" rel="noopener">
-        <div class="pbd"><div class="pn">CU</div><div class="pd" data-i18n="p.conv2">1F of the building next door (listed as "CU market" on Google Maps)</div></div><span class="pgo" data-i18n="map">Map ↗</span></a>
-      <a class="place" href="https://www.google.com/maps/place/7-Eleven/data=!4m6!3m5!1s0x357b9b3ca23781bd:0xe0cdf7c4237883e9!8m2!3d37.4390727!4d126.4620265" target="_blank" rel="noopener">
-        <div class="pbd"><div class="pn">7-Eleven</div><div class="pd" data-i18n="p.conv3">1F of our building</div></div><span class="pgo" data-i18n="map">Map ↗</span></a>
+      <div class="place">
+        <div class="pbd"><div class="pn">emart24</div><div class="pd" data-i18n="p.conv1">1F of our building</div></div></div>
+      <div class="place">
+        <div class="pbd"><div class="pn">CU</div><div class="pd" data-i18n="p.conv2">1F of the building next door (listed as "CU market" on Google Maps)</div></div></div>
+      <div class="place">
+        <div class="pbd"><div class="pn">7-Eleven</div><div class="pd" data-i18n="p.conv3">1F of our building</div></div></div>
     </div>
   </section>
 
@@ -553,7 +549,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "trash.t": `쓰레기 <span class="subn">(7일 이상 숙박 시)</span>`,
       "trash.d": `재활용 → 문 옆 상자 · 일반 쓰레기 → 주방 쓰레기통 · 음식물 → 싱크대 아래 통. 배출 장소는 <b>건물 뒷문 밖</b>입니다.`,
       "door.t": `예고 없는 방문자에게 문을 열지 마세요`, "door.d": `저희 팀은 사전 안내 없이 방문하지 않습니다.`,
-      "around.k": `건물 주변`, "around.h": `주변 안내 🗺️`, "around.tap": `누르면 구글맵으로 열립니다.`, "map": `지도 ↗`,
+      "around.k": `건물 주변`, "around.h": `주변 안내 🗺️`,
       "around.cat.food": `🍽️ 근처 식당 및 바`,
       "p.food1": `한식 뷔페 · 이른 아침 6:30부터 영업`, "p.food2": `한식 BBQ · 인기 있는 고기집`,
       "p.food3": `한식 (콩나물국밥 등)`, "p.food4": `한식`, "p.food5": `치킨 프랜차이즈`, "p.food6": `바`,
@@ -618,7 +614,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "trash.t": `ゴミ <span class="subn">（7泊以上のご滞在の場合）</span>`,
       "trash.d": `リサイクル → ドア横の箱 · 一般ごみ → キッチンのゴミ箱 · 生ごみ → シンク下の容器。排出場所は<b>建物裏口の外</b>です。`,
       "door.t": `予告のない訪問者にはドアを開けないでください`, "door.d": `当施設のスタッフが予告なく訪問することはありません。`,
-      "around.k": `周辺のご案内`, "around.h": `近隣スポット 🗺️`, "around.tap": `タップするとGoogleマップで開きます。`, "map": `地図 ↗`,
+      "around.k": `周辺のご案内`, "around.h": `近隣スポット 🗺️`,
       "around.cat.food": `🍽️ 近くの飲食店・バー`,
       "p.food1": `韓国式ビュッフェ · 朝6:30から営業`, "p.food2": `韓国式BBQ · 人気の焼肉店`,
       "p.food3": `韓国料理（豆もやしクッパなど）`, "p.food4": `韓国料理`, "p.food5": `チキンのフランチャイズ`, "p.food6": `バー`,
@@ -683,7 +679,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "trash.t": `垃圾 <span class="subn">(入住7天及以上)</span>`,
       "trash.d": `可回收 → 门旁箱子 · 一般垃圾 → 厨房垃圾桶 · 厨余 → 水槽下方桶。投放处在<b>楼后门外</b>。`,
       "door.t": `请勿为未经预约的访客开门`, "door.d": `我们的团队绝不会无预约上门。`,
-      "around.k": `建筑周边`, "around.h": `周边一带 🗺️`, "around.tap": `点按任意地点即可在Google地图中打开。`, "map": `地图 ↗`,
+      "around.k": `建筑周边`, "around.h": `周边一带 🗺️`,
       "around.cat.food": `🍽️ 附近餐厅与酒吧`,
       "p.food1": `韩式自助 · 清晨6:30起营业`, "p.food2": `韩式烤肉 · 人气烤肉店`,
       "p.food3": `韩餐（豆芽汤饭等）`, "p.food4": `韩餐`, "p.food5": `炸鸡连锁店`, "p.food6": `酒吧`,
