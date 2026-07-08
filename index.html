@@ -91,6 +91,7 @@ h3{font-size:15.5px;font-weight:700;margin:22px 0 9px;}
 .gallery .photo img{height:135px;}
 
 /* ---- clean timetable ---- */
+.tt-title .tt-sub{display:block;font-weight:400;font-size:12.5px;color:var(--muted);margin-top:3px;letter-spacing:.2px;}
 .tt{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:12px 0;}
 .tt .tt-h{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.4px;
   color:var(--night);padding:12px 14px;background:var(--night-soft);}
@@ -290,7 +291,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       <div class="cap" data-i18n="cap.toairstop">TO THE AIRPORT-BOUND STOP — THE STOP ON THE RIGHT (INT'L BUSINESS CENTER); ITS TIMETABLE IS BELOW ↓</div>
     </div>
 
-    <h3 data-i18n="tt.title">Timetable</h3>
+    <h3 class="tt-title" data-i18n="tt.title">TIMETABLE: INT'L BUSINESS CENTER<span class="tt-sub">(THE STOP ON THE RIGHT)</span></h3>
     <div class="tt">
       <div class="tt-h" data-i18n="tt.head">🕒 Bus No.04 — from "Int'l Business Center" stop</div>
       <table>
@@ -350,6 +351,12 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       <img src="assets/images/Elevator-1st-floor-01.jpeg" alt="Elevators on the 1st floor" loading="lazy" decoding="async">
       <div class="cap" data-i18n="cap.elevator">ELEVATORS — 1ST FLOOR</div>
     </div>
+
+    <div class="photo">
+      <img src="assets/images/Door.jpeg" alt="Room door with keypad lock" loading="lazy" decoding="async">
+      <div class="cap" data-i18n="cap.door">YOUR ROOM DOOR — KEYPAD LOCK</div>
+    </div>
+    <div class="note info" data-i18n="bld.door">🔢 Every room door has a keypad lock. Enter the keypad PIN you received through your booking platform.</div>
 
     <div class="note info" data-i18n="bld.note">🔑 This is an <b>unmanned residence</b> — there is no front desk. For your privacy and safety, your <b>room number & door code</b> are sent via your <b>booking platform's message</b> on arrival day, so you can go straight up by elevator.</div>
   </section>
@@ -529,7 +536,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "s.air.3": `<b>04번 버스</b>를 타세요.`,
       "s.air.4": `<b>T1</b> 약 5분(2정거장) · <b>T2</b> 약 25분(4정거장).`,
       "cap.toairstop": `공항행 정류장 — 지도 오른쪽 정류장(Int'l Business Center). 시간표는 아래에 있습니다 ↓`,
-      "tt.title": `시간표`,
+      "tt.title": `시간표: INT'L BUSINESS CENTER<span class="tt-sub">(오른쪽 정류장)</span>`,
       "tt.head": `🕒 04번 버스 — "Int'l Business Center" 정류장 출발`,
       "tt.note": `각 행은 '시', 숫자는 그 시의 '분'입니다 (05:00–12:59 구간).`,
       "taxi.k": `택시 이용`, "taxi.h": `택시를 타시나요? 🚕`, "taxi.lead": `기사님께 이 화면을 보여주세요:`,
@@ -537,6 +544,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "bld.k": `건물 찾기`, "bld.h": `도착하셨습니다 📍`,
       "bld.lead": `아래 사진으로 건물을 확인한 뒤, 엘리베이터로 바로 올라오세요.`,
       "cap.exterior": `건물 외관`, "cap.entrance": `정문`, "cap.lobby": `로비`, "cap.elevator": `엘리베이터 — 1층`,
+      "bld.door": `🔢 모든 객실의 문은 키패드로 되어 있습니다. 예약 플랫폼으로 전달받으신 키패드 비밀번호를 입력해주세요.`,
       "bld.note": `🔑 <b>무인 레지던스</b>로 프런트가 없습니다. 개인정보 보호와 안전을 위해 <b>객실 번호와 도어록 비밀번호</b>는 도착 당일 <b>예약하신 플랫폼의 메시지</b>로 보내드립니다. 엘리베이터로 바로 올라오시면 됩니다.`,
       "stay.k": `숙박 안내`, "stay.h": `객실 안내 🏠`,
       "checkin.t": `체크인`, "checkin.d": `<b>오후 3:00</b>부터.`,
@@ -595,7 +603,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "s.air.3": `<b>04番バス</b>に乗車。`,
       "s.air.4": `<b>T1</b> 約5分（2停留所）· <b>T2</b> 約25分（4停留所）。`,
       "cap.toairstop": `空港行きの停留所 — 地図右側の停留所（Int'l Business Center）。時刻表は下にあります ↓`,
-      "tt.title": `時刻表`,
+      "tt.title": `時刻表: INT'L BUSINESS CENTER<span class="tt-sub">(右側の停留所)</span>`,
       "tt.head": `🕒 04番バス — 「Int'l Business Center」停留所発`,
       "tt.note": `各行が「時」、数字がその時の「分」です（05:00–12:59の区間）。`,
       "taxi.k": `タクシー`, "taxi.h": `タクシーをご利用ですか？🚕`, "taxi.lead": `運転手にこの画面をお見せください：`,
@@ -603,6 +611,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "bld.k": `建物を探す`, "bld.h": `到着です 📍`,
       "bld.lead": `下の写真で建物を確認し、エレベーターでそのままお上がりください。`,
       "cap.exterior": `建物の外観`, "cap.entrance": `正面玄関`, "cap.lobby": `ロビー`, "cap.elevator": `エレベーター — 1階`,
+      "bld.door": `🔢 全ての客室のドアはキーパッド式です。予約プラットフォームから受け取ったキーパッドの暗証番号を入力してください。`,
       "bld.note": `🔑 <b>無人レジデンス</b>のためフロントはありません。プライバシーと安全のため、<b>部屋番号とドアコード</b>はご到着当日に<b>ご予約プラットフォームのメッセージ</b>でお送りします。そのままエレベーターでお上がりください。`,
       "stay.k": `ご滞在について`, "stay.h": `お部屋について 🏠`,
       "checkin.t": `チェックイン`, "checkin.d": `<b>15:00</b>から。`,
@@ -661,7 +670,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "s.air.3": `乘坐<b>04路巴士</b>。`,
       "s.air.4": `<b>T1</b> 约5分钟(2站) · <b>T2</b> 约25分钟(4站)。`,
       "cap.toairstop": `前往机场的巴士站 — 地图右侧的车站（Int'l Business Center）；时刻表见下方 ↓`,
-      "tt.title": `时刻表`,
+      "tt.title": `时刻表: INT'L BUSINESS CENTER<span class="tt-sub">(右侧的车站)</span>`,
       "tt.head": `🕒 04路巴士 — 从"Int'l Business Center"站发车`,
       "tt.note": `每行代表"小时"，数字为该小时的"分钟"（涵盖05:00–12:59）。`,
       "taxi.k": `乘坐出租车`, "taxi.h": `要乘出租车吗？🚕`, "taxi.lead": `请把此屏幕给司机看：`,
@@ -669,6 +678,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "bld.k": `找到建筑物`, "bld.h": `您已抵达 📍`,
       "bld.lead": `请对照下方照片认准建筑物，然后乘电梯直接上楼。`,
       "cap.exterior": `建筑外观`, "cap.entrance": `正门`, "cap.lobby": `大堂`, "cap.elevator": `电梯 — 1层`,
+      "bld.door": `🔢 所有客房的门均为键盘密码锁。请输入您通过预订平台收到的键盘密码。`,
       "bld.note": `🔑 本处为<b>无人值守公寓</b>，没有前台。为保护您的隐私与安全，<b>房间号与门锁密码</b>将于抵达当天通过<b>您预订平台的消息</b>发送。您可乘电梯直接上楼。`,
       "stay.k": `入住须知`, "stay.h": `客房内 🏠`,
       "checkin.t": `入住`, "checkin.d": `<b>下午3:00</b>起。`,
