@@ -124,9 +124,14 @@ ol.steps li:not(:last-child)::after{content:'';position:absolute;left:11px;top:2
 ol.steps li b{color:var(--ink);}
 .stopname{background:var(--amber-soft);color:var(--amber);border-radius:5px;
   padding:1px 6px;font-weight:600;white-space:nowrap;}
-.route .rt-time{font-family:var(--mono);font-size:12px;color:var(--muted);
-  padding:2px 2px 12px;line-height:1.55;letter-spacing:.2px;}
-.route .rt-time b{color:var(--ink2);}
+.route .rt-time{font-family:var(--mono);font-size:12px;color:var(--ink2);
+  padding:4px 2px 12px;line-height:1.5;letter-spacing:.2px;}
+.route .rt-time .bt{border-collapse:collapse;margin:0 0 5px;}
+.route .rt-time .bt th,.route .rt-time .bt td{padding:2px 16px 2px 0;text-align:left;
+  font-weight:400;white-space:nowrap;}
+.route .rt-time .bt .lbl,.route .rt-time .bt th{color:var(--muted);}
+.route .rt-time .bt th{font-size:11px;letter-spacing:.5px;}
+.route .rt-time .foot{color:var(--muted);}
 
 /* ---- notes ---- */
 .note{border-radius:var(--rs);padding:11px 14px;font-size:13.5px;line-height:1.5;
@@ -259,7 +264,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
         <li data-i18n="s.t1.3">Get off at the <b>1st stop</b> — <span class="stopname">Grand Hyatt Hotel</span>.</li>
         <li data-i18n="s.walkcross">Walk a little in the bus's direction, reach the crosswalk, and cross — <b>our building is right in front of you</b>.</li>
       </ol>
-      <div class="rt-time" data-i18n="s.t1.time">🕒 First / last bus — Gate 3: <b>05:08 / 00:30</b> · Gate 12: <b>05:10 / 00:32</b>. Runs every 7–20 min. (as of Jul 2026)</div>
+      <div class="rt-time" data-i18n="s.t1.time"><table class="bt"><tr><td class="lbl">Gate</td><th>3</th><th>12</th></tr><tr><td class="lbl">🕒 First bus</td><td>05:08 a.m.</td><td>05:10 a.m.</td></tr><tr><td class="lbl">🕒 Last bus</td><td>00:30 a.m.</td><td>00:32 a.m.</td></tr></table><div class="foot">Runs every 7–20 min. (as of Jul 2026)</div></div>
     </div>
     <div class="note warm" data-i18n="note.walk">🧳 Walking from T1 is possible (~15 min), but not recommended with luggage.</div>
 
@@ -271,7 +276,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
         <li data-i18n="s.t2.3">Get off at the <b>4th stop</b> — <span class="stopname">Grand Hyatt Hotel</span>.</li>
         <li data-i18n="s.walkcross">Walk a little in the bus's direction, reach the crosswalk, and cross — <b>our building is right in front of you</b>.</li>
       </ol>
-      <div class="rt-time" data-i18n="s.t2.time">🕒 First / last bus — <b>04:48 / 23:48</b>. Runs every 7–20 min. (as of Jul 2026)</div>
+      <div class="rt-time" data-i18n="s.t2.time"><table class="bt"><tr><td class="lbl">🕒 First bus</td><td>04:48 a.m.</td></tr><tr><td class="lbl">🕒 Last bus</td><td>11:48 p.m.</td></tr></table><div class="foot">Runs every 7–20 min. (as of Jul 2026)</div></div>
     </div>
 
     <div class="photo">
@@ -289,7 +294,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
         <li data-i18n="s.air.3">Take <b>Bus No.04</b>.</li>
         <li data-i18n="s.air.4"><b>T1</b> ~5 min (2 stops) · <b>T2</b> ~25 min (4 stops).</li>
       </ol>
-      <div class="rt-time" data-i18n="s.air.time">🕒 First / last bus — <b>05:02 / 23:52</b>. Runs every 7–20 min. (as of Jul 2026)</div>
+      <div class="rt-time" data-i18n="s.air.time"><table class="bt"><tr><td class="lbl">🕒 First bus</td><td>05:02 a.m.</td></tr><tr><td class="lbl">🕒 Last bus</td><td>11:52 p.m.</td></tr></table><div class="foot">Runs every 7–20 min. (as of Jul 2026)</div></div>
     </div>
 
     <div class="photo map">
@@ -529,21 +534,21 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "s.t1.1": `<b>3F(출국장)</b>의 <b>3번 또는 12번 게이트</b>로 가세요.`,
       "s.t1.2": `순환 <b>03번 버스</b>(AICC 방면)를 타세요.`,
       "s.t1.3": `<b>첫 번째 정류장</b>에서 내리세요 — <span class="stopname">Grand Hyatt Hotel</span>.`,
-      "s.t1.time": `🕒 첫차 / 막차 — 3번 게이트: <b>05:08 / 00:30</b> · 12번 게이트: <b>05:10 / 00:32</b>. 배차 7–20분. (2026년 7월 기준)`,
+      "s.t1.time": `<table class="bt"><tr><td class="lbl">게이트</td><th>3</th><th>12</th></tr><tr><td class="lbl">🕒 첫차</td><td>05:08</td><td>05:10</td></tr><tr><td class="lbl">🕒 막차</td><td>00:30</td><td>00:32</td></tr></table><div class="foot">배차 7–20분. (2026년 7월 기준)</div>`,
       "s.walkcross": `버스 진행 방향으로 조금 걸어가 횡단보도를 건너면 — <b>바로 앞에 저희 건물이 있습니다</b>.`,
       "note.walk": `🧳 T1에서 도보(약 15분)도 가능하지만, 짐이 있으면 권장하지 않습니다.`,
       "pill.t2": `T2에서`, "rt.t2": `터미널 2 → PWR`,
       "s.t2.1": `<b>3F</b>의 <b>7번 게이트</b>로 가세요.`,
       "s.t2.2": `동일한 <b>03번 버스</b>를 타세요.`,
       "s.t2.3": `<b>네 번째 정류장</b>에서 내리세요 — <span class="stopname">Grand Hyatt Hotel</span>.`,
-      "s.t2.time": `🕒 첫차 / 막차 — <b>04:48 / 23:48</b>. 배차 7–20분. (2026년 7월 기준)`,
+      "s.t2.time": `<table class="bt"><tr><td class="lbl">🕒 첫차</td><td>04:48</td></tr><tr><td class="lbl">🕒 막차</td><td>23:48</td></tr></table><div class="foot">배차 7–20분. (2026년 7월 기준)</div>`,
       "cap.recognize": `이 건물이 보이면 도착입니다`,
       "pill.air": `공항으로`, "rt.air": `PWR → 터미널 (T1/T2)`,
       "s.air.1": `정문으로 나와 <b>인천국제공항공사</b> 건물 쪽으로 길을 건너세요.`,
       "s.air.2": `오른쪽으로 걸어 가장 가까운 정류장으로 가세요.`,
       "s.air.3": `<b>04번 버스</b>를 타세요.`,
       "s.air.4": `<b>T1</b> 약 5분(2정거장) · <b>T2</b> 약 25분(4정거장).`,
-      "s.air.time": `🕒 첫차 / 막차 — <b>05:02 / 23:52</b>. 배차 7–20분. (2026년 7월 기준)`,
+      "s.air.time": `<table class="bt"><tr><td class="lbl">🕒 첫차</td><td>05:02</td></tr><tr><td class="lbl">🕒 막차</td><td>23:52</td></tr></table><div class="foot">배차 7–20분. (2026년 7월 기준)</div>`,
       "cap.toairstop": `공항행 정류장 — 지도 오른쪽 정류장(Int'l Business Center). 시간표는 아래에 있습니다 ↓`,
       "tt.title": `시간표: INT'L BUSINESS CENTER<span class="tt-sub">(오른쪽 정류장)</span>`,
       "tt.head": `🕒 04번 버스 — "Int'l Business Center" 정류장 출발`,
@@ -599,21 +604,21 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "s.t1.1": `<b>3F（出発フロア）</b>の<b>3番または12番ゲート</b>へ。`,
       "s.t1.2": `循環<b>03番バス</b>（AICC方面）に乗車。`,
       "s.t1.3": `<b>1つ目の停留所</b>で下車 — <span class="stopname">Grand Hyatt Hotel</span>。`,
-      "s.t1.time": `🕒 始発 / 終発 — 3番ゲート: <b>05:08 / 00:30</b> · 12番ゲート: <b>05:10 / 00:32</b>。運行間隔 7〜20分。(2026年7月時点)`,
+      "s.t1.time": `<table class="bt"><tr><td class="lbl">ゲート</td><th>3</th><th>12</th></tr><tr><td class="lbl">🕒 始発</td><td>05:08</td><td>05:10</td></tr><tr><td class="lbl">🕒 終発</td><td>00:30</td><td>00:32</td></tr></table><div class="foot">運行間隔 7〜20分。(2026年7月時点)</div>`,
       "s.walkcross": `バスの進行方向へ少し歩き、横断歩道を渡ると — <b>目の前が当施設です</b>。`,
       "note.walk": `🧳 T1から徒歩（約15分）も可能ですが、お荷物が多い場合はおすすめしません。`,
       "pill.t2": `T2から`, "rt.t2": `第2ターミナル → PWR`,
       "s.t2.1": `<b>3F</b>の<b>7番ゲート</b>へ。`,
       "s.t2.2": `同じ<b>03番バス</b>に乗車。`,
       "s.t2.3": `<b>4つ目の停留所</b>で下車 — <span class="stopname">Grand Hyatt Hotel</span>。`,
-      "s.t2.time": `🕒 始発 / 終発 — <b>04:48 / 23:48</b>。運行間隔 7〜20分。(2026年7月時点)`,
+      "s.t2.time": `<table class="bt"><tr><td class="lbl">🕒 始発</td><td>04:48</td></tr><tr><td class="lbl">🕒 終発</td><td>23:48</td></tr></table><div class="foot">運行間隔 7〜20分。(2026年7月時点)</div>`,
       "cap.recognize": `この建物が見えたら到着です`,
       "pill.air": `空港へ`, "rt.air": `PWR → ターミナル (T1/T2)`,
       "s.air.1": `正面玄関を出て、<b>仁川国際空港公社</b>の建物へ向かって横断してください。`,
       "s.air.2": `右へ歩き、最寄りのバス停へ。`,
       "s.air.3": `<b>04番バス</b>に乗車。`,
       "s.air.4": `<b>T1</b> 約5分（2停留所）· <b>T2</b> 約25分（4停留所）。`,
-      "s.air.time": `🕒 始発 / 終発 — <b>05:02 / 23:52</b>。運行間隔 7〜20分。(2026年7月時点)`,
+      "s.air.time": `<table class="bt"><tr><td class="lbl">🕒 始発</td><td>05:02</td></tr><tr><td class="lbl">🕒 終発</td><td>23:52</td></tr></table><div class="foot">運行間隔 7〜20分。(2026年7月時点)</div>`,
       "cap.toairstop": `空港行きの停留所 — 地図右側の停留所（Int'l Business Center）。時刻表は下にあります ↓`,
       "tt.title": `時刻表: INT'L BUSINESS CENTER<span class="tt-sub">(右側の停留所)</span>`,
       "tt.head": `🕒 04番バス — 「Int'l Business Center」停留所発`,
@@ -669,21 +674,21 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "s.t1.1": `前往<b>3层(出发层)</b>的<b>3号或12号门</b>。`,
       "s.t1.2": `乘坐循环<b>03路巴士</b>（开往AICC）。`,
       "s.t1.3": `在<b>第1站</b>下车 — <span class="stopname">Grand Hyatt Hotel</span>。`,
-      "s.t1.time": `🕒 首班 / 末班 — 3号门: <b>05:08 / 00:30</b> · 12号门: <b>05:10 / 00:32</b>。每7–20分钟一班。(截至2026年7月)`,
+      "s.t1.time": `<table class="bt"><tr><td class="lbl">登机口</td><th>3</th><th>12</th></tr><tr><td class="lbl">🕒 首班</td><td>05:08</td><td>05:10</td></tr><tr><td class="lbl">🕒 末班</td><td>00:30</td><td>00:32</td></tr></table><div class="foot">每7–20分钟一班。(截至2026年7月)</div>`,
       "s.walkcross": `沿巴士行进方向走一小段，过人行横道 — <b>本楼就在正前方</b>。`,
       "note.walk": `🧳 从T1步行(约15分钟)也可以，但携带行李时不建议。`,
       "pill.t2": `从T2`, "rt.t2": `2号航站楼 → PWR`,
       "s.t2.1": `前往<b>3层</b>的<b>7号门</b>。`,
       "s.t2.2": `乘坐同一趟<b>03路巴士</b>。`,
       "s.t2.3": `在<b>第4站</b>下车 — <span class="stopname">Grand Hyatt Hotel</span>。`,
-      "s.t2.time": `🕒 首班 / 末班 — <b>04:48 / 23:48</b>。每7–20分钟一班。(截至2026年7月)`,
+      "s.t2.time": `<table class="bt"><tr><td class="lbl">🕒 首班</td><td>04:48</td></tr><tr><td class="lbl">🕒 末班</td><td>23:48</td></tr></table><div class="foot">每7–20分钟一班。(截至2026年7月)</div>`,
       "cap.recognize": `看到这栋建筑就到了`,
       "pill.air": `前往机场`, "rt.air": `PWR → 航站楼 (T1/T2)`,
       "s.air.1": `从正门出来，朝<b>仁川国际机场公社</b>大楼方向过马路。`,
       "s.air.2": `向右步行至最近的巴士站。`,
       "s.air.3": `乘坐<b>04路巴士</b>。`,
       "s.air.4": `<b>T1</b> 约5分钟(2站) · <b>T2</b> 约25分钟(4站)。`,
-      "s.air.time": `🕒 首班 / 末班 — <b>05:02 / 23:52</b>。每7–20分钟一班。(截至2026年7月)`,
+      "s.air.time": `<table class="bt"><tr><td class="lbl">🕒 首班</td><td>05:02</td></tr><tr><td class="lbl">🕒 末班</td><td>23:52</td></tr></table><div class="foot">每7–20分钟一班。(截至2026年7月)</div>`,
       "cap.toairstop": `前往机场的巴士站 — 地图右侧的车站（Int'l Business Center）；时刻表见下方 ↓`,
       "tt.title": `时刻表: INT'L BUSINESS CENTER<span class="tt-sub">(右侧的车站)</span>`,
       "tt.head": `🕒 04路巴士 — 从"Int'l Business Center"站发车`,
