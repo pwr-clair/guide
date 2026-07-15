@@ -107,12 +107,9 @@
   var GD = window.GUIDE_DATA || { CATS:[], PLACES:{} };
   // deep clone working model
   var model = JSON.parse(JSON.stringify({ CATS: GD.CATS||[], PLACES: GD.PLACES||{} }));
-  // ensure every place has all 4 desc keys and a d object
+  // ensure every place has a d object (render/syncModel null-guard everything else)
   model.CATS.forEach(function(c){
-    (model.PLACES[c.key]||[]).forEach(function(p){
-      p.d = p.d || {}; LANGS.forEach(function(L){ if (p.d[L.k]==null) p.d[L.k]=''; });
-      if (p.url==null) p.url='';
-    });
+    (model.PLACES[c.key]||[]).forEach(function(p){ p.d = p.d || {}; });
   });
 
   function escAttr(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }

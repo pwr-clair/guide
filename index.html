@@ -699,6 +699,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
   var base = {};
   nodes.forEach(function(el){ base[el.getAttribute('data-i18n')] = el.innerHTML; });
   var cur = 'en';
+  var btns = document.querySelectorAll('.lg'); // static header buttons — never re-created
 
   function apply(lang){
     cur = lang;
@@ -709,12 +710,10 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
     });
     renderAround(lang);
     document.documentElement.lang = lang;
-    var btns = document.querySelectorAll('.lg');
     for (var i=0;i<btns.length;i++){ btns[i].classList.toggle('active', btns[i].getAttribute('data-lang') === lang); }
     try { localStorage.setItem('pwr_lang', lang); } catch(e){}
   }
 
-  var btns = document.querySelectorAll('.lg');
   for (var i=0;i<btns.length;i++){
     (function(b){ b.addEventListener('click', function(){ apply(b.getAttribute('data-lang')); }); })(btns[i]);
   }
