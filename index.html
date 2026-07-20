@@ -180,6 +180,7 @@ ol.steps li b{color:var(--ink);}
 @media (hover:hover){ .place:hover{border-color:var(--accent,#9a8f7d);} }
 .place .pbd{flex:1;min-width:0;}
 .place .pn{font-weight:700;font-size:14.5px;line-height:1.3;}
+.place .pn .pnalt{font-weight:400;font-size:12.5px;color:var(--ink2);}
 .place .pd{font-size:12.5px;color:var(--ink2);line-height:1.45;margin-top:2px;}
 .place .parrow{flex:none;font-size:15px;color:var(--ink2);opacity:.5;}
 
@@ -682,7 +683,8 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       html += '<div class="places">';
       for (var i=0;i<list.length;i++){
         var p = list[i], dd = p.d || {}, desc = dd[lang] || dd.en || dd.ko || '';
-        var body = '<div class="pbd"><div class="pn">' + esc(p.name) + '</div>' +
+        var alt = (p.alt || {})[lang] || ''; // 한국어 상호 병기 — ko 화면은 alt에 ko 키가 없어 자동 제외
+        var body = '<div class="pbd"><div class="pn">' + esc(p.name) + (alt ? ' <span class="pnalt">' + esc(alt) + '</span>' : '') + '</div>' +
                    (desc ? '<div class="pd">' + esc(desc) + '</div>' : '') + '</div>';
         if (p.url){
           html += '<a class="place" href="' + esc(p.url) + '" target="_blank" rel="noopener">' + body + '<div class="parrow" aria-hidden="true">↗</div></a>';

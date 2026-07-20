@@ -47,6 +47,7 @@
   .flagrow{display:flex;align-items:center;gap:6px;}
   .flagrow .fl{font-size:12px;font-weight:700;color:var(--ink2);width:64px;flex:none;}
   .flagrow textarea{min-height:34px;}
+  .flagrow input{flex:1;min-width:0;}
   .bar{position:fixed;left:0;right:0;bottom:0;background:rgba(246,243,236,.96);
     border-top:1px solid var(--line);padding:12px 14px;backdrop-filter:blur(6px);}
   .bar .inner{max-width:780px;margin:0 auto;display:flex;gap:10px;align-items:center;}
@@ -147,6 +148,13 @@
         html += '<button class="btn icon danger" data-act="del" title="삭제">🗑</button>';
         html += '</div>';
         html += '<div class="fld"><label>가게명 (모든 언어 공통)</label><input type="text" data-f="name" value="'+escAttr(p.name)+'"></div>';
+        html += '<div class="fld"><label>이름 병기 <span class="sub">(선택 — 한국어 상호일 때, 해당 언어 화면에서 이름 옆에 표기)</span></label><div class="desc-grid">';
+        LANGS.forEach(function(L){
+          if (L.k === 'ko') return;
+          html += '<div class="flagrow"><span class="fl">'+L.label+'</span>'
+               +  '<input type="text" data-f="alt" data-lang="'+L.k+'" value="'+escAttr((p.alt&&p.alt[L.k])||'')+'" placeholder="비우면 병기 없음"></div>';
+        });
+        html += '</div></div>';
         html += '<div class="fld"><label>지도 링크 URL <span class="sub">(비우면 누를 수 없는 카드)</span></label><input type="text" data-f="url" value="'+escAttr(p.url)+'" placeholder="https://maps.app.goo.gl/..."></div>';
         html += '<div class="fld"><label>설명</label><div class="desc-grid">';
         LANGS.forEach(function(L){
@@ -184,6 +192,12 @@
         card.querySelectorAll('textarea[data-f="d"]').forEach(function(ta){
           obj.d[ta.getAttribute('data-lang')] = ta.value.trim();
         });
+        var alt = {}, hasAlt = false;
+        card.querySelectorAll('input[data-f="alt"]').forEach(function(inp){
+          var v = inp.value.trim();
+          if (v){ alt[inp.getAttribute('data-lang')] = v; hasAlt = true; }
+        });
+        if (hasAlt) obj.alt = alt;
         newList.push(obj);
       });
       model.PLACES[cat.key] = newList;
