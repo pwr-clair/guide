@@ -73,14 +73,16 @@
         d:{ en:`Western-style pub/bar · open until 2:00 AM`, ko:`서양식 펍/바 · 새벽 2시까지 영업`, ja:`洋風パブ・バー · 深夜2時まで営業`, zh:`西式酒吧 · 营业至凌晨2点` } }
     ],
     pharm: [
-      { name:'연세약국 (Yonsei Pharmacy)', url:'https://maps.app.goo.gl/WYfxKz93Zym1xVHD9',
+      { name:'연세약국', url:'https://maps.app.goo.gl/WYfxKz93Zym1xVHD9',
+        alt:{ en:`Yonsei Pharmacy`, ja:`ヨンセ薬局`, zh:`延世药店` },
         d:{ en:`B1 of the LG Eclat building`, ko:`LG인천공항에클라트(Eclat) 건물 B1`, ja:`LG Eclatビルの地下1階`, zh:`LG Eclat大楼地下1层` } },
       { name:'연세공항의원', url:'https://maps.app.goo.gl/nTnBzeWuwZ9AMRke6',
         alt:{ en:`Yonsei Airport Clinic`, ja:`ヨンセ空港クリニック`, zh:`延世机场诊所` },
         d:{ en:`General practitioner (family medicine)`, ko:`일반의 (가정의학과 성격)`, ja:`一般内科（家庭医学）`, zh:`全科诊所（家庭医学）` } }
     ],
     etc: [
-      { name:'씨메르 (Cimer)', url:'https://maps.app.goo.gl/XumAbk59S1PwDNoAA',
+      { name:'씨메르', url:'https://maps.app.goo.gl/XumAbk59S1PwDNoAA',
+        alt:{ en:`Cimer`, ja:`Cimer`, zh:`Cimer` },
         d:{ en:`Premium sauna & water park inside Paradise City Hotel. Paid entry.`, ko:`파라다이스시티 호텔 내 고급 사우나·워터파크. 유료 이용.`, ja:`パラダイスシティホテル内の高級サウナ・ウォーターパーク。有料。`, zh:`Paradise City酒店内的高级桑拿·水上乐园。付费使用。` } },
       { name:'Spa at Home (T1)', url:'https://maps.app.goo.gl/JkSEHz5cHR1ct6cWA',
         d:{ en:`Spa (Terminal 1)`, ko:`스파 (터미널 1)`, ja:`スパ（第1ターミナル）`, zh:`水疗（1号航站楼）` } },
