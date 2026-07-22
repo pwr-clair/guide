@@ -8,6 +8,8 @@ on:
       - "index.html"
       - "assets/**"
       - "CNAME"
+      - "guide-data.js"
+      - "edit.html"
   workflow_dispatch:
 
 permissions:
