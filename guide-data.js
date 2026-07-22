@@ -125,7 +125,7 @@ window.GUIDE_DATA = {
         "name": "BHC치킨 인천공항점",
         "url": "https://maps.app.goo.gl/YqWkZfYLfv7fNxhu9",
         "d": {
-          "ko": "숙소 건물 1층 · 한국의 유명 치킨 프랜차이즈 · 떡볶이와 치킨을 같이 즐길 수 있어요. 한국에서 머무는 시간이 짧다면 추천합니다!",
+          "ko": "숙소 건물 1층",
           "en": "1F of our building · one of Korea's famous fried-chicken franchises · enjoy tteokbokki and chicken together — recommended if your stay in Korea is short!",
           "ja": "当施設の建物1階 · 韓国の有名チキンフランチャイズ · トッポッキとチキンを一緒に楽しめます。韓国滞在が短い方におすすめです！",
           "zh": "住宿楼1层 · 韩国知名炸鸡连锁品牌 · 可以同时享用炒年糕和炸鸡。在韩国停留时间较短的话，推荐一试！"
