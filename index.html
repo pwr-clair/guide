@@ -275,10 +275,15 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       <ol class="steps">
         <li data-i18n="s.t2.1">Go to <b>3F</b>, <b>Gate 7</b>.</li>
         <li data-i18n="s.t2.2">Take the same <b>Bus No.03</b>.</li>
-        <li data-i18n="s.t2.3">Get off at the <b>4th stop</b> — <span class="stopname">Grand Hyatt Hotel</span>.<br><span class="stopalt">The 1st stop is also a Grand Hyatt stop, but the 4th stop is much closer — please get off at the 4th.</span></li>
+        <li data-i18n="s.t2.3">Get off at the <b>4th stop</b> — <span class="stopname">Grand Hyatt Hotel</span>.<br><span class="stopalt">The 1st stop is also a Grand Hyatt stop, but the 4th stop is closer — please get off at the 4th.</span></li>
         <li data-i18n="s.walkcross">Walk a little in the bus's direction, reach the crosswalk, and cross — <b>our building is right in front of you</b>.</li>
       </ol>
       <div class="rt-time" data-i18n="s.t2.time"><table class="bt"><tr><td class="lbl">🕒 First bus</td><td>04:48 a.m.</td></tr><tr><td class="lbl">🕒 Last bus</td><td>11:48 p.m.</td></tr></table><div class="foot">Runs every 7–20 min. (as of Jul 2026)</div></div>
+    </div>
+
+    <div class="photo map">
+      <img src="assets/images/Map-t2-4th-stop.jpg?v=2" alt="Map — 1st and 4th Hyatt stops; get off at the 4th, then a 1-minute walk to the crosswalk" loading="lazy" decoding="async">
+      <div class="cap" data-i18n="cap.t2map">The 1st stop is also a Grand Hyatt stop, but the 4th stop is closer — please get off at the 4th.</div>
     </div>
 
     <div class="photo">
@@ -497,7 +502,8 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "nav.shuttle": `🚌 무료 셔틀`, "nav.building": `📍 건물 찾기`, "nav.stay": `🏠 숙박 안내`, "nav.around": `🗺️ 주변`, "nav.contact": `💬 연락`,
       "shuttle.k": `오시는 길`, "shuttle.h": `무료 공항 셔틀 🚌`,
       "shuttle.lead": `공항과 건물을 오가는 무료 순환버스가 있어요. 아래에서 도착하신 터미널을 골라 주세요.`,
-      "cap.overview": `T1 셔틀 경로 한눈에 보기`,      "pill.t1": `T1에서`, "rt.t1": `터미널 1 → PWR`,
+      "cap.overview": `T1 셔틀 경로 한눈에 보기`,
+      "cap.t2map": `첫 번째 정류장도 하얏트 호텔이지만, 네 번째 정류장이 더 가깝습니다. 네 번째 하얏트 호텔 정류장에서 내려주세요.`,      "pill.t1": `T1에서`, "rt.t1": `터미널 1 → PWR`,
       "s.t1.1": `<b>3층 출국장</b>의 <b>3번 또는 12번 게이트</b>로 가세요.`,
       "s.t1.2": `<b>03번 순환버스</b>(AICC 방면)를 타세요.`,
       "s.t1.3": `<b>첫 번째 정류장</b>에서 내리세요 — <span class="stopname">Grand Hyatt Hotel</span>.`,
@@ -507,7 +513,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "pill.t2": `T2에서`, "rt.t2": `터미널 2 → PWR`,
       "s.t2.1": `<b>3층</b>의 <b>7번 게이트</b>로 가세요.`,
       "s.t2.2": `똑같이 <b>03번 버스</b>를 타세요.`,
-      "s.t2.3": `<b>네 번째 정류장</b>에서 내리세요 — <span class="stopname">Grand Hyatt Hotel</span>.<br><span class="stopalt">첫 번째 정류장도 하얏트 호텔이지만, 네 번째 정류장이 훨씬 더 가깝습니다. 네 번째 하얏트 호텔 정류장에서 내려주세요.</span>`,
+      "s.t2.3": `<b>네 번째 정류장</b>에서 내리세요 — <span class="stopname">Grand Hyatt Hotel</span>.<br><span class="stopalt">첫 번째 정류장도 하얏트 호텔이지만, 네 번째 정류장이 더 가깝습니다. 네 번째 하얏트 호텔 정류장에서 내려주세요.</span>`,
       "s.t2.time": `<table class="bt"><tr><td class="lbl">🕒 첫차</td><td>04:48</td></tr><tr><td class="lbl">🕒 막차</td><td>23:48</td></tr></table><div class="foot">배차 간격 7–20분 · 2026년 7월 기준</div>`,
       "cap.recognize": `이 건물이 보이면 다 오신 거예요`,
       "pill.air": `공항으로`, "rt.air": `PWR → 터미널 (T1/T2)`,
@@ -558,7 +564,8 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "nav.shuttle": `🚌 無料シャトル`, "nav.building": `📍 建物`, "nav.stay": `🏠 ご滞在`, "nav.around": `🗺️ 周辺`, "nav.contact": `💬 連絡先`,
       "shuttle.k": `アクセス`, "shuttle.h": `無料空港シャトル 🚌`,
       "shuttle.lead": `空港と建物を結ぶ無料の循環バスがあります。下でターミナルをお選びください。`,
-      "cap.overview": `T1 シャトル経路の概要`,      "pill.t1": `T1から`, "rt.t1": `第1ターミナル → PWR`,
+      "cap.overview": `T1 シャトル経路の概要`,
+      "cap.t2map": `1つ目の停留所もハイアットホテルですが、4つ目の停留所の方が近いです。4つ目のハイアット停留所で下車してください。`,      "pill.t1": `T1から`, "rt.t1": `第1ターミナル → PWR`,
       "s.t1.1": `<b>3F（出発フロア）</b>の<b>3番または12番ゲート</b>へ。`,
       "s.t1.2": `循環<b>03番バス</b>（AICC方面）に乗車。`,
       "s.t1.3": `<b>1つ目の停留所</b>で下車 — <span class="stopname">Grand Hyatt Hotel</span>。`,
@@ -568,7 +575,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "pill.t2": `T2から`, "rt.t2": `第2ターミナル → PWR`,
       "s.t2.1": `<b>3F</b>の<b>7番ゲート</b>へ。`,
       "s.t2.2": `同じ<b>03番バス</b>に乗車。`,
-      "s.t2.3": `<b>4つ目の停留所</b>で下車 — <span class="stopname">Grand Hyatt Hotel</span>。<br><span class="stopalt">1つ目の停留所もハイアットホテルですが、4つ目の停留所の方がずっと近いです。4つ目のハイアット停留所で下車してください。</span>`,
+      "s.t2.3": `<b>4つ目の停留所</b>で下車 — <span class="stopname">Grand Hyatt Hotel</span>。<br><span class="stopalt">1つ目の停留所もハイアットホテルですが、4つ目の停留所の方が近いです。4つ目のハイアット停留所で下車してください。</span>`,
       "s.t2.time": `<table class="bt"><tr><td class="lbl">🕒 始発</td><td>04:48</td></tr><tr><td class="lbl">🕒 終発</td><td>23:48</td></tr></table><div class="foot">運行間隔 7〜20分。(2026年7月時点)</div>`,
       "cap.recognize": `この建物が見えたら到着です`,
       "pill.air": `空港へ`, "rt.air": `PWR → ターミナル (T1/T2)`,
@@ -619,7 +626,8 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "nav.shuttle": `🚌 免费班车`, "nav.building": `📍 建筑物`, "nav.stay": `🏠 入住须知`, "nav.around": `🗺️ 周边`, "nav.contact": `💬 联系`,
       "shuttle.k": `如何抵达`, "shuttle.h": `免费机场班车 🚌`,
       "shuttle.lead": `有免费循环巴士往返机场与本楼。请在下方选择您的航站楼。`,
-      "cap.overview": `T1 班车路线概览`,      "pill.t1": `从T1`, "rt.t1": `1号航站楼 → PWR`,
+      "cap.overview": `T1 班车路线概览`,
+      "cap.t2map": `第1站也是凯悦酒店站，但第4站更近。请在第4站的凯悦酒店站下车。`,      "pill.t1": `从T1`, "rt.t1": `1号航站楼 → PWR`,
       "s.t1.1": `前往<b>3层(出发层)</b>的<b>3号或12号门</b>。`,
       "s.t1.2": `乘坐循环<b>03路巴士</b>（开往AICC）。`,
       "s.t1.3": `在<b>第1站</b>下车 — <span class="stopname">Grand Hyatt Hotel</span>。`,
@@ -629,7 +637,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "pill.t2": `从T2`, "rt.t2": `2号航站楼 → PWR`,
       "s.t2.1": `前往<b>3层</b>的<b>7号门</b>。`,
       "s.t2.2": `乘坐同一趟<b>03路巴士</b>。`,
-      "s.t2.3": `在<b>第4站</b>下车 — <span class="stopname">Grand Hyatt Hotel</span>。<br><span class="stopalt">第1站也是凯悦酒店站，但第4站近得多。请在第4站的凯悦酒店站下车。</span>`,
+      "s.t2.3": `在<b>第4站</b>下车 — <span class="stopname">Grand Hyatt Hotel</span>。<br><span class="stopalt">第1站也是凯悦酒店站，但第4站更近。请在第4站的凯悦酒店站下车。</span>`,
       "s.t2.time": `<table class="bt"><tr><td class="lbl">🕒 首班</td><td>04:48</td></tr><tr><td class="lbl">🕒 末班</td><td>23:48</td></tr></table><div class="foot">每7–20分钟一班。(截至2026年7月)</div>`,
       "cap.recognize": `看到这栋建筑就到了`,
       "pill.air": `前往机场`, "rt.air": `PWR → 航站楼 (T1/T2)`,
