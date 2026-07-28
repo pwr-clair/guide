@@ -126,6 +126,7 @@ ol.steps li:not(:last-child)::after{content:'';position:absolute;left:11px;top:2
 ol.steps li b{color:var(--ink);}
 .stopname{background:var(--amber-soft);color:var(--amber);border-radius:5px;
   padding:1px 6px;font-weight:600;white-space:nowrap;}
+.stopalt{font-size:12.5px;color:var(--ink2);}
 .route .rt-time{font-family:inherit;font-size:12.5px;color:#000;
   border:1px solid var(--line);border-radius:14px;
   padding:12px 12px 11px;margin:2px 0 10px;line-height:1.5;text-align:center;}
@@ -233,7 +234,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
     <img src="assets/images/PWR-logo-black.png" alt="PWR" class="logo">
     <div class="brandmark">Paradise Walk Residence</div>
     <h1 data-i18n="hero.h1">Welcome —<br>your arrival guide</h1>
-    <p class="sub" data-i18n="hero.sub">A self check-in residence right by Incheon Airport Terminal 1. Everything you need for a smooth arrival is on this page.</p>
+    <p class="sub" data-i18n="hero.sub">🔑 This is an <b>unmanned residence</b> — there is no front desk. For your privacy and safety, your <b>room number &amp; door code</b> are sent via your <b>booking platform's message</b> between <b>2:30–3:00 PM</b> on arrival day, so you can go straight up by elevator.</p>
   </header>
 
   <div class="topbar">
@@ -274,7 +275,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       <ol class="steps">
         <li data-i18n="s.t2.1">Go to <b>3F</b>, <b>Gate 7</b>.</li>
         <li data-i18n="s.t2.2">Take the same <b>Bus No.03</b>.</li>
-        <li data-i18n="s.t2.3">Get off at the <b>4th stop</b> — <span class="stopname">Grand Hyatt Hotel</span>.</li>
+        <li data-i18n="s.t2.3">Get off at the <b>4th stop</b> — <span class="stopname">Grand Hyatt Hotel</span>.<br><span class="stopalt">The 1st stop is also a Grand Hyatt stop, but the 4th stop is much closer — please get off at the 4th.</span></li>
         <li data-i18n="s.walkcross">Walk a little in the bus's direction, reach the crosswalk, and cross — <b>our building is right in front of you</b>.</li>
       </ol>
       <div class="rt-time" data-i18n="s.t2.time"><table class="bt"><tr><td class="lbl">🕒 First bus</td><td>04:48 a.m.</td></tr><tr><td class="lbl">🕒 Last bus</td><td>11:48 p.m.</td></tr></table><div class="foot">Runs every 7–20 min. (as of Jul 2026)</div></div>
@@ -368,7 +369,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
     </div>
     <div class="note info" data-i18n="bld.door">🔢 Every room door has a keypad lock. Enter the keypad PIN you received through your booking platform.</div>
 
-    <div class="note info" data-i18n="bld.note">🔑 This is an <b>unmanned residence</b> — there is no front desk. For your privacy and safety, your <b>room number & door code</b> are sent via your <b>booking platform's message</b> on arrival day, so you can go straight up by elevator.</div>
+    <div class="note info" data-i18n="bld.note">🔑 This is an <b>unmanned residence</b> — there is no front desk. For your privacy and safety, your <b>room number & door code</b> are sent via your <b>booking platform's message</b> between <b>2:30–3:00 PM</b> on arrival day, so you can go straight up by elevator.</div>
   </section>
 
   <!-- ═══════════ 4. YOUR STAY ═══════════ -->
@@ -387,17 +388,23 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       </div></div>
       <div class="f"><div class="ic">📶</div><div class="bd">
         <div class="t">Wi-Fi</div>
-        <div class="d" data-i18n="wifi.d">Wi-Fi details are on a sticker at the <b>end of the TV cabinet</b> — the drawer unit the TV sits on.</div>
+        <div class="d" data-i18n="wifi.d">The Wi-Fi info sticker is <b>where the TV remote is</b>.</div>
+      </div></div>
+      <div class="f"><div class="ic">💧</div><div class="bd">
+        <div class="t" data-i18n="water.t">Water</div>
+        <div class="d" data-i18n="water.d">The water in the fridge is <b>complimentary</b>.</div>
       </div></div>
       <div class="f"><div class="ic">🌡️</div><div class="bd">
         <div class="t" data-i18n="hvac.t">Heating &amp; Cooling</div>
         <div class="d" data-i18n="hvac.d">Fan-coil system — the control panel is <b>next to the bathroom door</b>.</div>
       </div></div>
-      <div class="f ok"><div class="ic">💧</div><div class="bd">
-        <div class="t" data-i18n="water.t">Water</div>
-        <div class="d" data-i18n="water.d">The water in the fridge is <b>complimentary</b>.</div>
-      </div></div>
     </div>
+
+    <div class="photo map">
+      <img src="aircon-max.jpg" alt="Aircon control panel — the setting shown is maximum cooling" style="max-height:340px;margin:0 auto;" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'">
+      <div class="cap" data-i18n="cap.hvac">AIRCON PANEL — THE SETTING SHOWN = MAXIMUM COOLING</div>
+    </div>
+    <div class="note info" data-i18n="hvac.note">❄️ The photo above shows <b>maximum cooling</b> (COOL · 20.0°C · fan at max). Everyone feels the heat differently, so a <b>fan is also provided in your room</b> — running both together is much cooler. In the midday sun, the floor-to-ceiling window lets in strong light, so <b>closing the blackout curtains</b> helps a lot too.</div>
 
     <h3 data-i18n="notice.h">Notice</h3>
     <div class="facts">
@@ -486,7 +493,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
   var I18N = {
     ko: {
       "hero.h1": `환영합니다 —<br>도착 안내`,
-      "hero.sub": `인천공항 제1터미널 바로 옆에 있는 셀프 체크인 레지던스예요. 편하게 도착하시는 데 필요한 정보를 이 페이지에 모두 담았어요.`,
+      "hero.sub": `🔑 저희는 <b>프런트가 없는 무인 레지던스</b>예요. 개인정보 보호와 안전을 위해 <b>객실 번호와 도어록 비밀번호</b>는 도착하시는 날 <b>오후 2시 30분~3시 사이</b>에 <b>예약 플랫폼 메시지</b>로 보내드려요. 받으시면 엘리베이터로 바로 올라오시면 됩니다.`,
       "nav.shuttle": `🚌 무료 셔틀`, "nav.building": `📍 건물 찾기`, "nav.stay": `🏠 숙박 안내`, "nav.around": `🗺️ 주변`, "nav.contact": `💬 연락`,
       "shuttle.k": `오시는 길`, "shuttle.h": `무료 공항 셔틀 🚌`,
       "shuttle.lead": `공항과 건물을 오가는 무료 순환버스가 있어요. 아래에서 도착하신 터미널을 골라 주세요.`,
@@ -501,7 +508,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "pill.t2": `T2에서`, "rt.t2": `터미널 2 → PWR`,
       "s.t2.1": `<b>3층</b>의 <b>7번 게이트</b>로 가세요.`,
       "s.t2.2": `똑같이 <b>03번 버스</b>를 타세요.`,
-      "s.t2.3": `<b>네 번째 정류장</b>에서 내리세요 — <span class="stopname">Grand Hyatt Hotel</span>.`,
+      "s.t2.3": `<b>네 번째 정류장</b>에서 내리세요 — <span class="stopname">Grand Hyatt Hotel</span>.<br><span class="stopalt">첫 번째 정류장도 하얏트 호텔이지만, 네 번째 정류장이 훨씬 더 가깝습니다. 네 번째 하얏트 호텔 정류장에서 내려주세요.</span>`,
       "s.t2.time": `<table class="bt"><tr><td class="lbl">🕒 첫차</td><td>04:48</td></tr><tr><td class="lbl">🕒 막차</td><td>23:48</td></tr></table><div class="foot">배차 간격 7–20분 · 2026년 7월 기준</div>`,
       "cap.recognize": `이 건물이 보이면 다 오신 거예요`,
       "pill.air": `공항으로`, "rt.air": `PWR → 터미널 (T1/T2)`,
@@ -520,12 +527,14 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "bld.lead": `아래 사진으로 건물을 확인하시고, 엘리베이터로 바로 올라오세요.`,
       "cap.exterior": `건물 외관`, "cap.entrance": `정문`, "cap.lobby": `로비`, "cap.elevator": `엘리베이터 — 1층`,
       "bld.door": `🔢 모든 객실 문은 키패드 잠금이에요. 예약하신 플랫폼으로 받으신 비밀번호를 눌러 주세요.`,
-      "bld.note": `🔑 저희는 <b>프런트가 없는 무인 레지던스</b>예요. 개인정보 보호와 안전을 위해 <b>객실 번호와 도어록 비밀번호</b>는 도착하시는 날 <b>예약 플랫폼 메시지</b>로 보내드려요. 받으시면 엘리베이터로 바로 올라오시면 됩니다.`,
+      "bld.note": `🔑 저희는 <b>프런트가 없는 무인 레지던스</b>예요. 개인정보 보호와 안전을 위해 <b>객실 번호와 도어록 비밀번호</b>는 도착하시는 날 <b>오후 2시 30분~3시 사이</b>에 <b>예약 플랫폼 메시지</b>로 보내드려요. 받으시면 엘리베이터로 바로 올라오시면 됩니다.`,
       "stay.k": `숙박 안내`, "stay.h": `객실 안내 🏠`,
       "checkin.t": `체크인`, "checkin.d": `<b>오후 3:00</b>부터예요.`,
       "checkout.t": `체크아웃`, "checkout.d": `<b>오전 11:00</b>까지예요.`,
-      "wifi.d": `Wi-Fi 정보는 <b>TV 서랍장 끝</b>에 붙은 스티커에 있어요 — TV가 올려져 있는 서랍장이에요.`,
+      "wifi.d": `<b>TV 리모컨이 있는 곳</b>에 와이파이 안내 스티커가 붙어있어요.`,
       "hvac.t": `냉난방`, "hvac.d": `팬코일 방식이고, 조절 패널은 <b>욕실 문 옆</b>에 있어요.`,
+      "cap.hvac": `냉방 조절 패널 — 사진과 같은 상태가 최대 출력`,
+      "hvac.note": `❄️ 위 사진과 같이 되어 있는 것이 <b>냉방 최대 출력</b>이에요(COOL · 20.0°C · 팬 최대). 더위를 느끼는 정도가 사람마다 달라서 <b>방 안에 선풍기</b>도 같이 넣어드려요 — 두 개를 같이 이용하면 훨씬 더 시원해요. 한낮에는 통창으로 해가 잘 들어오는 구조라 <b>암막커튼을 치는 것</b>도 도움이 돼요.`,
       "water.t": `생수`, "water.d": `냉장고 안의 물은 <b>무료로 드실 수 있어요</b>.`,
       "notice.h": `안내 사항`,
       "lug.t": `짐 보관`, "lug.d": `현장에 사무실이 없어서 체크인 전이나 체크아웃 후에는 짐을 맡아드리기 어려워요.`,
@@ -546,7 +555,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
     },
     ja: {
       "hero.h1": `ようこそ —<br>ご到着ガイド`,
-      "hero.sub": `仁川空港第1ターミナルすぐそばのセルフチェックイン・レジデンスです。スムーズなご到着に必要な情報をこのページにまとめました。`,
+      "hero.sub": `🔑 <b>無人レジデンス</b>のためフロントはありません。プライバシーと安全のため、<b>部屋番号とドアコード</b>はご到着当日の<b>午後2時30分〜3時の間</b>に<b>ご予約プラットフォームのメッセージ</b>でお送りします。そのままエレベーターでお上がりください。`,
       "nav.shuttle": `🚌 無料シャトル`, "nav.building": `📍 建物`, "nav.stay": `🏠 ご滞在`, "nav.around": `🗺️ 周辺`, "nav.contact": `💬 連絡先`,
       "shuttle.k": `アクセス`, "shuttle.h": `無料空港シャトル 🚌`,
       "shuttle.lead": `空港と建物を結ぶ無料の循環バスがあります。下でターミナルをお選びください。`,
@@ -561,7 +570,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "pill.t2": `T2から`, "rt.t2": `第2ターミナル → PWR`,
       "s.t2.1": `<b>3F</b>の<b>7番ゲート</b>へ。`,
       "s.t2.2": `同じ<b>03番バス</b>に乗車。`,
-      "s.t2.3": `<b>4つ目の停留所</b>で下車 — <span class="stopname">Grand Hyatt Hotel</span>。`,
+      "s.t2.3": `<b>4つ目の停留所</b>で下車 — <span class="stopname">Grand Hyatt Hotel</span>。<br><span class="stopalt">1つ目の停留所もハイアットホテルですが、4つ目の停留所の方がずっと近いです。4つ目のハイアット停留所で下車してください。</span>`,
       "s.t2.time": `<table class="bt"><tr><td class="lbl">🕒 始発</td><td>04:48</td></tr><tr><td class="lbl">🕒 終発</td><td>23:48</td></tr></table><div class="foot">運行間隔 7〜20分。(2026年7月時点)</div>`,
       "cap.recognize": `この建物が見えたら到着です`,
       "pill.air": `空港へ`, "rt.air": `PWR → ターミナル (T1/T2)`,
@@ -580,12 +589,14 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "bld.lead": `下の写真で建物を確認し、エレベーターでそのままお上がりください。`,
       "cap.exterior": `建物の外観`, "cap.entrance": `正面玄関`, "cap.lobby": `ロビー`, "cap.elevator": `エレベーター — 1階`,
       "bld.door": `🔢 全ての客室のドアはキーパッド式です。予約プラットフォームから受け取ったキーパッドの暗証番号を入力してください。`,
-      "bld.note": `🔑 <b>無人レジデンス</b>のためフロントはありません。プライバシーと安全のため、<b>部屋番号とドアコード</b>はご到着当日に<b>ご予約プラットフォームのメッセージ</b>でお送りします。そのままエレベーターでお上がりください。`,
+      "bld.note": `🔑 <b>無人レジデンス</b>のためフロントはありません。プライバシーと安全のため、<b>部屋番号とドアコード</b>はご到着当日の<b>午後2時30分〜3時の間</b>に<b>ご予約プラットフォームのメッセージ</b>でお送りします。そのままエレベーターでお上がりください。`,
       "stay.k": `ご滞在について`, "stay.h": `お部屋について 🏠`,
       "checkin.t": `チェックイン`, "checkin.d": `<b>15:00</b>から。`,
       "checkout.t": `チェックアウト`, "checkout.d": `<b>11:00</b>まで。`,
-      "wifi.d": `Wi-Fi情報は<b>テレビ台の端</b>に貼られたシールに記載されています（テレビが載っている引き出し付きの台）。`,
+      "wifi.d": `<b>テレビのリモコンがある場所</b>にWi-Fi案内のステッカーが貼ってあります。`,
       "hvac.t": `冷暖房`, "hvac.d": `ファンコイル方式です。操作パネルは<b>浴室のドア横</b>にあります。`,
+      "cap.hvac": `冷房パネル — 写真の状態が最大出力`,
+      "hvac.note": `❄️ 上の写真の状態が<b>冷房の最大出力</b>です（COOL · 20.0°C · ファン最大）。暑さの感じ方は人それぞれのため、<b>お部屋に扇風機</b>もご用意しています — 併用するとずっと涼しくなります。日中は大きな窓から日差しがよく入るため、<b>遮光カーテンを閉める</b>のも効果的です。`,
       "water.t": `お水`, "water.d": `冷蔵庫のお水は<b>無料</b>です。`,
       "notice.h": `ご注意`,
       "lug.t": `お荷物`, "lug.d": `チェックイン前・チェックアウト後のお荷物のお預かりはできません（現地オフィスはございません）。`,
@@ -606,7 +617,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
     },
     zh: {
       "hero.h1": `欢迎 —<br>入住指南`,
-      "hero.sub": `位于仁川机场1号航站楼旁的自助入住公寓。顺利抵达所需的全部信息都在本页。`,
+      "hero.sub": `🔑 本处为<b>无人值守公寓</b>，没有前台。为保护您的隐私与安全，<b>房间号与门锁密码</b>将于抵达当天<b>下午2:30–3:00之间</b>通过<b>您预订平台的消息</b>发送。您可乘电梯直接上楼。`,
       "nav.shuttle": `🚌 免费班车`, "nav.building": `📍 建筑物`, "nav.stay": `🏠 入住须知`, "nav.around": `🗺️ 周边`, "nav.contact": `💬 联系`,
       "shuttle.k": `如何抵达`, "shuttle.h": `免费机场班车 🚌`,
       "shuttle.lead": `有免费循环巴士往返机场与本楼。请在下方选择您的航站楼。`,
@@ -621,7 +632,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "pill.t2": `从T2`, "rt.t2": `2号航站楼 → PWR`,
       "s.t2.1": `前往<b>3层</b>的<b>7号门</b>。`,
       "s.t2.2": `乘坐同一趟<b>03路巴士</b>。`,
-      "s.t2.3": `在<b>第4站</b>下车 — <span class="stopname">Grand Hyatt Hotel</span>。`,
+      "s.t2.3": `在<b>第4站</b>下车 — <span class="stopname">Grand Hyatt Hotel</span>。<br><span class="stopalt">第1站也是凯悦酒店站，但第4站近得多。请在第4站的凯悦酒店站下车。</span>`,
       "s.t2.time": `<table class="bt"><tr><td class="lbl">🕒 首班</td><td>04:48</td></tr><tr><td class="lbl">🕒 末班</td><td>23:48</td></tr></table><div class="foot">每7–20分钟一班。(截至2026年7月)</div>`,
       "cap.recognize": `看到这栋建筑就到了`,
       "pill.air": `前往机场`, "rt.air": `PWR → 航站楼 (T1/T2)`,
@@ -640,12 +651,14 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "bld.lead": `请对照下方照片认准建筑物，然后乘电梯直接上楼。`,
       "cap.exterior": `建筑外观`, "cap.entrance": `正门`, "cap.lobby": `大堂`, "cap.elevator": `电梯 — 1层`,
       "bld.door": `🔢 所有客房的门均为键盘密码锁。请输入您通过预订平台收到的键盘密码。`,
-      "bld.note": `🔑 本处为<b>无人值守公寓</b>，没有前台。为保护您的隐私与安全，<b>房间号与门锁密码</b>将于抵达当天通过<b>您预订平台的消息</b>发送。您可乘电梯直接上楼。`,
+      "bld.note": `🔑 本处为<b>无人值守公寓</b>，没有前台。为保护您的隐私与安全，<b>房间号与门锁密码</b>将于抵达当天<b>下午2:30–3:00之间</b>通过<b>您预订平台的消息</b>发送。您可乘电梯直接上楼。`,
       "stay.k": `入住须知`, "stay.h": `客房内 🏠`,
       "checkin.t": `入住`, "checkin.d": `<b>下午3:00</b>起。`,
       "checkout.t": `退房`, "checkout.d": `<b>上午11:00</b>前。`,
-      "wifi.d": `Wi-Fi信息在<b>电视柜一端</b>的贴纸上 — 即电视所在的抽屉柜。`,
+      "wifi.d": `<b>放电视遥控器的地方</b>贴有Wi-Fi信息贴纸。`,
       "hvac.t": `空调/暖气`, "hvac.d": `为风机盘管系统，控制面板在<b>浴室门旁</b>。`,
+      "cap.hvac": `空调面板 — 图中状态即为最大制冷`,
+      "hvac.note": `❄️ 上图所示即为<b>最大制冷输出</b>（COOL · 20.0°C · 风速最大）。每个人对炎热的感受不同，因此<b>房间内备有电风扇</b> — 两者同时使用会凉快得多。正午阳光会透过落地窗照入室内，<b>拉上遮光窗帘</b>也很有帮助。`,
       "water.t": `饮用水`, "water.d": `冰箱里的水<b>免费提供</b>。`,
       "notice.h": `注意事项`,
       "lug.t": `行李`, "lug.d": `入住前及退房后不提供行李寄存（现场无办公室）。`,
