@@ -80,11 +80,16 @@ button{font-family:inherit;cursor:pointer;}
   border:1px solid var(--line);background:var(--card);color:var(--ink2);white-space:nowrap;}
 .tabbtn.active{background:var(--ink);color:#fff;border-color:var(--ink);
   box-shadow:0 2px 7px rgba(35,46,56,.22);}
-nav.jump{display:flex;gap:8px;overflow-x:auto;padding:8px 16px 11px;scrollbar-width:none;}
+/* 점프 메뉴: 알약 칩 대신 에디토리얼 타이포 인덱스 (탭 토글은 위에서 유지) */
+nav.jump{display:flex;align-items:center;gap:9px;overflow-x:auto;
+  padding:0 18px;margin-top:10px;border-top:1px solid var(--line);scrollbar-width:none;}
 nav.jump::-webkit-scrollbar{display:none;}
-nav.jump a{flex:0 0 auto;font-family:var(--mono);font-size:11px;font-weight:500;
-  letter-spacing:.4px;color:var(--ink2);background:var(--card);
-  border:1px solid var(--line);border-radius:100px;padding:6px 12px;}
+nav.jump a{flex:0 0 auto;font-family:var(--mono);font-size:10.5px;font-weight:700;
+  letter-spacing:1.2px;text-transform:uppercase;color:var(--ink2);
+  padding:10px 0 11px;border-radius:0;}
+nav.jump a:active{color:var(--amber);}
+nav.jump a+a::before{content:'♦';font-size:7px;color:var(--line);
+  vertical-align:2px;margin-right:9px;}
 
 /* ---- sections ---- */
 section{padding:30px 20px 8px;scroll-margin-top:128px;}
@@ -260,17 +265,17 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       <button type="button" class="tabbtn" data-tab="living" data-i18n="tab.living">🏠 Daily Living</button>
     </div>
     <nav class="jump" id="nav-checkin">
-      <a href="#shuttle" data-i18n="nav.shuttle">🚌 Free Shuttle</a>
-      <a href="#building" data-i18n="nav.building">📍 The Building</a>
-      <a href="#checkin" data-i18n="nav.checkin">🔑 Check-in</a>
-      <a href="#contact" data-i18n="nav.contact">💬 Contact</a>
+      <a href="#shuttle" data-i18n="nav.shuttle">Free Shuttle</a>
+      <a href="#building" data-i18n="nav.building">The Building</a>
+      <a href="#checkin" data-i18n="nav.checkin">Check-in</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
     <nav class="jump" id="nav-living" hidden>
-      <a href="#living" data-i18n="nav.living">🏠 Living</a>
-      <a href="#shopping" data-i18n="nav.shopping">🛒 Shopping</a>
-      <a href="#paradise" data-i18n="nav.paradise">🎰 Paradise City</a>
-      <a href="#around" data-i18n="nav.around">🗺️ Around</a>
-      <a href="#contact" data-i18n="nav.contact">💬 Contact</a>
+      <a href="#living" data-i18n="nav.living">Living</a>
+      <a href="#shopping" data-i18n="nav.shopping">Shopping</a>
+      <a href="#paradise" data-i18n="nav.paradise">Paradise City</a>
+      <a href="#around" data-i18n="nav.around">Around</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
   </div>
 
@@ -643,8 +648,8 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "hero.sub": `🔑 저희는 <b>프런트가 없는 무인 레지던스</b>예요. 도착부터 생활까지 필요한 내용을 이 가이드에 모두 담았어요 — <b>아래 두 개의 탭</b>으로 나뉘어 있어요.`,
       "hero.luck": `🍀 <b>APT 인천</b>에 참가하러 오셨나요? 카드가 게스트 편이기를 — 행운을 빌어요!`,
       "tab.checkin": `🔑 체크인/아웃 안내`, "tab.living": `🏠 생활 참고`,
-      "nav.shuttle": `🚌 무료 셔틀`, "nav.building": `📍 건물 찾기`, "nav.checkin": `🔑 체크인`, "nav.contact": `💬 연락`,
-      "nav.living": `🏠 생활`, "nav.shopping": `🛒 구매대행`, "nav.paradise": `🎰 파라다이스시티`, "nav.around": `🗺️ 주변`,
+      "nav.shuttle": `무료 셔틀`, "nav.building": `건물 찾기`, "nav.checkin": `체크인`, "nav.contact": `연락`,
+      "nav.living": `생활`, "nav.shopping": `구매대행`, "nav.paradise": `파라다이스시티`, "nav.around": `주변`,
       "shuttle.k": `오시는 길`, "shuttle.h": `무료 공항 셔틀 🚌`,
       "shuttle.lead": `공항과 건물을 오가는 무료 순환버스가 있어요. 아래에서 도착하신 터미널을 골라 주세요.`,
       "cap.overview": `T1 셔틀 경로 한눈에 보기`,
@@ -750,8 +755,8 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "hero.sub": `🔑 当施設は<b>フロントのない無人レジデンス</b>です。ご到着から日々の暮らしまで、必要な情報をこのガイドにまとめました — <b>下の2つのタブ</b>をご利用ください。`,
       "hero.luck": `🍀 <b>APT仁川</b>にご参加ですか？カードが味方につきますように — ご健闘をお祈りします！`,
       "tab.checkin": `🔑 チェックイン/アウト`, "tab.living": `🏠 暮らしの参考`,
-      "nav.shuttle": `🚌 無料シャトル`, "nav.building": `📍 建物`, "nav.checkin": `🔑 チェックイン`, "nav.contact": `💬 連絡先`,
-      "nav.living": `🏠 暮らし`, "nav.shopping": `🛒 購入代行`, "nav.paradise": `🎰 パラダイスシティ`, "nav.around": `🗺️ 周辺`,
+      "nav.shuttle": `無料シャトル`, "nav.building": `建物`, "nav.checkin": `チェックイン`, "nav.contact": `連絡先`,
+      "nav.living": `暮らし`, "nav.shopping": `購入代行`, "nav.paradise": `パラダイスシティ`, "nav.around": `周辺`,
       "shuttle.k": `アクセス`, "shuttle.h": `無料空港シャトル 🚌`,
       "shuttle.lead": `空港と建物を結ぶ無料の循環バスがあります。下でターミナルをお選びください。`,
       "cap.overview": `T1 シャトル経路の概要`,
@@ -857,8 +862,8 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "hero.sub": `🔑 本处为<b>无人值守公寓</b>，没有前台。从抵达到日常生活所需的信息都在本指南中 — 请使用<b>下方两个标签页</b>。`,
       "hero.luck": `🍀 前来参加<b>APT仁川</b>吗？愿好牌常伴 — 祝您好运连连！`,
       "tab.checkin": `🔑 入住/退房`, "tab.living": `🏠 生活参考`,
-      "nav.shuttle": `🚌 免费班车`, "nav.building": `📍 建筑物`, "nav.checkin": `🔑 入住`, "nav.contact": `💬 联系`,
-      "nav.living": `🏠 生活`, "nav.shopping": `🛒 代购`, "nav.paradise": `🎰 百乐达斯城`, "nav.around": `🗺️ 周边`,
+      "nav.shuttle": `免费班车`, "nav.building": `建筑物`, "nav.checkin": `入住`, "nav.contact": `联系`,
+      "nav.living": `生活`, "nav.shopping": `代购`, "nav.paradise": `百乐达斯城`, "nav.around": `周边`,
       "shuttle.k": `如何抵达`, "shuttle.h": `免费机场班车 🚌`,
       "shuttle.lead": `有免费循环巴士往返机场与本楼。请在下方选择您的航站楼。`,
       "cap.overview": `T1 班车路线概览`,
