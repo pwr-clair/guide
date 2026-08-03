@@ -1,15 +1,11 @@
 # GitHub Pages 배포 — Actions 소스 + 동시성 가드 (cs 레포와 동일 패턴)
 name: Deploy Pages
 
+# paths 필터 없음 — 이 레포는 전부 사이트 파일이라 main 푸시면 항상 배포.
+# (과거 필터에 long.html이 빠져 새 파일 푸시가 배포를 트리거하지 않는 사고 있었음, 2026-08-03)
 on:
   push:
     branches: [main]
-    paths:
-      - "index.html"
-      - "assets/**"
-      - "CNAME"
-      - "guide-data.js"
-      - "edit.html"
   workflow_dispatch:
 
 permissions:
