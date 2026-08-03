@@ -199,6 +199,9 @@ ol.steps li b{color:var(--ink);}
 .facts .f.ok{background:var(--go-soft);}
 .facts .f.ok .t,.facts .f.ok .d{color:#155E43;}
 .facts .f.ok .d b{color:#0F4A34;}
+.facts .f .d .subnote{display:block;margin-top:4px;font-size:12px;line-height:1.55;
+  font-style:italic;font-weight:400;color:var(--muted);}
+.facts .f .d .subnote b{color:var(--muted);}
 
 /* ---- around: clickable place list ---- */
 .places{display:flex;flex-direction:column;gap:8px;margin:10px 0 6px;}
@@ -428,11 +431,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
     <div class="facts">
       <div class="f ok"><div class="ic">🕒</div><div class="bd">
         <div class="t" data-i18n="checkin.t">Check-in</div>
-        <div class="d" data-i18n="checkin.d">From <b>3:00 PM</b>.</div>
-      </div></div>
-      <div class="f"><div class="ic">⏰</div><div class="bd">
-        <div class="t" data-i18n="ci.early.t">Early check-in</div>
-        <div class="d" data-i18n="ci.early.d">Regular check-in is from 3:00 PM — but if you <b>tell us your expected arrival time</b> on the day, we'll have your room ready for that time. We'll do our best to make early check-in possible, so just let us know what time suits you.</div>
+        <div class="d" data-i18n="checkin.d">From <b>3:00 PM</b>.<span class="subnote">Regular check-in is from 3:00 PM — but if you tell us your expected arrival time on the day, we'll have your room ready for that time. We'll do our best to make early check-in possible, so just let us know what time suits you.</span></div>
       </div></div>
       <div class="f warn"><div class="ic">🕚</div><div class="bd">
         <div class="t" data-i18n="checkout.t">Check-out</div>
@@ -448,7 +447,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       </div></div>
       <div class="f ok"><div class="ic">🔑</div><div class="bd">
         <div class="t" data-i18n="ci.code.t">Room number &amp; door code</div>
-        <div class="d" data-i18n="ci.code.d">Sent by message on arrival day between <b>2:30–3:00 PM</b>. For cash contracts, we'll share them when we meet.</div>
+        <div class="d" data-i18n="ci.code.d">Sent via your <b>booking platform's message</b> between <b>2:30–3:00 PM</b> on arrival day.</div>
       </div></div>
     </div>
   </section>
@@ -506,15 +505,11 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
     <div class="facts">
       <div class="f"><div class="ic">🗑️</div><div class="bd">
         <div class="t" data-i18n="trash.gen.t">General waste</div>
-        <div class="d" data-i18n="trash.gen.d">Use the <b>white bags in the shoe cabinet</b> by the entrance.</div>
+        <div class="d" data-i18n="trash.gen.d">Use the <b>white bags in the shoe cabinet</b> by the entrance.<br>🥕 Food waste goes in too: <b>drain the liquid as much as you can and seal it in a plastic bag</b> before putting it in the general-waste bag — it keeps smells and leaks away, especially in this heat.</div>
       </div></div>
       <div class="f"><div class="ic">♻️</div><div class="bd">
         <div class="t" data-i18n="trash.rec.t">Recyclables</div>
         <div class="d" data-i18n="trash.rec.d">Bottles, cans, plastics and paper go in the <b>white basket by the door</b>.</div>
-      </div></div>
-      <div class="f"><div class="ic">🥕</div><div class="bd">
-        <div class="t" data-i18n="trash.food.t">Food waste</div>
-        <div class="d" data-i18n="trash.food.d">Use the bin <b>under the kitchen sink</b>.</div>
       </div></div>
       <div class="f ok"><div class="ic">📍</div><div class="bd">
         <div class="t" data-i18n="trash.out.t">Where to drop it off</div>
@@ -697,16 +692,14 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "bld.door": `🔢 모든 객실 문은 키패드 잠금이에요. 메시지로 받으신 비밀번호를 눌러 주세요.`,
       "ci.k": `체크인·결제`, "ci.h": `체크인 안내 🔑`,
       "ci.lead": `장기 숙박은 여기서 시작돼요 — 결제 부분만 미리 확인해 주세요.`,
-      "checkin.t": `체크인`, "checkin.d": `<b>오후 3:00</b>부터예요.`,
-      "ci.early.t": `이른 체크인`,
-      "ci.early.d": `정규 체크인 시간은 오후 3시이지만, 도착하시는 날 <b>예상 시간을 알려주시면</b> 해당 시간에 맞추어 객실을 준비해 드리고 있어요. 이른 체크인도 가능할 수 있도록 최선을 다할 테니, 편하신 시간을 알려주세요.`,
+      "checkin.t": `체크인`, "checkin.d": `<b>오후 3:00</b>부터예요.<span class="subnote">정규 체크인 시간은 오후 3시이지만, 도착하시는 날 예상 시간을 알려주시면 해당 시간에 맞추어 객실을 준비해 드리고 있습니다. 이른 체크인도 가능할 수 있도록 최선을 다하겠으니 편하신 시간을 알려주세요.</span>`,
       "checkout.t": `체크아웃`, "checkout.d": `<b>오전 11:00</b>까지예요.`,
       "ci.bank.t": `입금(계좌이체)으로 결제하시는 경우`,
       "ci.bank.d": `입금은 <b>도착 1일 전까지</b> 완료해 주세요. 해외에서는 국제 송금 앱 <b><a href="https://wise.com" target="_blank" rel="noopener">Wise</a></b>를 추천드려요 — 원화(KRW)로 빠르고 수수료가 낮아요. 입금 정보는 메시지로 보내드려요.`,
       "ci.cash.t": `도착 당일 현금으로 계약하시는 경우`,
       "ci.cash.d": `직접 만나서 계약을 진행해요 — 프런트가 없는 곳이라 <b>도착 시간을 미리 메시지로 조율</b>해 주셔야 해요.`,
       "ci.code.t": `객실 번호·도어코드`,
-      "ci.code.d": `도착일 <b>오후 2:30–3:00 사이</b>에 메시지로 보내드려요. 현금 계약은 만나서 안내드려요.`,
+      "ci.code.d": `도착일 <b>오후 2:30–3:00 사이</b>에 <b>예약하신 부킹 플랫폼 메시지</b>로 보내드려요.`,
       "live.k": `생활 참고`, "live.h": `이곳에서의 생활 🏠`,
       "live.lead": `장기 숙박은 호텔에 묵는 것이 아니라, 집 한 채를 빌려 지내시는 방식이에요.`,
       "home.rent.t": `계약에 의한 하우스 렌탈`,
@@ -722,11 +715,9 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "trash.h": `쓰레기 버리기 🗑️`,
       "trash.lead": `분리는 간단해요 — 객실에 통이 있고, 버리는 곳은 아래층 한 곳이에요.`,
       "trash.gen.t": `일반 쓰레기`,
-      "trash.gen.d": `현관 <b>신발장에 들어있는 흰색 봉투</b>를 사용해 주세요.`,
+      "trash.gen.d": `현관 <b>신발장에 들어있는 흰색 봉투</b>를 사용해 주세요.<br>🥕 음식물 쓰레기도 여기에 같이: <b>물기를 최대한 빼고 비닐봉투에 잘 밀봉</b>해서 일반 쓰레기 봉투에 넣어 주세요 — 요즘 같은 폭염엔 냄새·누수 방지에 특히 중요해요.`,
       "trash.rec.t": `분리수거(재활용)`,
       "trash.rec.d": `병·캔·플라스틱·종이는 <b>문 앞의 흰색 바구니</b>에 모아 주세요.`,
-      "trash.food.t": `음식물 쓰레기`,
-      "trash.food.d": `<b>싱크대 아래 통</b>을 사용해 주세요.`,
       "trash.out.t": `버리는 곳`,
       "trash.out.d": `<b>건물 후문으로 나가면 오른쪽에 쓰레기장</b>이 바로 보여요. 봉투나 바구니가 차면 그곳에 버려 주시면 됩니다.`,
       "notice.h": `안내 사항`,
@@ -804,16 +795,14 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "bld.door": `🔢 全ての客室のドアはキーパッド式です。メッセージで受け取った暗証番号を入力してください。`,
       "ci.k": `チェックイン・お支払い`, "ci.h": `チェックインのご案内 🔑`,
       "ci.lead": `長期滞在はここから始まります — お支払いの部分だけ事前にご確認ください。`,
-      "checkin.t": `チェックイン`, "checkin.d": `<b>15:00</b>から。`,
-      "ci.early.t": `アーリーチェックイン`,
-      "ci.early.d": `正規のチェックインは15:00からですが、ご到着日の<b>おおよその時間をお知らせいただければ</b>、その時間に合わせてお部屋をご用意しています。アーリーチェックインもできる限り対応いたしますので、ご都合の良い時間をお知らせください。`,
+      "checkin.t": `チェックイン`, "checkin.d": `<b>15:00</b>から。<span class="subnote">正規のチェックインは15:00からですが、ご到着日のおおよその時間をお知らせいただければ、その時間に合わせてお部屋をご用意しています。アーリーチェックインもできる限り対応いたしますので、ご都合の良い時間をお知らせください。</span>`,
       "checkout.t": `チェックアウト`, "checkout.d": `<b>11:00</b>まで。`,
       "ci.bank.t": `銀行振込でお支払いの場合`,
       "ci.bank.d": `お振込は<b>ご到着の1日前まで</b>にお願いします。海外からは国際送金アプリ<b><a href="https://wise.com" target="_blank" rel="noopener">Wise</a></b>がおすすめです — ウォン（KRW）建てで速く、手数料も低めです。振込先はメッセージでお送りします。`,
       "ci.cash.t": `ご到着当日に現金でご契約の場合`,
       "ci.cash.d": `直接お会いして契約を行います — フロントがないため、<b>ご到着時間を事前にメッセージでご調整</b>ください。`,
       "ci.code.t": `部屋番号・ドアコード`,
-      "ci.code.d": `ご到着日の<b>午後2:30〜3:00の間</b>にメッセージでお送りします。現金契約の場合はお会いした際にご案内します。`,
+      "ci.code.d": `ご到着日の<b>午後2:30〜3:00の間</b>に、<b>ご予約のプラットフォームのメッセージ</b>でお送りします。`,
       "live.k": `暮らしの参考`, "live.h": `ここでの暮らし 🏠`,
       "live.lead": `長期滞在は、ホテルに泊まるのではなく、家を一軒お借りになって暮らすスタイルです。`,
       "home.rent.t": `契約によるハウスレンタル`,
@@ -829,11 +818,9 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "trash.h": `ゴミの出し方 🗑️`,
       "trash.lead": `分別は簡単です — お部屋に容器があり、出す場所は下の1か所だけです。`,
       "trash.gen.t": `一般ごみ`,
-      "trash.gen.d": `玄関の<b>靴箱に入っている白い袋</b>をお使いください。`,
+      "trash.gen.d": `玄関の<b>靴箱に入っている白い袋</b>をお使いください。<br>🥕 生ごみもこちらへ：<b>水気をできるだけ切り、ビニール袋にしっかり密封</b>してから一般ごみの袋に入れてください — この猛暑では、においや液漏れ防止に特に大切です。`,
       "trash.rec.t": `分別ごみ（リサイクル）`,
       "trash.rec.d": `びん・缶・プラスチック・紙は<b>ドアの前の白いかご</b>にまとめてください。`,
-      "trash.food.t": `生ごみ`,
-      "trash.food.d": `<b>シンク下の容器</b>をお使いください。`,
       "trash.out.t": `出す場所`,
       "trash.out.d": `<b>建物の裏口を出るとすぐ右手にごみ置き場</b>が見えます。袋やかごがいっぱいになったら、そちらへお出しください。`,
       "notice.h": `ご注意`,
@@ -911,16 +898,14 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "bld.door": `🔢 所有客房的门均为键盘密码锁。请输入您通过消息收到的密码。`,
       "ci.k": `入住·付款`, "ci.h": `入住指南 🔑`,
       "ci.lead": `长住从这里开始 — 请提前确认付款相关内容。`,
-      "checkin.t": `入住`, "checkin.d": `<b>下午3:00</b>起。`,
-      "ci.early.t": `提前入住`,
-      "ci.early.d": `正式入住时间为下午3点，但如果您<b>告知抵达当天的预计时间</b>，我们会按该时间为您准备好房间。我们会尽力安排提前入住，请随时告诉我们您方便的时间。`,
+      "checkin.t": `入住`, "checkin.d": `<b>下午3:00</b>起。<span class="subnote">正式入住时间为下午3点，但如果您告知抵达当天的预计时间，我们会按该时间为您准备好房间。我们会尽力安排提前入住，请随时告诉我们您方便的时间。</span>`,
       "checkout.t": `退房`, "checkout.d": `<b>上午11:00</b>前。`,
       "ci.bank.t": `通过银行转账付款`,
       "ci.bank.d": `请<b>在抵达前1天</b>完成付款。海外汇款推荐使用<b><a href="https://wise.com" target="_blank" rel="noopener">Wise</a></b> — 以韩元（KRW）汇款，快捷且手续费低。收款信息将通过消息发送给您。`,
       "ci.cash.t": `抵达当日现金签约`,
       "ci.cash.d": `我们会与您当面办理合同 — 因没有前台，请<b>提前通过消息与我们约好抵达时间</b>。`,
       "ci.code.t": `房间号与门锁密码`,
-      "ci.code.d": `抵达当日<b>下午2:30–3:00之间</b>通过消息发送。现金签约的客人将在见面时告知。`,
+      "ci.code.d": `抵达当日<b>下午2:30–3:00之间</b>，通过<b>您预订平台的消息</b>发送。`,
       "live.k": `生活参考`, "live.h": `在这里的生活 🏠`,
       "live.lead": `长期入住不是住酒店，而是租下一套房、像在家一样生活的方式。`,
       "home.rent.t": `合同制房屋租赁`,
@@ -936,11 +921,9 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "trash.h": `倒垃圾 🗑️`,
       "trash.lead": `分类很简单 — 房间里有容器，楼下一个投放点。`,
       "trash.gen.t": `一般垃圾`,
-      "trash.gen.d": `请使用玄关<b>鞋柜里的白色垃圾袋</b>。`,
+      "trash.gen.d": `请使用玄关<b>鞋柜里的白色垃圾袋</b>。<br>🥕 厨余垃圾也放这里：<b>尽量沥干水分，用塑料袋密封</b>后放入一般垃圾袋中 — 在当下酷暑中，这对防止异味和渗漏尤为重要。`,
       "trash.rec.t": `可回收垃圾`,
       "trash.rec.d": `瓶、罐、塑料、纸类请放入<b>门前的白色篮子</b>。`,
-      "trash.food.t": `厨余垃圾`,
-      "trash.food.d": `请使用<b>水槽下方的桶</b>。`,
       "trash.out.t": `投放地点`,
       "trash.out.d": `从<b>楼的后门出去，右侧就能看到垃圾投放区</b>。垃圾袋或篮子装满后，拿到那里投放即可。`,
       "notice.h": `注意事项`,
