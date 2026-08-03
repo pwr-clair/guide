@@ -162,6 +162,13 @@ ol.steps li b{color:var(--ink);}
 .note.info{background:var(--night-soft);border-color:#CFDBF3;color:#2C3F7A;}
 .note b{font-weight:700;}
 
+/* ---- stack: 카드·사진·노트를 한 덩어리로 잇기 ---- */
+.stack{margin:12px 0;}
+.stack>*{margin:0!important;border-radius:0!important;}
+.stack>*+*{border-top:none!important;}
+.stack>:first-child{border-radius:var(--r) var(--r) 0 0!important;}
+.stack>:last-child{border-radius:0 0 var(--r) var(--r)!important;}
+
 /* ---- address / taxi card ---- */
 .addr{background:var(--ink);color:#fff;border-radius:var(--r);padding:18px 18px 16px;margin:14px 0;}
 .addr .lbl{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;
@@ -423,6 +430,10 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
         <div class="t" data-i18n="checkin.t">Check-in</div>
         <div class="d" data-i18n="checkin.d">From <b>3:00 PM</b>.</div>
       </div></div>
+      <div class="f"><div class="ic">⏰</div><div class="bd">
+        <div class="t" data-i18n="ci.early.t">Early check-in</div>
+        <div class="d" data-i18n="ci.early.d">Regular check-in is from 3:00 PM — but if you <b>tell us your expected arrival time</b> on the day, we'll have your room ready for that time. We'll do our best to make early check-in possible, so just let us know what time suits you.</div>
+      </div></div>
       <div class="f warn"><div class="ic">🕚</div><div class="bd">
         <div class="t" data-i18n="checkout.t">Check-out</div>
         <div class="d" data-i18n="checkout.d">By <b>11:00 AM</b>.</div>
@@ -464,13 +475,10 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
         <div class="t" data-i18n="home.priv.t">Complete privacy</div>
         <div class="d" data-i18n="home.priv.d">Just like at home, <b>no one enters your room during your stay</b> — there are no daily housekeeping visits, so your space stays exactly as you leave it.</div>
       </div></div>
-      <div class="f"><div class="ic">🧹</div><div class="bd">
-        <div class="t" data-i18n="home.care.t">Living like at home</div>
-        <div class="d" data-i18n="home.care.d">Day-to-day tidying is in your hands, the way a home is. Before you move in, we prepare the room <b>fully cleaned with fresh linens</b> — from then on, it's all yours.</div>
-      </div></div>
     </div>
 
     <h3 data-i18n="live.room.h">In your room</h3>
+    <div class="stack">
     <div class="facts">
       <div class="f"><div class="ic">📶</div><div class="bd">
         <div class="t">Wi-Fi</div>
@@ -478,7 +486,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       </div></div>
       <div class="f"><div class="ic">💧</div><div class="bd">
         <div class="t" data-i18n="water.t">Water</div>
-        <div class="d" data-i18n="water.d">The water in the fridge is <b>complimentary</b>.</div>
+        <div class="d" data-i18n="water.d">The water in the <b>fridge and in the wardrobe</b> is complimentary.</div>
       </div></div>
       <div class="f"><div class="ic">🌡️</div><div class="bd">
         <div class="t" data-i18n="hvac.t">Heating &amp; Cooling</div>
@@ -491,6 +499,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       <div class="cap" data-i18n="cap.hvac">AIRCON PANEL — THE SETTING SHOWN = MAXIMUM COOLING</div>
     </div>
     <div class="note info" data-i18n="hvac.note">❄️ As you may have noticed, Korea is currently experiencing an <b>unprecedented heatwave</b>, with record-breaking temperatures reported daily. Our rooms have large windows that let in plenty of sunlight, so room temperatures can rise quickly during the daytime. Two warm recommendations: <b>keep the air conditioning on even while you're out</b> — rather than switching it off — and <b>keep the blackout curtains drawn during midday hours</b>. The photo above shows the panel at maximum cooling (COOL · 20.0°C · fan at max). Please stay cool and safe!</div>
+    </div><!-- /stack -->
 
     <h3 data-i18n="trash.h">Taking out the trash 🗑️</h3>
     <p class="lead" data-i18n="trash.lead">Sorting is simple — containers in your room, one drop-off spot downstairs.</p>
@@ -580,6 +589,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       </ol>
     </div>
 
+    <div class="stack">
     <div class="photo map">
       <img src="assets/images/pc-walk-photo.jpg" alt="View from our building — yellow route from the Emart24 side door to the Paradise City entrance" loading="lazy" decoding="async">
       <div class="cap" data-i18n="cap.pcphoto">THE WAY THERE — EXIT BY EMART24 (1F), THEN FOLLOW THE YELLOW ROUTE</div>
@@ -588,6 +598,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       <img src="assets/images/pc-walk-map.jpg" alt="The same walking route to Paradise City shown on the map" loading="lazy" decoding="async">
       <div class="cap" data-i18n="cap.pcmap">THE SAME ROUTE ON THE MAP</div>
     </div>
+    </div><!-- /stack -->
 
     <div class="note warm" data-i18n="pc.luck">🍀 Good luck at <b>APT Incheon</b> — we're rooting for you! ♠♥♦♣</div>
   </section>
@@ -687,6 +698,8 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "ci.k": `체크인·결제`, "ci.h": `체크인 안내 🔑`,
       "ci.lead": `장기 숙박은 여기서 시작돼요 — 결제 부분만 미리 확인해 주세요.`,
       "checkin.t": `체크인`, "checkin.d": `<b>오후 3:00</b>부터예요.`,
+      "ci.early.t": `이른 체크인`,
+      "ci.early.d": `정규 체크인 시간은 오후 3시이지만, 도착하시는 날 <b>예상 시간을 알려주시면</b> 해당 시간에 맞추어 객실을 준비해 드리고 있어요. 이른 체크인도 가능할 수 있도록 최선을 다할 테니, 편하신 시간을 알려주세요.`,
       "checkout.t": `체크아웃`, "checkout.d": `<b>오전 11:00</b>까지예요.`,
       "ci.bank.t": `입금(계좌이체)으로 결제하시는 경우`,
       "ci.bank.d": `입금은 <b>도착 1일 전까지</b> 완료해 주세요. 해외에서는 국제 송금 앱 <b><a href="https://wise.com" target="_blank" rel="noopener">Wise</a></b>를 추천드려요 — 원화(KRW)로 빠르고 수수료가 낮아요. 입금 정보는 메시지로 보내드려요.`,
@@ -700,11 +713,9 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "home.rent.d": `장기 숙박은 <b>계약에 따른 단기 하우스 렌탈</b>이에요 — 머무시는 기간 내내 객실은 온전히 나만의 집이 됩니다.`,
       "home.priv.t": `완전한 프라이버시`,
       "home.priv.d": `집에서처럼, <b>머무시는 동안 누구도 객실에 들어가지 않아요</b> — 매일의 하우스키핑 방문이 없는 방식이라, 내 공간이 그대로 유지돼요.`,
-      "home.care.t": `내 집처럼 지내기`,
-      "home.care.d": `일상적인 정리는 집에서처럼 직접 해 주시면 돼요. 입주 전에 저희가 <b>구석구석 청소하고 새 침구로</b> 준비해 두어요 — 그 다음부터는 온전히 게스트의 공간이에요.`,
       "live.room.h": `객실 안내`,
       "wifi.d": `<b>TV 리모컨이 있는 곳</b>에 와이파이 안내 스티커가 붙어있어요.`,
-      "water.t": `생수`, "water.d": `냉장고 안의 물은 <b>무료로 드실 수 있어요</b>.`,
+      "water.t": `생수`, "water.d": `<b>냉장고와 옷장 안에 있는 물</b>은 무료로 드실 수 있어요.`,
       "hvac.t": `냉난방`, "hvac.d": `팬코일 방식이고, 조절 패널은 <b>욕실 문 옆</b>에 있어요.`,
       "cap.hvac": `냉방 조절 패널 — 사진과 같은 상태가 최대 출력`,
       "hvac.note": `❄️ 아시는 것처럼 요즘 한국은 매일 최고기온 기록을 갱신하는 <b>유례없는 폭염</b>이 이어지고 있어요. 저희 객실은 통창으로 햇빛이 잘 드는 구조라 한낮에는 실내 온도가 빠르게 올라갈 수 있어요. 두 가지를 추천드려요: <b>외출하실 때도 에어컨은 끄지 말고 켜 둔 채 유지</b>해 주시고, <b>한낮에는 암막커튼을 꼭 닫아두고</b> 지내시는 거예요. 위 사진 상태가 냉방 최대 출력이에요(COOL · 20.0°C · 팬 최대). 시원하고 안전한 여름 보내세요!`,
@@ -794,6 +805,8 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "ci.k": `チェックイン・お支払い`, "ci.h": `チェックインのご案内 🔑`,
       "ci.lead": `長期滞在はここから始まります — お支払いの部分だけ事前にご確認ください。`,
       "checkin.t": `チェックイン`, "checkin.d": `<b>15:00</b>から。`,
+      "ci.early.t": `アーリーチェックイン`,
+      "ci.early.d": `正規のチェックインは15:00からですが、ご到着日の<b>おおよその時間をお知らせいただければ</b>、その時間に合わせてお部屋をご用意しています。アーリーチェックインもできる限り対応いたしますので、ご都合の良い時間をお知らせください。`,
       "checkout.t": `チェックアウト`, "checkout.d": `<b>11:00</b>まで。`,
       "ci.bank.t": `銀行振込でお支払いの場合`,
       "ci.bank.d": `お振込は<b>ご到着の1日前まで</b>にお願いします。海外からは国際送金アプリ<b><a href="https://wise.com" target="_blank" rel="noopener">Wise</a></b>がおすすめです — ウォン（KRW）建てで速く、手数料も低めです。振込先はメッセージでお送りします。`,
@@ -807,11 +820,9 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "home.rent.d": `長期滞在は<b>契約に基づく短期ハウスレンタル</b>です — ご滞在の間、お部屋はまるごとご自身のお住まいになります。`,
       "home.priv.t": `完全なプライバシー`,
       "home.priv.d": `ご自宅と同じように、<b>ご滞在中はどなたもお部屋に立ち入りません</b> — 毎日のハウスキーピング訪問がない方式のため、お部屋はそのままの状態で保たれます。`,
-      "home.care.t": `自宅のように過ごす`,
-      "home.care.d": `日々の片付けは、ご自宅と同じようにご自身でお願いします。ご入居前には<b>隅々まで清掃し、新しいリネンで</b>ご用意しています — その後は、すべてゲストの空間です。`,
       "live.room.h": `お部屋について`,
       "wifi.d": `<b>テレビのリモコンがある場所</b>にWi-Fi案内のステッカーが貼ってあります。`,
-      "water.t": `お水`, "water.d": `冷蔵庫のお水は<b>無料</b>です。`,
+      "water.t": `お水`, "water.d": `<b>冷蔵庫とクローゼットの中のお水</b>は無料です。`,
       "hvac.t": `冷暖房`, "hvac.d": `ファンコイル方式です。操作パネルは<b>浴室のドア横</b>にあります。`,
       "cap.hvac": `冷房パネル — 写真の状態が最大出力`,
       "hvac.note": `❄️ ご存知の通り、現在韓国では連日最高気温を更新する<b>記録的な猛暑</b>が続いております。当客室は大きな窓から日差しがたっぷり入る構造のため、日中は室温が上がりやすくなっております。おすすめは2つ：<b>外出中もエアコンは切らずにつけたままに</b>していただくこと、そして<b>日中は遮光カーテンを閉めて</b>お過ごしいただくことです。上の写真の状態が冷房の最大出力です（COOL · 20.0°C · ファン最大）。どうぞ涼しく快適にお過ごしください。`,
@@ -901,6 +912,8 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "ci.k": `入住·付款`, "ci.h": `入住指南 🔑`,
       "ci.lead": `长住从这里开始 — 请提前确认付款相关内容。`,
       "checkin.t": `入住`, "checkin.d": `<b>下午3:00</b>起。`,
+      "ci.early.t": `提前入住`,
+      "ci.early.d": `正式入住时间为下午3点，但如果您<b>告知抵达当天的预计时间</b>，我们会按该时间为您准备好房间。我们会尽力安排提前入住，请随时告诉我们您方便的时间。`,
       "checkout.t": `退房`, "checkout.d": `<b>上午11:00</b>前。`,
       "ci.bank.t": `通过银行转账付款`,
       "ci.bank.d": `请<b>在抵达前1天</b>完成付款。海外汇款推荐使用<b><a href="https://wise.com" target="_blank" rel="noopener">Wise</a></b> — 以韩元（KRW）汇款，快捷且手续费低。收款信息将通过消息发送给您。`,
@@ -914,11 +927,9 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "home.rent.d": `长期入住是<b>基于合同的短期房屋租赁（house rental）</b> — 在整个入住期间，房间完全是您自己的家。`,
       "home.priv.t": `完全的隐私`,
       "home.priv.d": `和在家一样，<b>入住期间不会有任何人进入您的房间</b> — 没有每日客房清扫服务，您的空间会保持您离开时的原样。`,
-      "home.care.t": `像在家一样生活`,
-      "home.care.d": `日常整理请像在家一样自行打理。入住前我们会<b>彻底清洁并换上全新床品</b> — 之后，这里就完全属于您了。`,
       "live.room.h": `客房内`,
       "wifi.d": `<b>放电视遥控器的地方</b>贴有Wi-Fi信息贴纸。`,
-      "water.t": `饮用水`, "water.d": `冰箱里的水<b>免费提供</b>。`,
+      "water.t": `饮用水`, "water.d": `<b>冰箱和衣柜里的水</b>免费提供。`,
       "hvac.t": `空调/暖气`, "hvac.d": `为风机盘管系统，控制面板在<b>浴室门旁</b>。`,
       "cap.hvac": `空调面板 — 图中状态即为最大制冷`,
       "hvac.note": `❄️ 如您所见，韩国近期正经历<b>前所未有的酷暑</b>，每天都在刷新高温纪录。我们客房的窗户较大、采光充分，白天室内温度可能上升较快。有两点建议：<b>外出时也请不要关闭空调，保持开启</b>；<b>白天阳光强烈时请务必拉上遮光窗帘</b>。上图所示即为最大制冷状态（COOL · 20.0°C · 风速最大）。祝您度过清凉舒适的时光！`,
