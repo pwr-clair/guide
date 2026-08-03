@@ -31,6 +31,7 @@
   --sans:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Hiragino Sans','Yu Gothic',Meiryo,'PingFang SC','Microsoft YaHei','Noto Sans CJK KR','Segoe UI',sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
+[hidden]{display:none!important;} /* nav.jump의 display:flex가 hidden 속성을 이기지 않도록 */
 html{-webkit-text-size-adjust:100%;}
 body{
   background:var(--paper);color:var(--ink);
@@ -544,16 +545,16 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
 
     <div class="facts">
       <div class="f"><div class="ic">🛒</div><div class="bd">
-        <div class="t" data-i18n="shop.what.t">What we can order</div>
-        <div class="d" data-i18n="shop.what.d">Bottled water, daily necessities, kitchen &amp; bathroom supplies and similar everyday items — delivered right to the building.</div>
+        <div class="t" data-i18n="shop.what.t">How it works</div>
+        <div class="d" data-i18n="shop.what.d">Bottled water, groceries and other daily items — <b>message us what you need</b>, and we'll find the right item and check it with you first.</div>
       </div></div>
-      <div class="f"><div class="ic">💬</div><div class="bd">
-        <div class="t" data-i18n="shop.how.t">How to ask</div>
-        <div class="d" data-i18n="shop.how.d">Message us on <b>WhatsApp</b> (or LINE / WeChat) with what you need — we'll confirm the price with you before ordering.</div>
+      <div class="f"><div class="ic">🚚</div><div class="bd">
+        <div class="t" data-i18n="shop.how.t">To your door</div>
+        <div class="d" data-i18n="shop.how.d">We handle the ordering for you — it's delivered <b>right to your room door</b>.</div>
       </div></div>
-      <div class="f"><div class="ic">💳</div><div class="bd">
+      <div class="f"><div class="ic">💵</div><div class="bd">
         <div class="t" data-i18n="shop.pay.t">Payment</div>
-        <div class="d" data-i18n="shop.pay.d">You cover the item cost — we'll share the receipt as-is, and let you know when it's delivered.</div>
+        <div class="d" data-i18n="shop.pay.d">The item cost is covered by the guest, <b>paid in cash</b> — we'll arrange the payment details with you by message.</div>
       </div></div>
     </div>
     <div class="note warm" data-i18n="shop.note">🚚 Delivery in Korea is usually next-day — when possible, tell us a day ahead.</div>
@@ -563,44 +564,24 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
   <section id="paradise">
     <div class="sec-k" data-i18n="pc.k">Getting Around</div>
     <div class="sec-h" data-i18n="pc.h">To Paradise City 🎰</div>
-    <p class="lead" data-i18n="pc.lead">The Paradise City resort &amp; casino is practically next door — an easy walk, a free shuttle, or a 5-minute taxi.</p>
+    <p class="lead" data-i18n="pc.lead">The Paradise City resort &amp; casino is literally next door — just a <b>1–2 minute walk</b>.</p>
 
     <div class="route">
-      <div class="rt go"><span class="pill" data-i18n="pc.pill.walk">ON FOOT</span> <span data-i18n="pc.rt.walk">PWR → Paradise City · ~10 min</span></div>
+      <div class="rt go"><span class="pill" data-i18n="pc.pill.walk">ON FOOT</span> <span data-i18n="pc.rt.walk">PWR → Paradise City · 1–2 min</span></div>
       <ol class="steps">
-        <li data-i18n="pc.w.1">Exit the main entrance and cross the crosswalk toward the <span class="stopname">Hyatt hotel</span> — the same crosswalk you used on arrival, in reverse.</li>
-        <li data-i18n="pc.w.2">Walk past the Hyatt following the main road — the large <b>Paradise City complex is straight ahead</b>, you can't miss it.</li>
-        <li data-i18n="pc.w.3">About <b>10 minutes</b> door to door.</li>
+        <li data-i18n="pc.w.1">Go down to <b>1F</b> and exit through the door <b>next to the Emart24 convenience store</b>.</li>
+        <li data-i18n="pc.w.2">Follow the yellow route in the photos below — <b>Paradise City is right there</b>.</li>
+        <li data-i18n="pc.w.3">It takes just <b>1–2 minutes</b> — this is the shortest way there.</li>
       </ol>
-      <div class="addr" style="margin:4px 0 12px;">
-        <div class="lbl" data-i18n="pc.map.lbl">Walking directions</div>
-        <div class="en" style="margin-top:0;" data-i18n="pc.map.d">Open turn-by-turn walking directions from our building:</div>
-        <div class="row">
-          <a class="abtn maps" href="https://www.google.com/maps/dir/?api=1&origin=50+Gonghang-ro+424beon-gil,+Incheon&destination=Paradise+City,+186+Yeongjonghaeannam-ro+321beon-gil,+Incheon&travelmode=walking" target="_blank" rel="noopener" data-i18n="pc.map.btn">Open in Google Maps ↗</a>
-        </div>
-      </div>
     </div>
 
-    <div class="route">
-      <div class="rt"><span class="pill" data-i18n="pc.pill.shuttle">FREE SHUTTLE</span> <span data-i18n="pc.rt.shuttle">Hyatt stop → Paradise City</span></div>
-      <ol class="steps">
-        <li data-i18n="pc.s.1">Cross toward the <span class="stopname">Hyatt hotel</span> (Hyatt Regency Incheon) — Paradise City's <b>free circulation shuttle stops at the hotel</b>.</li>
-        <li data-i18n="pc.s.2">Board the shuttle <b>toward Paradise City</b> — it calls at the Hyatt at <b>:15 · :35 · :55</b> past each hour.</li>
-        <li data-i18n="pc.s.3">Ride ~5 min to the <b>Paradise City B1 bus station</b>.</li>
-      </ol>
-      <div class="rt-time" data-i18n="pc.s.time"><table class="bt"><tr><td class="lbl">Hyatt → Paradise City</td><td>:15 · :35 · :55</td></tr><tr><td class="lbl">Return (from PC B1 station)</td><td>:00 · :20 · :40</td></tr><tr><td class="lbl">🕒 Service hours</td><td>approx. 05:00 – 23:15</td></tr></table><div class="foot">Every 20 min · free of charge (as of Aug 2026)</div></div>
+    <div class="photo map">
+      <img src="assets/images/pc-walk-photo.jpg" alt="View from our building — yellow route from the Emart24 side door to the Paradise City entrance" loading="lazy" decoding="async">
+      <div class="cap" data-i18n="cap.pcphoto">THE WAY THERE — EXIT BY EMART24 (1F), THEN FOLLOW THE YELLOW ROUTE</div>
     </div>
-    <div class="note info" data-i18n="pc.note">ℹ️ Shuttle times are set by Paradise City and may change — the latest schedule is on <b>p-city.com</b> (Support → Location).</div>
-
-    <div class="addr">
-      <div class="lbl" data-i18n="pc.taxi.lbl">Taking a taxi? Show this to your driver</div>
-      <!-- Korean address stays Korean in every language (the driver reads it). -->
-      <div class="kr">파라다이스시티 (인천 영종해안남로321번길 186)</div>
-      <div class="drop">— 파라다이스시티 정문으로 가주세요, 감사합니다!</div>
-      <div class="en">Paradise City, 186 Yeongjonghaeannam-ro 321beon-gil, Incheon · ~5 min</div>
-      <div class="row">
-        <button class="abtn" type="button" data-copy="파라다이스시티 (인천 영종해안남로321번길 186) — 파라다이스시티 정문으로 가주세요, 감사합니다!" data-i18n="pc.taxi.copy">⧉ Copy</button>
-      </div>
+    <div class="photo map">
+      <img src="assets/images/pc-walk-map.jpg" alt="The same walking route to Paradise City shown on the map" loading="lazy" decoding="async">
+      <div class="cap" data-i18n="cap.pcmap">THE SAME ROUTE ON THE MAP</div>
     </div>
 
     <div class="note warm" data-i18n="pc.luck">🍀 Good luck at <b>APT Incheon</b> — we're rooting for you! ♠♥♦♣</div>
@@ -741,30 +722,21 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "door.t": `예고 없는 방문자에게 문을 열지 마세요`, "door.d": `저희 직원은 미리 안내 없이 찾아가지 않아요.`,
       "shop.k": `구매 도움`, "shop.h": `온라인 구매대행 🛒`,
       "shop.lead": `한국 쇼핑몰은 현지 계정과 결제수단이 필요해서, 장기 게스트분들께는 저희가 대신 주문해 드려요.`,
-      "shop.what.t": `주문 가능한 것`,
-      "shop.what.d": `생수, 생활용품, 주방·욕실 소모품 등 일상 물품 — 건물 앞까지 배송돼요.`,
-      "shop.how.t": `요청 방법`,
-      "shop.how.d": `필요한 것을 <b>WhatsApp</b>(또는 LINE/WeChat) 메시지로 알려주세요 — 주문 전에 가격을 먼저 확인해 드려요.`,
+      "shop.what.t": `이렇게 진행돼요`,
+      "shop.what.d": `생수, 식재료 등 필요한 물품을 <b>메시지로 문의</b> 주세요 — 해당 물품을 찾아서 먼저 안내해 드려요.`,
+      "shop.how.t": `문앞까지 배송`,
+      "shop.how.d": `주문은 저희가 대신 진행하고, <b>객실 문앞까지 배송</b>해 드려요.`,
       "shop.pay.t": `결제`,
-      "shop.pay.d": `물품 비용은 게스트 부담이에요 — 영수증을 그대로 공유해 드리고, 도착하면 알려드려요.`,
+      "shop.pay.d": `물품비는 게스트 부담이고 <b>현금으로 결제</b>해 주시면 돼요 — 지불 방법은 메시지로 편하게 논의해요.`,
       "shop.note": `🚚 한국 택배는 보통 다음날 도착해요 — 가능하면 하루 전에 미리 말씀해 주세요.`,
       "pc.k": `주변 이동`, "pc.h": `파라다이스시티 가는 길 🎰`,
-      "pc.lead": `파라다이스시티 리조트·카지노는 사실상 바로 옆이에요 — 걸어서도, 무료 셔틀로도, 택시로 5분이면 도착해요.`,
-      "pc.pill.walk": `도보`, "pc.rt.walk": `PWR → 파라다이스시티 · 약 10분`,
-      "pc.w.1": `정문으로 나와 <span class="stopname">하얏트 호텔</span> 방향 횡단보도를 건너세요 — 도착하실 때 건넜던 그 횡단보도의 반대 방향이에요.`,
-      "pc.w.2": `하얏트를 지나 큰길을 따라 걸으면 <b>파라다이스시티 단지가 바로 정면</b>에 보여요. 워낙 커서 못 찾으실 수 없어요.`,
-      "pc.w.3": `문에서 문까지 <b>약 10분</b>이에요.`,
-      "pc.map.lbl": `도보 길안내`,
-      "pc.map.d": `저희 건물에서 출발하는 도보 경로를 열어보세요:`,
-      "pc.map.btn": `구글 지도에서 열기 ↗`,
-      "pc.pill.shuttle": `무료 셔틀`, "pc.rt.shuttle": `하얏트 정류장 → 파라다이스시티`,
-      "pc.s.1": `<span class="stopname">하얏트 호텔</span>(하얏트 리젠시 인천) 방향으로 길을 건너세요 — 파라다이스시티의 <b>무료 순환 셔틀이 호텔에 정차</b>해요.`,
-      "pc.s.2": `<b>파라다이스시티 방면</b> 셔틀을 타세요 — 하얏트에는 <b>매시 15분 · 35분 · 55분</b>에 도착해요.`,
-      "pc.s.3": `약 5분이면 <b>파라다이스시티 B1층 버스 스테이션</b>에 내려요.`,
-      "pc.s.time": `<table class="bt"><tr><td class="lbl">하얏트 → 파라다이스시티</td><td>매시 15 · 35 · 55분</td></tr><tr><td class="lbl">복귀 (PC B1 스테이션 출발)</td><td>매시 00 · 20 · 40분</td></tr><tr><td class="lbl">🕒 운행 시간</td><td>약 05:00 – 23:15</td></tr></table><div class="foot">배차 20분 · 무료 (2026년 8월 기준)</div>`,
-      "pc.note": `ℹ️ 셔틀 시간은 파라다이스시티에서 정하는 것이라 바뀔 수 있어요 — 최신 시간표는 <b>p-city.com</b>(고객지원 → 오시는 길)에서 확인하실 수 있어요.`,
-      "pc.taxi.lbl": `택시를 타시나요? 기사님께 보여주세요`,
-      "pc.taxi.copy": `⧉ 복사`,
+      "pc.lead": `파라다이스시티 리조트·카지노는 말 그대로 바로 옆이에요 — <b>걸어서 1~2분</b>이면 충분해요.`,
+      "pc.pill.walk": `도보`, "pc.rt.walk": `PWR → 파라다이스시티 · 1~2분`,
+      "pc.w.1": `1층으로 내려와 <b>편의점 Emart24 옆에 있는 문</b>으로 나가세요.`,
+      "pc.w.2": `아래 사진의 노란 경로를 따라 걸으면 <b>바로 파라다이스시티</b>예요.`,
+      "pc.w.3": `<b>1~2분</b>이면 도착해요 — 이 길이 최단거리예요.`,
+      "cap.pcphoto": `가는 길 — 1층 Emart24 옆문으로 나와 노란 경로를 따라가세요`,
+      "cap.pcmap": `같은 경로를 지도로 보기`,
       "pc.luck": `🍀 <b>APT 인천</b>에서의 선전을 빌어요 — 저희가 응원할게요! ♠♥♦♣`,
       "around.k": `건물 주변`, "around.h": `주변 안내 🗺️`,
       "contact.k": `지원·연락처`, "contact.h": `다이렉트 연락처 💬`,
@@ -857,30 +829,21 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "door.t": `予告のない訪問者にはドアを開けないでください`, "door.d": `当施設のスタッフが予告なく訪問することはありません。`,
       "shop.k": `お買い物サポート`, "shop.h": `オンライン購入代行 🛒`,
       "shop.lead": `韓国の通販サイトは現地アカウントと決済手段が必要なため、長期滞在のゲストにはこちらで代わりにご注文します。`,
-      "shop.what.t": `ご注文いただけるもの`,
-      "shop.what.d": `ミネラルウォーター、日用品、キッチン・バス用品などの生活用品 — 建物までお届けされます。`,
-      "shop.how.t": `ご依頼方法`,
-      "shop.how.d": `必要なものを<b>WhatsApp</b>（またはLINE/WeChat）でお知らせください — ご注文前に価格をご確認いただきます。`,
+      "shop.what.t": `ご利用の流れ`,
+      "shop.what.d": `ミネラルウォーターや食材など必要な物を<b>メッセージでお知らせ</b>ください — 該当する商品を探して、先にご案内します。`,
+      "shop.how.t": `お部屋の前までお届け`,
+      "shop.how.d": `ご注文はこちらで代行し、<b>お部屋のドアの前までお届け</b>します。`,
       "shop.pay.t": `お支払い`,
-      "shop.pay.d": `商品代金はゲストのご負担です — レシートをそのまま共有し、届いたらお知らせします。`,
+      "shop.pay.d": `商品代金はゲストのご負担で、<b>現金でのお支払い</b>となります — お支払い方法はメッセージでご相談ください。`,
       "shop.note": `🚚 韓国の宅配は通常翌日に届きます — できれば1日前にお知らせください。`,
       "pc.k": `周辺への移動`, "pc.h": `パラダイスシティへ 🎰`,
-      "pc.lead": `パラダイスシティ（リゾート＆カジノ）はほぼお隣です — 徒歩でも、無料シャトルでも、タクシーなら5分で到着します。`,
-      "pc.pill.walk": `徒歩`, "pc.rt.walk": `PWR → パラダイスシティ · 約10分`,
-      "pc.w.1": `正面玄関を出て、<span class="stopname">ハイアットホテル</span>方向の横断歩道を渡ってください — ご到着時に渡った横断歩道の逆方向です。`,
-      "pc.w.2": `ハイアットを過ぎて大通り沿いに歩くと、<b>正面にパラダイスシティの建物群</b>が見えます。とても大きいので見逃すことはありません。`,
-      "pc.w.3": `ドアからドアまで<b>約10分</b>です。`,
-      "pc.map.lbl": `徒歩ルート案内`,
-      "pc.map.d": `当施設からの徒歩ルートを開く：`,
-      "pc.map.btn": `Googleマップで開く ↗`,
-      "pc.pill.shuttle": `無料シャトル`, "pc.rt.shuttle": `ハイアット停留所 → パラダイスシティ`,
-      "pc.s.1": `<span class="stopname">ハイアットホテル</span>（ハイアット リージェンシー仁川）方向へ道を渡ってください — パラダイスシティの<b>無料循環シャトルがホテルに停車</b>します。`,
-      "pc.s.2": `<b>パラダイスシティ方面</b>のシャトルにご乗車ください — ハイアットには<b>毎時15分・35分・55分</b>に到着します。`,
-      "pc.s.3": `約5分で<b>パラダイスシティB1階のバスステーション</b>に到着します。`,
-      "pc.s.time": `<table class="bt"><tr><td class="lbl">ハイアット → パラダイスシティ</td><td>毎時 15 · 35 · 55分</td></tr><tr><td class="lbl">帰り（PC B1ステーション発）</td><td>毎時 00 · 20 · 40分</td></tr><tr><td class="lbl">🕒 運行時間</td><td>約 05:00 – 23:15</td></tr></table><div class="foot">20分間隔 · 無料（2026年8月時点）</div>`,
-      "pc.note": `ℹ️ シャトルの時刻はパラダイスシティが定めるもので、変更される場合があります — 最新の時刻表は<b>p-city.com</b>（サポート → アクセス）でご確認ください。`,
-      "pc.taxi.lbl": `タクシーをご利用ですか？運転手にお見せください`,
-      "pc.taxi.copy": `⧉ コピー`,
+      "pc.lead": `パラダイスシティ（リゾート＆カジノ）は文字通りすぐ隣です — <b>徒歩1〜2分</b>で到着します。`,
+      "pc.pill.walk": `徒歩`, "pc.rt.walk": `PWR → パラダイスシティ · 1〜2分`,
+      "pc.w.1": `1階に降り、<b>コンビニEmart24の横にあるドア</b>から外に出てください。`,
+      "pc.w.2": `下の写真の黄色いルートに沿って歩くと、<b>すぐパラダイスシティ</b>です。`,
+      "pc.w.3": `所要時間は<b>1〜2分</b> — これが最短ルートです。`,
+      "cap.pcphoto": `行き方 — 1階Emart24横のドアから出て、黄色いルートに沿って`,
+      "cap.pcmap": `同じルートを地図で`,
       "pc.luck": `🍀 <b>APT仁川</b>でのご健闘をお祈りしています — 応援しています！ ♠♥♦♣`,
       "around.k": `周辺のご案内`, "around.h": `近隣スポット 🗺️`,
       "contact.k": `サポート・連絡先`, "contact.h": `お気軽にご連絡ください 💬`,
@@ -973,30 +936,21 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "door.t": `请勿为未经预约的访客开门`, "door.d": `我们的团队绝不会无预约上门。`,
       "shop.k": `购物帮助`, "shop.h": `网购代购 🛒`,
       "shop.lead": `韩国购物网站需要本地账号和支付方式，因此我们乐意为长住客人代为下单。`,
-      "shop.what.t": `可代购的物品`,
-      "shop.what.d": `瓶装水、日用品、厨房和浴室消耗品等日常物品 — 直接送到楼下。`,
-      "shop.how.t": `如何请求`,
-      "shop.how.d": `通过<b>WhatsApp</b>（或LINE/WeChat）告诉我们您需要什么 — 下单前会先与您确认价格。`,
+      "shop.what.t": `流程说明`,
+      "shop.what.d": `瓶装水、食材等所需物品，<b>通过消息告诉我们</b> — 我们会找到相应商品并先与您确认。`,
+      "shop.how.t": `送到房门口`,
+      "shop.how.d": `我们代为下单，<b>直接送到您的房间门口</b>。`,
       "shop.pay.t": `付款`,
-      "shop.pay.d": `商品费用由客人承担 — 我们会原样分享收据，送达后会通知您。`,
+      "shop.pay.d": `商品费用由客人承担，<b>以现金支付</b> — 具体支付方式可通过消息与我们商定。`,
       "shop.note": `🚚 韩国快递通常次日送达 — 如有需要请尽量提前一天告知。`,
       "pc.k": `周边出行`, "pc.h": `前往百乐达斯城 🎰`,
-      "pc.lead": `百乐达斯城（Paradise City）度假村·娱乐场几乎就在隔壁 — 步行可达，也可乘免费班车，打车只需5分钟。`,
-      "pc.pill.walk": `步行`, "pc.rt.walk": `PWR → 百乐达斯城 · 约10分钟`,
-      "pc.w.1": `从正门出来，朝<span class="stopname">凯悦酒店</span>方向过人行横道 — 就是您抵达时走过的那条横道，方向相反。`,
-      "pc.w.2": `经过凯悦酒店沿大路走，<b>正前方就是百乐达斯城建筑群</b>，规模很大，不会错过。`,
-      "pc.w.3": `门到门<b>约10分钟</b>。`,
-      "pc.map.lbl": `步行路线`,
-      "pc.map.d": `打开从本楼出发的步行路线：`,
-      "pc.map.btn": `在Google地图中打开 ↗`,
-      "pc.pill.shuttle": `免费班车`, "pc.rt.shuttle": `凯悦站 → 百乐达斯城`,
-      "pc.s.1": `朝<span class="stopname">凯悦酒店</span>（仁川凯悦丽晶）方向过马路 — 百乐达斯城的<b>免费循环班车在酒店停靠</b>。`,
-      "pc.s.2": `乘坐<b>开往百乐达斯城方向</b>的班车 — 班车于<b>每小时15分·35分·55分</b>到达凯悦。`,
-      "pc.s.3": `约5分钟即到<b>百乐达斯城B1层巴士站</b>。`,
-      "pc.s.time": `<table class="bt"><tr><td class="lbl">凯悦 → 百乐达斯城</td><td>每小时 15 · 35 · 55分</td></tr><tr><td class="lbl">返程（PC B1站发车）</td><td>每小时 00 · 20 · 40分</td></tr><tr><td class="lbl">🕒 运行时间</td><td>约 05:00 – 23:15</td></tr></table><div class="foot">每20分钟一班 · 免费（截至2026年8月）</div>`,
-      "pc.note": `ℹ️ 班车时刻由百乐达斯城制定，可能会有变动 — 最新时刻表请查看<b>p-city.com</b>（客户支持 → 交通位置）。`,
-      "pc.taxi.lbl": `乘出租车？请给司机看`,
-      "pc.taxi.copy": `⧉ 复制`,
+      "pc.lead": `百乐达斯城（Paradise City）度假村·娱乐场就在隔壁 — <b>步行1–2分钟</b>即到。`,
+      "pc.pill.walk": `步行`, "pc.rt.walk": `PWR → 百乐达斯城 · 1–2分钟`,
+      "pc.w.1": `下到1层，从<b>便利店Emart24旁边的门</b>出去。`,
+      "pc.w.2": `沿下方照片中的黄色路线步行，<b>百乐达斯城就在眼前</b>。`,
+      "pc.w.3": `只需<b>1–2分钟</b> — 这是最短路线。`,
+      "cap.pcphoto": `路线 — 从1层Emart24旁的门出去，沿黄色路线前行`,
+      "cap.pcmap": `地图上的同一路线`,
       "pc.luck": `🍀 祝您在<b>APT仁川</b>旗开得胜 — 我们为您加油！ ♠♥♦♣`,
       "around.k": `建筑周边`, "around.h": `周边一带 🗺️`,
       "contact.k": `支持与联系`, "contact.h": `我们随时为您服务 💬`,
