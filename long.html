@@ -460,7 +460,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       </div></div>
       <div class="f warn"><div class="ic">🕚</div><div class="bd">
         <div class="t" data-i18n="checkout.t">Check-out</div>
-        <div class="d" data-i18n="checkout.d">By <b>11:00 AM</b>.</div>
+        <div class="d" data-i18n="checkout.d">By <b>11:00 AM</b>.<span class="subnote">On your last day: please take out all your trash, close the windows, make sure you haven't left anything behind, and simply close the door on your way out.</span></div>
       </div></div>
       <div class="f"><div class="ic">🏦</div><div class="bd">
         <div class="t" data-i18n="ci.bank.t">Paying by bank transfer</div>
@@ -571,6 +571,10 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
         <div class="t" data-i18n="ldy.rack.t">Drying rack</div>
         <div class="d" data-i18n="ldy.rack.d">Tucked away <b>next to the refrigerator</b> — after use, please fold it neatly and slide it back!</div>
       </div></div>
+      <div class="f"><div class="ic">🛁</div><div class="bd">
+        <div class="t" data-i18n="ldy.towel.t">Towels</div>
+        <div class="d" data-i18n="ldy.towel.d">We leave <b>plenty of towels</b> for your whole stay — when you need more, just wash and reuse them.</div>
+      </div></div>
     </div>
 
     <h3 data-i18n="tv.h">TV — Netflix &amp; YouTube 📺</h3>
@@ -606,6 +610,18 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       </div></div>
     </div>
 
+    <h3 data-i18n="help.h">Need anything? 🙋</h3>
+    <div class="facts">
+      <div class="f ok"><div class="ic">🧻</div><div class="bd">
+        <div class="t" data-i18n="help.sup.t">Supplies — free refills</div>
+        <div class="d" data-i18n="help.sup.d">Toilet paper, trash bags, detergent and the like are <b>refilled free of charge</b>. Just message us when you run low — <b>WhatsApp</b> reaches us fastest.</div>
+      </div></div>
+      <div class="f"><div class="ic">🔧</div><div class="bd">
+        <div class="t" data-i18n="help.fix.t">Something not working?</div>
+        <div class="d" data-i18n="help.fix.d">Aircon, hot water, Wi-Fi, anything at all — <b>message us on WhatsApp</b> and we'll take care of it.</div>
+      </div></div>
+    </div>
+
     <h3 data-i18n="notice.h">Notice</h3>
     <div class="facts">
       <div class="f"><div class="ic">🅿️</div><div class="bd">
@@ -614,7 +630,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       </div></div>
       <div class="f warn"><div class="ic">🚭</div><div class="bd">
         <div class="t" data-i18n="smoke.t">Strictly non-smoking</div>
-        <div class="d" data-i18n="smoke.d">The entire property is strictly non-smoking. If indoor smoking causes odors or damage to the bedding, furniture or wallpaper, we will inevitably have to charge for the professional cleaning required for restoration. Also note: <b>if cigarette smoke reaches the fire alarm on the ceiling, the alarm goes off for the entire building</b> — please be especially careful, and smoke only outside the building.</div>
+        <div class="d" data-i18n="smoke.d">The entire property is strictly non-smoking. If indoor smoking causes odors or damage to the bedding, furniture or wallpaper, we will inevitably have to charge for the professional cleaning required for restoration. Also note: <b>if cigarette smoke reaches the fire alarm on the ceiling, the alarm goes off for the entire building</b> — please be especially careful. <b>Outside the building you may smoke anywhere</b>.</div>
       </div></div>
       <div class="f warn"><div class="ic">👥</div><div class="bd">
         <div class="t" data-i18n="max2.t">Max 2 guests</div>
@@ -786,7 +802,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "ci.k": `체크인·결제`, "ci.h": `체크인 안내 🔑`,
       "ci.lead": `장기 숙박은 여기서 시작돼요 — 결제 부분만 미리 확인해 주세요.`,
       "checkin.t": `체크인`, "checkin.d": `<b>오후 3:00</b>부터예요.<span class="subnote">정규 체크인 시간은 오후 3시이지만, 도착하시는 날 예상 시간을 알려주시면 해당 시간에 맞추어 객실을 준비해 드리고 있습니다. 이른 체크인도 가능할 수 있도록 최선을 다하겠으니 편하신 시간을 알려주세요.</span>`,
-      "checkout.t": `체크아웃`, "checkout.d": `<b>오전 11:00</b>까지예요.`,
+      "checkout.t": `체크아웃`, "checkout.d": `<b>오전 11:00</b>까지예요.<span class="subnote">마지막 날에는 쓰레기를 전부 배출해 주시고, 창문을 꼭 닫아 주세요. 두고 가시는 물건이 없는지 확인하신 뒤 문만 잘 닫고 나가시면 됩니다.</span>`,
       "ci.bank.t": `입금(계좌이체)으로 결제하시는 경우`,
       "ci.bank.d": `입금은 <b>도착 1일 전까지</b> 완료해 주세요. 해외에서는 국제 송금 앱 <b><a href="https://wise.com" target="_blank" rel="noopener">Wise</a></b>를 추천드려요 — 원화(KRW)로 빠르고 수수료가 낮아요. 입금 정보는 메시지로 보내드려요.`,
       "ci.cash.t": `도착 당일 현금으로 계약하시는 경우`,
@@ -825,6 +841,13 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "ldy.det.d": `욕실 문 바로 앞 <b>수납장 맨 아래 칸</b>에 있어요.`,
       "ldy.rack.t": `빨래 건조대`,
       "ldy.rack.d": `<b>냉장고 옆</b>에 세워져 있어요 — 사용 후에는 접어서 다시 냉장고 옆에 넣어 주세요!`,
+      "ldy.towel.t": `수건`,
+      "ldy.towel.d": `머무시는 기간에 맞춰 <b>수건을 넉넉히</b> 넣어드려요 — 더 필요하시면 세탁해서 사용해 주세요.`,
+      "help.h": `도움이 필요하실 때 🙋`,
+      "help.sup.t": `소모품 — 무료로 채워드려요`,
+      "help.sup.d": `휴지, 쓰레기봉투, 세제 같은 소모품은 <b>무료로 보충</b>해 드려요. 떨어져 갈 때 편하게 메시지 주세요 — <b>WhatsApp</b>이 가장 빨라요.`,
+      "help.fix.t": `고장이나 이상이 있다면`,
+      "help.fix.d": `에어컨, 온수, 와이파이 등 무엇이든 <b>WhatsApp으로 메시지</b> 주시면 바로 확인해 드릴게요.`,
       "tv.h": `TV — 넷플릭스·유튜브 📺`,
       "tv.use": `📺 TV로 <b>넷플릭스와 유튜브</b>를 보실 수 있어요 — 리모컨 아래쪽의 <b>넷플릭스·유튜브 버튼</b>을 누르시면 바로 열려요.`,
       "cap.remote": `리모컨 — ① 셋톱 전원 버튼`,
@@ -843,7 +866,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "trash.out.d": `<b>건물 후문으로 나가면 오른쪽에 쓰레기장</b>이 바로 보여요. 봉투나 바구니가 차면 그곳에 버려 주시면 됩니다.`,
       "notice.h": `안내 사항`,
       "park.t": `주차 (유료 주차만 가능)`, "park.d": `요금: 최초 20분 <b>₩1,000</b> (이후 30분마다 <b>₩1,000</b> 추가) · 하루 최대 <b>₩50,000</b>.<br>안내: 공항 인근 규정이 엄격해 숙소를 통한 무료 주차나 할인은 제공해 드리기 어려워요. 양해 부탁드립니다.`,
-      "smoke.t": `전면 금연`, "smoke.d": `숙소 전체가 엄격한 금연 구역이에요. 실내 흡연으로 침구·가구·벽지에 냄새나 손상이 생기면, 복원에 필요한 전문 클리닝 비용을 부득이하게 청구하게 돼요. 특히 <b>담배 연기가 천장의 화재경보기에 닿으면 건물 전체에 경보가 울려요</b> — 각별히 주의해 주시고, 흡연은 꼭 건물 밖에서 부탁드려요.`,
+      "smoke.t": `전면 금연`, "smoke.d": `숙소 전체가 엄격한 금연 구역이에요. 실내 흡연으로 침구·가구·벽지에 냄새나 손상이 생기면, 복원에 필요한 전문 클리닝 비용을 부득이하게 청구하게 돼요. 특히 <b>담배 연기가 천장의 화재경보기에 닿으면 건물 전체에 경보가 울려요</b> — 각별히 주의해 주세요. <b>건물 밖이라면 어디서든 흡연하실 수 있어요</b>.`,
       "max2.t": `최대 2인`, "max2.d": `한 객실 기준이에요.`,
       "pets.t": `반려동물 불가`, "pets.d": `반려동물과는 함께 묵으실 수 없어요.`,
       "party.t": `파티·소음 금지`, "party.d": `적발되면 즉시 퇴실 사유가 될 수 있어요.`,
@@ -918,7 +941,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "ci.k": `チェックイン・お支払い`, "ci.h": `チェックインのご案内 🔑`,
       "ci.lead": `長期滞在はここから始まります — お支払いの部分だけ事前にご確認ください。`,
       "checkin.t": `チェックイン`, "checkin.d": `<b>15:00</b>から。<span class="subnote">正規のチェックインは15:00からですが、ご到着日のおおよその時間をお知らせいただければ、その時間に合わせてお部屋をご用意しています。アーリーチェックインもできる限り対応いたしますので、ご都合の良い時間をお知らせください。</span>`,
-      "checkout.t": `チェックアウト`, "checkout.d": `<b>11:00</b>まで。`,
+      "checkout.t": `チェックアウト`, "checkout.d": `<b>11:00</b>まで。<span class="subnote">最終日は、ゴミをすべてお出しいただき、窓を必ず閉めてください。お忘れ物がないかご確認のうえ、ドアを閉めてお発ちいただければ大丈夫です。</span>`,
       "ci.bank.t": `銀行振込でお支払いの場合`,
       "ci.bank.d": `お振込は<b>ご到着の1日前まで</b>にお願いします。海外からは国際送金アプリ<b><a href="https://wise.com" target="_blank" rel="noopener">Wise</a></b>がおすすめです — ウォン（KRW）建てで速く、手数料も低めです。振込先はメッセージでお送りします。`,
       "ci.cash.t": `ご到着当日に現金でご契約の場合`,
@@ -957,6 +980,13 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "ldy.det.d": `浴室ドアのすぐ前にある<b>収納棚の一番下</b>にあります。`,
       "ldy.rack.t": `物干しラック`,
       "ldy.rack.d": `<b>冷蔵庫の横</b>に収納されています — ご使用後はたたんで、また冷蔵庫の横に戻してください！`,
+      "ldy.towel.t": `タオル`,
+      "ldy.towel.d": `ご滞在期間に合わせて<b>タオルを多めに</b>ご用意しています — さらに必要な場合は、洗濯してお使いください。`,
+      "help.h": `お困りのときは 🙋`,
+      "help.sup.t": `消耗品 — 無料で補充します`,
+      "help.sup.d": `トイレットペーパー、ゴミ袋、洗剤などの消耗品は<b>無料で補充</b>いたします。少なくなったらお気軽にメッセージをどうぞ — <b>WhatsApp</b>が最も早くつながります。`,
+      "help.fix.t": `故障・不具合があれば`,
+      "help.fix.d": `エアコン、給湯、Wi-Fiなど、どんなことでも<b>WhatsAppでメッセージ</b>をいただければすぐに対応いたします。`,
       "tv.h": `テレビ — Netflix・YouTube 📺`,
       "tv.use": `📺 テレビで<b>NetflixとYouTube</b>をお楽しみいただけます — リモコン下部の<b>Netflix・YouTubeボタン</b>を押すとすぐに開きます。`,
       "cap.remote": `リモコン — ① セットトップ電源ボタン`,
@@ -975,7 +1005,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "trash.out.d": `<b>建物の裏口を出るとすぐ右手にごみ置き場</b>が見えます。袋やかごがいっぱいになったら、そちらへお出しください。`,
       "notice.h": `ご注意`,
       "park.t": `駐車場（有料のみ）`, "park.d": `料金：最初の20分 <b>₩1,000</b>（以降30分ごとに<b>₩1,000</b>追加）・1日最大 <b>₩50,000</b>。<br>ご案内：空港周辺の規制が厳しいため、施設による無料駐車・割引はご提供できません。ご理解のほどお願いいたします。`,
-      "smoke.t": `全面禁煙`, "smoke.d": `施設全体が厳格な禁煙です。室内での喫煙により寝具・家具・壁紙ににおいや損傷が生じた場合、復元に必要な専門クリーニング費用をやむを得ずご請求いたします。特に<b>タバコの煙が天井の火災報知器に届くと、建物全体に警報が鳴ります</b>ので、くれぐれもご注意ください — 喫煙は必ず建物の外でお願いします。`,
+      "smoke.t": `全面禁煙`, "smoke.d": `施設全体が厳格な禁煙です。室内での喫煙により寝具・家具・壁紙ににおいや損傷が生じた場合、復元に必要な専門クリーニング費用をやむを得ずご請求いたします。特に<b>タバコの煙が天井の火災報知器に届くと、建物全体に警報が鳴ります</b>ので、くれぐれもご注意ください。<b>建物の外であれば、どこでも喫煙いただけます</b>。`,
       "max2.t": `最大2名`, "max2.d": `1部屋あたりの人数です。`,
       "pets.t": `ペット不可`, "pets.d": `ペットの入室はできません。`,
       "party.t": `パーティー・騒音禁止`, "party.d": `違反は即時退去の対象となります。`,
@@ -1050,7 +1080,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "ci.k": `入住·付款`, "ci.h": `入住指南 🔑`,
       "ci.lead": `长住从这里开始 — 请提前确认付款相关内容。`,
       "checkin.t": `入住`, "checkin.d": `<b>下午3:00</b>起。<span class="subnote">正式入住时间为下午3点，但如果您告知抵达当天的预计时间，我们会按该时间为您准备好房间。我们会尽力安排提前入住，请随时告诉我们您方便的时间。</span>`,
-      "checkout.t": `退房`, "checkout.d": `<b>上午11:00</b>前。`,
+      "checkout.t": `退房`, "checkout.d": `<b>上午11:00</b>前。<span class="subnote">离开当天，请将垃圾全部清出，并务必关好窗户。确认没有遗留物品后，把门关好即可离开。</span>`,
       "ci.bank.t": `通过银行转账付款`,
       "ci.bank.d": `请<b>在抵达前1天</b>完成付款。海外汇款推荐使用<b><a href="https://wise.com" target="_blank" rel="noopener">Wise</a></b> — 以韩元（KRW）汇款，快捷且手续费低。收款信息将通过消息发送给您。`,
       "ci.cash.t": `抵达当日现金签约`,
@@ -1089,6 +1119,13 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "ldy.det.d": `位于浴室门正前方<b>储物柜的最底层</b>。`,
       "ldy.rack.t": `晾衣架`,
       "ldy.rack.d": `收在<b>冰箱旁边</b> — 用后请折叠好放回冰箱旁！`,
+      "ldy.towel.t": `毛巾`,
+      "ldy.towel.d": `我们会根据您的入住天数<b>备足毛巾</b> — 如需更多，请清洗后继续使用。`,
+      "help.h": `需要帮助时 🙋`,
+      "help.sup.t": `消耗品 — 免费补充`,
+      "help.sup.d": `卫生纸、垃圾袋、洗涤剂等消耗品<b>均免费补充</b>。快用完时请随时给我们发消息 — <b>WhatsApp</b> 联系最快。`,
+      "help.fix.t": `设备故障或异常`,
+      "help.fix.d": `空调、热水、Wi-Fi 等任何问题，<b>请通过 WhatsApp 联系我们</b>，我们会立即处理。`,
       "tv.h": `电视 — Netflix·YouTube 📺`,
       "tv.use": `📺 电视上可观看<b>Netflix和YouTube</b> — 按遥控器下方的<b>Netflix·YouTube按键</b>即可直接打开。`,
       "cap.remote": `遥控器 — ① 机顶盒电源键`,
@@ -1107,7 +1144,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "trash.out.d": `从<b>楼的后门出去，右侧就能看到垃圾投放区</b>。垃圾袋或篮子装满后，拿到那里投放即可。`,
       "notice.h": `注意事项`,
       "park.t": `停车（仅限付费）`, "park.d": `收费：前20分钟<b>₩1,000</b>（此后每30分钟加收<b>₩1,000</b>）· 每日上限<b>₩50,000</b>。<br>请注意：因机场周边规定严格，无法通过本住宿提供免费停车或折扣，敬请谅解。`,
-      "smoke.t": `严禁吸烟`, "smoke.d": `整栋住宿严格禁烟。若因室内吸烟导致床品、家具或壁纸产生异味或损坏，我们将不得不收取恢复所需的专业清洁费用。特别提醒：<b>烟雾一旦触达天花板上的火灾报警器，整栋楼都会响起警报</b>，请务必注意 — 吸烟请一定到建筑外。`,
+      "smoke.t": `严禁吸烟`, "smoke.d": `整栋住宿严格禁烟。若因室内吸烟导致床品、家具或壁纸产生异味或损坏，我们将不得不收取恢复所需的专业清洁费用。特别提醒：<b>烟雾一旦触达天花板上的火灾报警器，整栋楼都会响起警报</b>，请务必注意。<b>在建筑外，任何地方均可吸烟</b>。`,
       "max2.t": `最多2人`, "max2.d": `每间客房。`,
       "pets.t": `禁止携带宠物`, "pets.d": `不允许携带宠物入住。`,
       "party.t": `禁止聚会/喧哗`, "party.d": `违反将被立即要求离店。`,
