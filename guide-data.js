@@ -36,7 +36,7 @@ window.GUIDE_DATA = {
       },
       "intro": {
         "en": "Arrived before check-in (3:00 PM)? You're welcome to relax and wait at a nearby café.",
-        "ko": "체크인(오후 3시) 이전에 도착하셨다면, 근처 카페에서 잠시 쉬며 기다리실 수 있어요.",
+        "ko": "체크인(오후 3시) 이전에 도착하셨다면, 근처 카페에서 잠시 쉬며 기다리실 수 있습니다.",
         "ja": "チェックイン（15:00）前にご到着の場合は、近くのカフェでゆっくりお待ちいただけます。",
         "zh": "若在入住（下午3点）前抵达，可在附近的咖啡馆稍作休息等候。"
       }
@@ -170,7 +170,7 @@ window.GUIDE_DATA = {
         "name": "빨간거짱구네",
         "url": "https://maps.app.goo.gl/McYTmmb7YjBgjuAD9",
         "d": {
-          "ko": "한식당 · 낙지를 탕에 넣어서 먹는 '낙지전골' 전문점 · 1인분은 어려워요",
+          "ko": "한식당 · 낙지를 탕에 넣어서 먹는 '낙지전골' 전문점 · 1인분 주문은 어렵습니다",
           "en": "Korean restaurant · specializes in nakji-jeongol (octopus hot pot) · single-person orders not available",
           "ja": "韓国料理店 · テナガダコ鍋「ナクチチョンゴル」の専門店 · 1人前のご注文は難しいです",
           "zh": "韩餐厅 · 章鱼火锅（낙지전골）专门店 · 不接受单人份"
@@ -366,7 +366,7 @@ window.GUIDE_DATA = {
         "name": "짐캐리 인천공항 1터미널역점",
         "url": "https://maps.app.goo.gl/xztVJVPWy1wYeyrQA",
         "d": {
-          "ko": "짐 보관 서비스 (인천공항 1터미널역) - 서울로 가는 공항열차 근처라 이용이 편리해요.",
+          "ko": "짐 보관 서비스 (인천공항 1터미널역) - 서울로 가는 공항열차 근처라 이용이 편리합니다.",
           "en": "Luggage storage (Incheon Airport T1 station) — conveniently near the airport railway to Seoul.",
           "ja": "荷物預かりサービス（仁川空港第1ターミナル駅） — ソウル方面の空港鉄道の近くで便利です。",
           "zh": "行李寄存服务（仁川机场1号航站楼站） — 靠近前往首尔的机场铁路，非常方便。"
