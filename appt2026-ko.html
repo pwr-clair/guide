@@ -1,0 +1,791 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Paradise Walk Residence — 이용 안내</title>
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png?v=red1">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/icons/favicon-64.png?v=red1">
+<meta name="description" content="파라다이스 워크 레지던스 이용 안내 — 무료 공항 셔틀, 건물 찾아오기, 체크인·체크아웃, 생활 안내, 주변 안내.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+<style>
+/* Editorial card reskin (2026-08-04, 클라라 지시) — 네이비·골드·연회색 하이엔드 팔레트 (2026-08-27 클라라 지시).
+   차용분: 흰 카드 + 연분홍 배경 틴트, 크림슨 액센트 칩, 볼드 헤드라인, 부드러운 그림자, 넉넉한 라운드.
+   과하지 않게: 다크 썸네일·풀블리드 그래픽은 쓰지 않음. index.html(아이보리)과 별개 테마. */
+:root{
+  --paper:#F2F4F8;      /* light gray ground */
+  --paper2:#E9ECF3;
+  --card:#FFFFFF;
+  --ink:#0F1A33;        /* deep navy, near-black */
+  --ink2:#4B5670;
+  --muted:#8A94AC;
+  --line:#E1E5EE;
+  --rule:#D2D8E5;
+  --go:#0F1A33;   --go-soft:#EDF0F7;
+  --night:#16244C;--night-soft:#EDF1F9;   /* navy — solid bars */
+  --warn:#C39412; --warn-soft:#FDF7E4;    /* gold accent */
+  --amber:#C39412;--amber-soft:#FDF7E4;
+  --gold:#E0AE1F; --gold-hi:#F5D67E; --gold-ink:#6B4E05;
+  --shell:#0B142B;   /* navy ground behind the reading column */
+  --yellow:#E0AE1F;
+  --wa:#25D366;
+  --r:16px; --rs:12px;
+  --mono:'Space Grotesk','Pretendard Variable',sans-serif;
+  --sans:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Hiragino Sans','Yu Gothic',Meiryo,'PingFang SC','Microsoft YaHei','Noto Sans CJK KR','Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+[hidden]{display:none!important;} /* nav.jump의 display:flex가 hidden 속성을 이기지 않도록 */
+html{-webkit-text-size-adjust:100%;}
+body{
+  background:var(--shell);color:var(--ink);
+  font-family:var(--sans);font-size:15.5px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;}
+a{color:var(--night);text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+
+/* ---- shell ---- */
+.wrap{max-width:460px;margin:0 auto;min-height:100vh;background:var(--paper);border-top:3px solid var(--gold);
+  box-shadow: 0 0 80px rgba(0,0,0,.45);}
+
+/* ---- hero ---- */
+.hero{position:relative;padding:48px 22px 26px;
+  background:var(--card);
+  border-bottom:1px solid var(--line);}
+/* accent bar row (20% 차용: 크림슨 칩) */
+.geo{display:flex;gap:6px;align-items:center;margin:18px 0 0;}
+.geo .g-c{width:26px;height:5px;border-radius:100px;background:var(--warn);}
+.geo .g-s{width:12px;height:5px;border-radius:100px;background:var(--night);}
+.geo .g-t{width:5px;height:5px;border-radius:100px;background:var(--muted);}
+.geo .g-b{display:none;}
+.hero .logo{height:34px;width:auto;display:block;margin:0 0 12px;}
+.brandmark{font-family:var(--mono);font-weight:700;letter-spacing:3px;
+  font-size:13px;color:var(--amber);text-transform:uppercase;}
+.hero h1{font-family:var(--sans);font-weight:800;font-size:28px;line-height:1.2;
+  letter-spacing:-.6px;margin:6px 0 10px;}
+.hero .sub{color:var(--ink2);font-size:14.5px;text-align:left;}
+
+/* ---- language switch: flag circles, hero top-right ---- */
+.langs{position:absolute;top:13px;right:16px;display:flex;gap:6px;z-index:3;}
+.lg{width:30px;height:30px;padding:0;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;line-height:1;background:var(--card);
+  border:1px solid var(--line);box-shadow:0 1px 3px rgba(15,26,51,.08);opacity:.55;}
+.lg.active{opacity:1;border:2px solid var(--warn);box-shadow:0 2px 8px rgba(216,30,74,.22);}
+
+/* ---- sticky topbar: tabs + section nav ---- */
+.topbar{position:sticky;top:0;z-index:6;background:rgba(242,244,248,.96);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+.tabs{display:flex;gap:7px;padding:11px 16px 0;}
+.tabbtn{flex:1;font-family:var(--sans);font-size:13px;font-weight:700;
+  letter-spacing:-.1px;padding:11px 8px;border-radius:12px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink2);white-space:nowrap;}
+.tabbtn.active{background:var(--ink);color:#fff;border-color:var(--ink);
+  box-shadow:0 3px 10px rgba(15,26,51,.18);}
+/* 점프 메뉴: 타이포 인덱스 유지 + 소프트 구분점 */
+nav.jump{display:flex;align-items:center;gap:9px;overflow-x:auto;
+  padding:0 18px;margin-top:9px;border-top:1px solid var(--line);scrollbar-width:none;}
+nav.jump::-webkit-scrollbar{display:none;}
+nav.jump a{flex:0 0 auto;font-family:var(--mono);font-size:10.5px;font-weight:700;
+  letter-spacing:1.1px;text-transform:uppercase;color:var(--ink2);
+  padding:10px 0 11px;}
+nav.jump a:active{color:var(--warn);}
+nav.jump a+a::before{content:'';display:inline-block;width:4px;height:4px;border-radius:50%;
+  background:var(--rule);vertical-align:2px;margin-right:9px;}
+
+/* ---- sections ---- */
+section{padding:30px 20px 8px;scroll-margin-top:128px;}
+/* 섹션 키커: 크림슨 칩 (뉴스 카드의 날짜 배지 느낌을 아주 옅게) */
+.sec-k{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;
+  letter-spacing:1.4px;text-transform:uppercase;color:var(--gold-hi);background:var(--night);
+  border-radius:100px;padding:4px 11px 5px;}
+.sec-h{font-size:23px;font-weight:800;line-height:1.22;margin:9px 0 16px;letter-spacing:-.5px;}
+p{margin-bottom:13px;color:var(--ink);}
+p.lead{color:var(--ink2);}
+h3{font-size:16px;font-weight:800;margin:22px 0 9px;letter-spacing:-.3px;}
+
+/* ---- cards / images ---- */
+.photo{border-radius:var(--rs);overflow:hidden;border:1px solid var(--line);
+  background:var(--card);margin:12px 0;box-shadow:0 2px 10px rgba(15,26,51,.06);}
+.photo img{width:100%;height:220px;object-fit:cover;}
+/* 지도·도면류: 원본 비율 그대로(잘림 없음) */
+.photo.map img{height:auto;object-fit:contain;background:#fff;}
+/* 세로 사진: 여백 없이 폭 꽉 채우고 위쪽 기준으로 아래를 크롭 */
+.photo.tall img{height:380px;object-fit:cover;object-position:top center;}
+.cap{font-family:var(--mono);font-size:10px;letter-spacing:.6px;color:var(--ink2);
+  text-transform:uppercase;font-weight:600;
+  padding:9px 12px;border-top:1px solid var(--line);background:var(--card);}
+.cap::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;
+  background:var(--warn);margin-right:7px;vertical-align:1px;}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:12px 0;}
+.gallery .photo{margin:0;}
+.gallery .photo img{height:135px;}
+
+/* ---- clean timetable ---- */
+.tt-title .tt-sub{display:block;font-weight:400;font-size:12.5px;color:var(--muted);margin-top:3px;letter-spacing:.2px;}
+.tt{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:12px 0;
+  box-shadow:0 2px 10px rgba(15,26,51,.06);}
+.tt .tt-h{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.4px;
+  color:#fff;padding:12px 14px;background:var(--night);}
+.tt table{width:100%;border-collapse:collapse;}
+.tt th{width:46px;text-align:center;font-family:var(--mono);font-weight:700;font-size:16px;
+  color:var(--warn);background:var(--paper2);border-top:1px solid var(--line);padding:11px 0;vertical-align:middle;}
+.tt td{border-top:1px solid var(--line);padding:11px 13px;font-family:var(--mono);
+  font-size:14px;letter-spacing:.3px;color:var(--ink2);line-height:1.55;}
+.tt .tt-note{font-size:11.5px;color:var(--muted);padding:9px 14px;
+  border-top:1px solid var(--line);line-height:1.45;}
+
+/* ---- route steps ---- */
+.route{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:16px 16px 6px;margin:12px 0;box-shadow:0 2px 10px rgba(15,26,51,.06);}
+.route .rt{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.4px;
+  color:#fff;background:var(--night);border-radius:12px;padding:11px 13px;
+  margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.route .rt.depart{background:var(--warn);}
+.route .rt.go{background:var(--ink);}
+.route .rt .pill{background:rgba(255,255,255,.18);color:#fff;border-radius:100px;
+  font-size:10px;font-weight:700;padding:3px 9px;letter-spacing:1px;}
+ol.steps{list-style:none;counter-reset:s;}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 14px 34px;
+  font-size:14.5px;line-height:1.5;}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:-1px;
+  width:23px;height:23px;border-radius:50%;background:var(--warn);color:#fff;
+  font-family:var(--mono);font-size:11.5px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;}
+ol.steps li:not(:last-child)::after{content:'';position:absolute;left:11px;top:24px;
+  bottom:4px;width:1.5px;background:var(--line);}
+ol.steps li b{color:var(--ink);}
+.stopname{background:var(--warn-soft);color:#9A1436;border-radius:6px;
+  padding:1px 7px;font-weight:700;white-space:nowrap;}
+.stopalt{font-size:12.5px;color:var(--ink2);}
+.route .rt-time{font-family:inherit;font-size:12.5px;color:var(--ink);
+  border:1px solid var(--line);border-radius:14px;background:var(--paper2);
+  padding:12px 12px 11px;margin:2px 0 10px;line-height:1.5;text-align:center;}
+.route .rt-time .bt{border-collapse:collapse;margin:0 auto 6px;}
+.route .rt-time .bt th,.route .rt-time .bt td{padding:3px 10px;text-align:center;
+  font-weight:400;white-space:nowrap;color:var(--ink);font-size:12.5px;}
+.route .rt-time .foot{color:var(--ink2);text-align:center;font-size:12.5px;}
+
+/* ---- notes ---- */
+.note{border-radius:var(--rs);padding:12px 15px;font-size:13.5px;line-height:1.5;
+  margin:12px 0;border:1px solid var(--line);background:var(--card);}
+.note.warm{background:var(--warn-soft);border-color:#F7DBE4;color:#9A1436;}
+.note.warm b{color:#7C0F2B;}
+.note.info{background:var(--night-soft);border-color:#E6E2EF;color:var(--ink);}
+.note b{font-weight:700;}
+
+/* ---- stack: 카드·사진·노트를 한 덩어리로 잇기 (바깥 모서리만 라운드) ---- */
+.stack{margin:12px 0;border-radius:var(--r);box-shadow:0 2px 10px rgba(15,26,51,.06);}
+.stack>*{margin:0!important;border-radius:0!important;box-shadow:none!important;}
+.stack>*+*{border-top:none!important;}
+.stack>:first-child{border-radius:var(--r) var(--r) 0 0!important;}
+.stack>:last-child{border-radius:0 0 var(--r) var(--r)!important;}
+
+/* ---- address / taxi card ---- */
+.addr{background:var(--ink);color:#fff;border-radius:var(--r);padding:18px 18px 16px;margin:14px 0;
+  box-shadow:0 4px 16px rgba(15,26,51,.18);}
+.addr .lbl{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;
+  color:#9FB0D6;text-transform:uppercase;margin-bottom:10px;}
+.addr .kr{font-size:17px;font-weight:700;line-height:1.4;letter-spacing:-.2px;}
+.addr .drop{font-size:15.5px;font-weight:600;line-height:1.5;margin-top:9px;color:var(--gold-hi);}
+.addr .en{font-size:13px;color:#B7C2DA;margin-top:10px;line-height:1.45;}
+.addr .row{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap;}
+.addr .abtn{flex:1 1 auto;text-align:center;font-family:var(--mono);font-size:12px;
+  font-weight:700;letter-spacing:.4px;border-radius:10px;padding:11px;
+  background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.24);}
+.addr .abtn.maps{background:#fff;color:var(--ink);border-color:#fff;}
+
+/* ---- fact rows ---- */
+.facts{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+  background:var(--card);margin:12px 0;box-shadow:0 2px 10px rgba(15,26,51,.06);}
+.facts .f{display:flex;gap:12px;padding:13px 15px;border-top:1px solid var(--line);}
+.facts .f:first-child{border-top:none;}
+.facts .f .ic{flex:0 0 22px;font-size:17px;line-height:1.4;text-align:center;}
+.facts .f .bd{flex:1;}
+.facts .f .t{font-weight:700;font-size:14.5px;margin-bottom:1px;}
+.facts .f .t .subn{font-weight:500;color:var(--muted);font-size:12px;}
+.facts .f .d{font-size:13.5px;color:var(--ink2);line-height:1.5;}
+.facts .f .d b{color:var(--ink);}
+.facts .f.warn{background:var(--warn-soft);box-shadow:inset 3px 0 0 var(--warn);}
+.facts .f.warn .t,.facts .f.warn .d{color:var(--gold-ink);}
+.facts .f.warn .d b{color:#4E3B0F;}
+.facts .f.ok{background:var(--night-soft);box-shadow:inset 3px 0 0 var(--night);}
+.facts .f.ok .t,.facts .f.ok .d{color:var(--ink);}
+.facts .f.ok .d b{color:var(--night);}
+.facts .f .d .subnote{display:block;margin-top:4px;font-size:12px;line-height:1.55;
+  font-style:italic;font-weight:400;color:var(--muted);}
+.facts .f .d .subnote b{color:var(--muted);}
+
+/* ---- around: clickable place list ---- */
+.places{display:flex;flex-direction:column;gap:8px;margin:10px 0 6px;}
+.place{display:flex;align-items:center;gap:11px;background:var(--card);
+  border:1px solid var(--line);border-radius:13px;padding:13px;color:var(--ink);
+  text-decoration:none;-webkit-tap-highlight-color:transparent;
+  box-shadow:0 1px 6px rgba(15,26,51,.05);
+  transition:border-color .15s ease, transform .05s ease;}
+.place:active{transform:scale(.99);}
+@media (hover:hover){ .place:hover{border-color:var(--warn);} }
+.place .pbd{flex:1;min-width:0;}
+.place .pn{font-weight:700;font-size:14.5px;line-height:1.3;}
+.place .pn .pnalt{font-weight:400;font-size:12.5px;color:var(--warn);}
+.place .pd{font-size:12.5px;color:var(--ink2);line-height:1.45;margin-top:2px;}
+.place .parrow{flex:none;font-size:15px;color:var(--ink2);opacity:.5;}
+
+/* ---- support & contact ---- */
+.support{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:16px;margin:12px 0 0;box-shadow:0 2px 10px rgba(15,26,51,.06);}
+.support .hrs{font-size:15px;font-weight:600;margin-bottom:13px;}
+.support .hrs b{font-family:var(--mono);font-weight:700;letter-spacing:.5px;}
+.support .ota{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);
+  font-size:13.5px;color:var(--ink2);line-height:1.5;}
+.support .ota b{color:var(--ink);}
+.msgs{display:flex;flex-direction:column;gap:8px;}
+.wa-btn{display:flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--wa);color:#fff;border-radius:13px;padding:14px 15px;
+  font-family:var(--mono);font-weight:700;font-size:15px;letter-spacing:.3px;}
+.wa-btn svg{flex:0 0 auto;}
+.wa-btn>span{white-space:nowrap;}
+.wa-btn .num{font-weight:500;font-size:13px;opacity:.92;}
+.mchip{display:flex;align-items:center;gap:11px;width:100%;text-align:left;
+  background:var(--card);border:1px solid var(--line);border-radius:13px;padding:11px 13px;}
+.mchip .badge{flex:0 0 auto;width:32px;height:32px;border-radius:9px;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-weight:700;font-size:8.5px;letter-spacing:.2px;}
+.mchip .badge.line{background:#06C755;}
+.mchip .badge.wechat{background:#07C160;}
+.mchip .txt{flex:1;line-height:1.25;}
+.mchip .txt .k{display:block;font-size:11px;color:var(--muted);}
+.mchip .txt .v{display:block;font-weight:700;font-size:15px;}
+.mchip .act{font-family:var(--mono);font-size:9.5px;letter-spacing:.4px;color:var(--warn);
+  background:var(--warn-soft);border-radius:100px;padding:4px 10px;white-space:nowrap;}
+
+/* ---- footer ---- */
+footer{padding:26px 20px 40px;text-align:center;color:var(--muted);
+  font-size:11.5px;border-top:1px solid var(--line);margin-top:22px;
+  background:var(--card);}
+footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weight:700;font-size:12px;}
+</style>
+
+<div class="wrap">
+
+  <!-- ═══════════ 1. WELCOME ═══════════ -->
+  <header class="hero">
+    <div class="langs"><a class="lg" href="appt2026" title="English" style="font-size:11px;font-family:var(--mono);font-weight:700;">EN</a></div>
+    <img src="assets/images/PWR-logo-black.png" alt="PWR" class="logo">
+    <div class="brandmark">Paradise Walk Residence</div>
+    <h1>환영합니다 —<br>투숙 이용 안내</h1>
+    <p class="sub">🔑 본 숙소는 <b>무인 레지던스</b>로 프런트 데스크가 없습니다. 필요한 모든 안내는 아래 <b>세 개의 탭</b>에 정리되어 있습니다.</p>
+    <div class="geo" aria-hidden="true"><span class="g-c"></span><span class="g-s"></span><span class="g-t"></span><span class="g-b"></span></div>
+  </header>
+
+  <div class="topbar">
+    <div class="tabs">
+      <button type="button" class="tabbtn active" data-tab="checkin">🔑 체크인 / 아웃</button>
+      <button type="button" class="tabbtn" data-tab="living">🏠 생활 안내</button>
+      <button type="button" class="tabbtn" data-tab="nearby">📍 주변 안내</button>
+    </div>
+    <nav class="jump" id="nav-checkin">
+      <a href="#checkin">체크인 · 체크아웃</a>
+      <a href="#shuttle">무료 셔틀</a>
+      <a href="#building">건물 찾아오기</a>
+      <a href="#contact">문의</a>
+    </nav>
+    <nav class="jump" id="nav-living" hidden>
+      <a href="#living">생활</a>
+      <a href="#room">객실</a>
+      <a href="#kitchen">주방</a>
+      <a href="#rules">이용 수칙</a>
+      <a href="#shopping">쇼핑</a>
+      <a href="#contact">문의</a>
+    </nav>
+    <nav class="jump" id="nav-nearby" hidden>
+      <a href="#paradise">파라다이스시티</a>
+      <a href="#around">주변 안내</a>
+      <a href="#contact">문의</a>
+    </nav>
+  </div>
+
+  <!-- ════════ TAB 1 — CHECK-IN / OUT ════════ -->
+  <div id="tab-checkin">
+
+  <section id="checkin">
+    <div class="sec-k">체크인 · 체크아웃</div>
+    <div class="sec-h">체크인 안내 🔑</div>
+    <p class="lead">숙박의 시작입니다 — 아래 도착·출발 안내를 확인해 주시기 바랍니다.</p>
+
+    <div class="facts">
+      <div class="f ok"><div class="ic">🕒</div><div class="bd">
+        <div class="t">체크인</div>
+        <div class="d"><b>오후 3시</b>부터 가능합니다.<span class="subnote">정규 체크인은 오후 3시부터이나, 당일 예상 도착 시간을 알려주시면 해당 시간에 맞춰 객실을 준비해 드립니다. 얼리 체크인이 가능하도록 최선을 다하고 있으니 편하신 시간을 말씀해 주시기 바랍니다.</span></div>
+      </div></div>
+      <div class="f warn"><div class="ic">🕚</div><div class="bd">
+        <div class="t">체크아웃</div>
+        <div class="d"><b>오전 11시</b>까지입니다.<span class="subnote">마지막 날에는 창문을 닫고 에어컨을 꺼주시고, 두고 가시는 물건이 없는지 확인하신 뒤 문을 닫고 나가시면 됩니다.</span></div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="shuttle">
+    <div class="sec-k">오시는 길</div>
+    <div class="sec-h">무료 공항 셔틀 🚌</div>
+    <p class="lead">공항과 건물을 잇는 무료 순환버스가 운행됩니다. 아래에서 터미널을 선택해 확인해 주시기 바랍니다.</p>
+
+    <div class="photo map">
+      <img src="assets/images/Map-shuttle-overview.jpeg?v=2" alt="셔틀 노선 안내 지도" loading="lazy" decoding="async">
+      <div class="cap">제1터미널 셔틀 노선 안내</div>
+    </div>
+
+    <div class="route">
+      <div class="rt"><span class="pill">T1 출발</span> <span>제1터미널 → PWR</span></div>
+      <ol class="steps">
+        <li><b>3층(출국장)</b> <b>3번 또는 12번 게이트</b>로 이동합니다.</li>
+        <li>순환버스 <b>03번</b>(AICC 방면)에 탑승합니다.</li>
+        <li><b>첫 번째 정류장</b> — <span class="stopname">그랜드 하얏트 호텔</span>에서 하차합니다.</li>
+        <li>버스 진행 방향으로 조금 걸으면 횡단보도가 나옵니다. 길을 건너면 <b>바로 앞이 저희 건물</b>입니다.</li>
+      </ol>
+      <div class="rt-time"><table class="bt"><tr><td class="lbl">게이트</td><th>3</th><th>12</th></tr><tr><td class="lbl">🕒 첫차</td><td>05:08</td><td>05:10</td></tr><tr><td class="lbl">🕒 막차</td><td>00:30</td><td>00:32</td></tr></table><div class="foot">배차 간격 7~20분 (2026년 7월 기준)</div></div>
+    </div>
+    <div class="note warm">🧳 제1터미널에서 도보 이동도 가능하나(약 15분), 짐이 있는 경우 권장하지 않습니다.</div>
+
+    <div class="route">
+      <div class="rt"><span class="pill">T2 출발</span> <span>제2터미널 → PWR</span></div>
+      <ol class="steps">
+        <li><b>3층</b> <b>7번 게이트</b>로 이동합니다.</li>
+        <li>동일한 <b>03번 버스</b>에 탑승합니다.</li>
+        <li><b>네 번째 정류장</b> — <span class="stopname">그랜드 하얏트 호텔</span>에서 하차합니다.<br><span class="stopalt">첫 번째 정류장도 하얏트 정류장이지만, 네 번째 정류장이 숙소와 더 가깝습니다. 네 번째 정류장에서 내려주시기 바랍니다.</span></li>
+        <li>버스 진행 방향으로 조금 걸으면 횡단보도가 나옵니다. 길을 건너면 <b>바로 앞이 저희 건물</b>입니다.</li>
+      </ol>
+      <div class="rt-time"><table class="bt"><tr><td class="lbl">🕒 첫차</td><td>04:48</td></tr><tr><td class="lbl">🕒 막차</td><td>23:48</td></tr></table><div class="foot">배차 간격 7~20분 (2026년 7월 기준)</div></div>
+    </div>
+
+    <div class="photo map">
+      <img src="assets/images/Map-t2-4th-stop.jpg?v=2" alt="지도 — 하얏트 첫 번째·네 번째 정류장, 네 번째 정류장 하차 후 횡단보도까지 도보 1분" loading="lazy" decoding="async">
+      <div class="cap">첫 번째 정류장도 하얏트 정류장이지만, 더 가까운 네 번째 정류장에서 하차해 주시기 바랍니다</div>
+    </div>
+
+    <div class="photo">
+      <img src="assets/images/Building.jpg" alt="저희 건물 — 이 건물이 보이면 도착하신 것입니다" loading="lazy" decoding="async">
+      <div class="cap">이 건물이 보이면 도착하신 것입니다</div>
+    </div>
+
+    <div class="route">
+      <div class="rt depart"><span class="pill">공항 방면</span> <span>PWR → 터미널 (T1/T2)</span></div>
+      <ol class="steps">
+        <li>정문으로 나와 <b>인천공항공사</b> 건물 방향으로 길을 건넙니다.</li>
+        <li>오른쪽으로 걸어 가장 가까운 버스 정류장으로 이동합니다.</li>
+        <li><b>04번 버스</b>에 탑승합니다.</li>
+        <li><b>T1</b> 약 5분(2개 정류장) · <b>T2</b> 약 25분(4개 정류장).</li>
+      </ol>
+      <div class="rt-time"><table class="bt"><tr><td class="lbl">🕒 첫차</td><td>05:01</td></tr><tr><td class="lbl">🕒 막차</td><td>23:51</td></tr></table><div class="foot">배차 간격 7~20분 (2026년 7월 기준)</div></div>
+    </div>
+
+    <div class="photo map">
+      <img src="assets/images/map-to-airport.jpg?v=2" alt="건물에서 공항 방면 버스 정류장까지 도보 지도" loading="lazy" decoding="async">
+      <div class="cap">공항 방면 정류장 가는 길 — 오른쪽 정류장(국제업무단지), 시간표는 아래 ↓</div>
+    </div>
+
+    <h3 class="tt-title">시간표: 국제업무단지<span class="tt-sub">(오른쪽 정류장)</span></h3>
+    <div class="tt">
+      <div class="tt-h">🕒 04번 버스 — '국제업무단지' 정류장 출발</div>
+      <table>
+        <tr><th>05</th><td>01 · 13 · 25 · 36 · 49</td></tr>
+        <tr><th>06</th><td>01 · 16 · 29 · 43 · 56</td></tr>
+        <tr><th>07</th><td>11 · 26 · 41 · 51</td></tr>
+        <tr><th>08</th><td>01 · 11 · 24 · 36 · 47 · 56</td></tr>
+        <tr><th>09</th><td>06 · 16 · 26 · 41 · 54</td></tr>
+        <tr><th>10</th><td>11 · 28 · 45</td></tr>
+        <tr><th>11</th><td>02 · 19 · 36 · 53</td></tr>
+        <tr><th>12</th><td>08 · 25 · 42 · 59</td></tr>
+      </table>
+      <div class="tt-note">각 행은 '시', 숫자는 해당 시의 '분'입니다 (05:00~12:59 기준).</div>
+    </div>
+  </section>
+
+  <section aria-label="택시 이용">
+    <div class="sec-k">택시 이용</div>
+    <div class="sec-h">택시로 오시나요? 🚕</div>
+    <p class="lead">기사님께 아래 화면을 보여주시기 바랍니다:</p>
+
+    <div class="addr">
+      <div class="lbl">기사님께 보여주세요</div>
+      <div class="kr">인천광역시 중구 공항로424번길 50, IBC월드게이트</div>
+      <div class="drop">— 월드게이트 정문 앞 횡단보도에서 내려주세요, 감사합니다!</div>
+      <div class="en">IBC World Gate, 50 Gonghang-ro 424beon-gil, Jung-gu, Incheon</div>
+      <div class="row">
+        <button class="abtn" type="button" data-copy="인천광역시 중구 공항로424번길 50, IBC월드게이트 — 월드게이트 정문 앞 횡단보도에서 내려주세요, 감사합니다!">⧉ 주소 복사</button>
+        <a class="abtn maps" href="https://maps.app.goo.gl/3HosXsDa21Eti5Zo6" target="_blank" rel="noopener">구글 지도에서 열기 ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="building">
+    <div class="sec-k">건물 찾아오기</div>
+    <div class="sec-h">도착하셨습니다 📍</div>
+    <p class="lead">아래 사진으로 건물을 확인하신 뒤, 엘리베이터로 바로 올라가시면 됩니다.</p>
+
+    <div class="photo">
+      <img src="assets/images/Building.jpg" alt="건물 외관" loading="lazy" decoding="async">
+      <div class="cap">건물 외관</div>
+    </div>
+    <div class="gallery">
+      <div class="photo">
+        <img src="assets/images/Building-main-entrance.jpeg" alt="정문 입구" loading="lazy" decoding="async">
+        <div class="cap">정문 입구</div>
+      </div>
+      <div class="photo">
+        <img src="assets/images/building-main-lobby.jpg" alt="로비" loading="lazy" decoding="async">
+        <div class="cap">로비</div>
+      </div>
+    </div>
+    <div class="photo">
+      <img src="assets/images/Elevator-1st-floor-01.jpeg" alt="1층 엘리베이터" loading="lazy" decoding="async">
+      <div class="cap">엘리베이터 — 1층</div>
+    </div>
+
+    <div class="photo">
+      <img src="assets/images/Door.jpeg" alt="키패드 잠금장치가 있는 객실 문" loading="lazy" decoding="async">
+      <div class="cap">객실 도어 — 키패드 잠금장치</div>
+    </div>
+    <div class="note info">🔢 모든 객실 문에는 키패드 잠금장치가 설치되어 있습니다. 안내받으신 <b>객실 비밀번호</b>를 입력해 주시기 바랍니다.</div>
+  </section>
+
+  </div><!-- /tab-checkin -->
+
+  <!-- ════════ TAB 2 — DAILY LIVING ════════ -->
+  <div id="tab-living" hidden>
+
+  <section id="living">
+    <div class="sec-k">생활 안내</div>
+    <div class="sec-h">숙소 생활 🏠</div>
+
+    <div class="facts">
+      <div class="f ok"><div class="ic">🔑</div><div class="bd">
+        <div class="t">계약에 따른 온전한 개인 공간</div>
+        <div class="d">고객님의 숙박은 <b>계약에 따른 단기 하우스 렌탈</b>로, 투숙 기간 동안 객실은 온전히 고객님만의 공간입니다. <b>정기 청소를 위한 외부 인력의 출입이 없으므로</b>, 귀중품과 개인 소지품을 객실에 두셔도 안심하실 수 있습니다.</div>
+      </div></div>
+      <div class="f"><div class="ic">⏰</div><div class="bd">
+        <div class="t">나만의 시간에 맞춘 자유로운 생활</div>
+        <div class="d">밤낮이 바뀐 일정이라도 방해받지 않으실 수 있습니다 — <b>아침 청소 노크가 없습니다</b>. 전 객실에 <b>암막커튼</b>이 설치되어 있어 언제 주무셔도 편안한 수면이 가능합니다.</div>
+      </div></div>
+    </div>
+
+    <h3 id="room">객실 안내</h3>
+    <div class="stack">
+    <div class="facts">
+      <div class="f"><div class="ic">📶</div><div class="bd">
+        <div class="t">Wi-Fi</div>
+        <div class="d">안내 스티커는 <b>TV 리모컨이 있는 곳</b>에 있습니다.</div>
+      </div></div>
+      <div class="f"><div class="ic">💧</div><div class="bd">
+        <div class="t">생수</div>
+        <div class="d"><b>냉장고와 옷장</b> 안의 생수는 무료로 제공됩니다.</div>
+      </div></div>
+      <div class="f"><div class="ic">🎁</div><div class="bd">
+        <div class="t">객실 내 비품은 모두 무료입니다</div>
+        <div class="d">객실에 준비된 모든 것을 부담 없이 이용해 주시기 바랍니다 — <b>냉장고 음료</b>(한국의 인기 <b>바나나우유</b> 포함), <b>믹스커피</b>, <b>컵라면</b> 등 전부 무료로 제공됩니다.</div>
+      </div></div>
+      <div class="f"><div class="ic">🌡️</div><div class="bd">
+        <div class="t">냉난방</div>
+        <div class="d">팬코일 방식이며, 조작 패널은 <b>욕실 문 옆</b>(또는 냉장고 옆)에 있습니다.</div>
+      </div></div>
+    </div>
+
+    <div class="photo tall">
+      <img src="aircon-max.jpg" alt="에어컨 조작 패널 — 사진의 설정이 최대 냉방입니다" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'">
+      <div class="cap">에어컨 패널 — 사진의 설정 = 최대 냉방</div>
+    </div>
+    <div class="note info">❄️ 계절 안내: 외부 기온이 낮아짐에 따라 정부 지침에 의거, <b>9월 7일</b>부터 건물 에어컨은 <b>오전 9시~오후 11시</b>에만 가동됩니다. 그 외 시간에는 바깥 공기가 선선하므로 <b>창문을 열고 팬을 가동</b>하시면 객실을 쾌적하게 유지하실 수 있습니다. 위 사진은 최대 냉방 설정(COOL · 20.0°C · 팬 최대)입니다.</div>
+    </div><!-- /stack -->
+
+    <h3 id="kitchen">주방 🍳</h3>
+    <div class="stack">
+    <div class="photo">
+      <img src="assets/images/kitchen.jpg" alt="폴딩도어 안쪽의 주방 — 싱크대, 쿡탑, 전자레인지와 조리도구" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'">
+      <div class="cap">주방 — 폴딩도어 안쪽</div>
+    </div>
+    <div class="facts">
+      <div class="f"><div class="ic">🍽️</div><div class="bd">
+        <div class="t">조리도구</div>
+        <div class="d">모든 조리도구는 입실 전 세척을 완료해 두었습니다. 소중히 다뤄주시고, <b>사용 후에는 세척하여 제자리에</b> 놓아주시기 바랍니다. 추가로 필요한 물품이 있으시면 메시지로 알려주시기 바랍니다.</div>
+      </div></div>
+      <div class="f"><div class="ic">☕</div><div class="bd">
+        <div class="t">전기포트 · 전자레인지</div>
+        <div class="d">전기포트와 전자레인지가 준비되어 있습니다.</div>
+      </div></div>
+      <div class="f warn"><div class="ic">🔥</div><div class="bd">
+        <div class="t">쿡탑 — 잔열 화상 주의</div>
+        <div class="d"><b>잔열 표시등(아래 사진)이 꺼질 때까지</b> 상판이 매우 뜨거우니 화상에 주의해 주시기 바랍니다. 표시등이 꺼진 뒤에는 <b>상판을 닦아주시기 바랍니다</b> — 얼룩이 재가열되면 제거가 매우 어려워지므로, 사용 직후 닦아주시길 권장드립니다.</div>
+      </div></div>
+    </div>
+    <div class="photo map">
+      <img src="assets/images/stove-residual-heat.jpg" alt="하이라이트 쿡탑 — 빨간 점 두 개가 잔열 표시등입니다" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'">
+      <div class="cap">잔열 표시등 — 점등 중에는 상판이 매우 뜨겁습니다</div>
+    </div>
+    </div><!-- /stack -->
+
+    <h3>세탁 🧺</h3>
+    <div class="route">
+      <div class="rt"><span>🧺 세탁기 사용 방법</span></div>
+      <ol class="steps">
+        <li>전원 버튼을 눌러 세탁기를 켭니다.</li>
+        <li>세탁물을 넣고 세제를 투입합니다.</li>
+        <li>세탁기 문을 닫습니다.</li>
+        <li>세탁량에 맞춰 물 높이·세탁 방법·코스를 선택합니다.</li>
+        <li>시작 버튼을 누르면 완료입니다!</li>
+      </ol>
+    </div>
+    <div class="facts">
+      <div class="f"><div class="ic">🧴</div><div class="bd">
+        <div class="t">세제 · 섬유유연제</div>
+        <div class="d"><b>욕실 문 바로 앞 수납장 하단</b>에 있습니다.</div>
+      </div></div>
+      <div class="f"><div class="ic">🧺</div><div class="bd">
+        <div class="t">건조대</div>
+        <div class="d"><b>냉장고 옆</b>에 보관되어 있습니다 — 사용 후에는 접어서 제자리에 넣어주시기 바랍니다!</div>
+      </div></div>
+      <div class="f"><div class="ic">🧺</div><div class="bd">
+        <div class="t">수건 · 침구 · 비품</div>
+        <div class="d">요청 시 언제든 보충해 드립니다 — 편하게 말씀해 주시기 바랍니다.</div>
+      </div></div>
+      <div class="f ok"><div class="ic">🧹</div><div class="bd">
+        <div class="t">투숙 중 무료 청소 1회</div>
+        <div class="d"><b>투숙 기간 중 1회 청소가 무료로 제공됩니다</b> — 1회에 한하므로 가장 필요하신 시점에 이용해 주시기 바랍니다. <b>왓츠앱</b> 등 다이렉트 메신저로 <b>최소 하루 전</b> 예약을 부탁드립니다.</div>
+      </div></div>
+    </div>
+
+    <h3>TV — 넷플릭스 · 유튜브 📺</h3>
+    <div class="note info">📺 TV에서 <b>넷플릭스와 유튜브</b>를 이용하실 수 있습니다 — 리모컨 하단의 <b>넷플릭스/유튜브 버튼</b>을 눌러주시기 바랍니다.</div>
+    <div class="photo tall">
+      <img src="assets/images/tv-remote.jpg" alt="TV 리모컨 — ①번 버튼이 셋톱박스 전원입니다" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'">
+      <div class="cap">리모컨 — ① 셋톱박스 전원 버튼</div>
+    </div>
+    <div class="route">
+      <div class="rt"><span>📺 TV가 정상 작동하지 않을 때</span></div>
+      <ol class="steps">
+        <li><b>TV 아래 셋톱박스</b>에 빨간불이 켜져 있는지 확인하시고, 켜져 있다면 <b>'셋톱 전원' 버튼(사진의 ①)</b>을 눌러 파란불로 바꿔주시기 바랍니다.</li>
+        <li><b>TV 뒤편의 소형 연결 장치</b>에 빨간불이 켜져 있는지 확인하시고, 켜져 있다면 플러그를 뽑았다가 다시 꽂아 파란불이 되도록 해주시기 바랍니다.</li>
+        <li>그래도 해결되지 않으면 <b>메시지를 보내주시기 바랍니다</b> — 즉시 조치해 드리겠습니다.</li>
+      </ol>
+    </div>
+
+    <h3>쓰레기 배출 🗑️</h3>
+    <p class="lead">분리배출은 간단합니다 — 객실 내 수거함과 1층 배출 장소 한 곳입니다.</p>
+    <div class="facts">
+      <div class="f"><div class="ic">🗑️</div><div class="bd">
+        <div class="t">일반 쓰레기</div>
+        <div class="d">현관 <b>신발장 안의 흰색 봉투</b>를 사용해 주시기 바랍니다.<br>🥕 음식물 쓰레기도 함께 배출하실 수 있습니다: <b>물기를 최대한 제거하고 비닐봉지에 밀봉</b>한 뒤 일반 쓰레기 봉투에 넣어주시기 바랍니다 — 냄새와 새는 것을 막아줍니다.</div>
+      </div></div>
+      <div class="f"><div class="ic">♻️</div><div class="bd">
+        <div class="t">재활용</div>
+        <div class="d">병·캔·플라스틱·종이는 <b>문 옆 흰색 바구니</b>에 넣어주시기 바랍니다.</div>
+      </div></div>
+      <div class="f ok"><div class="ic">📍</div><div class="bd">
+        <div class="t">배출 장소</div>
+        <div class="d"><b>건물 후문</b>으로 나가시면 <b>오른쪽에 배출 장소</b>가 있습니다. 봉투나 바구니가 차면 그곳에 배출해 주시면 됩니다.</div>
+      </div></div>
+    </div>
+
+    <h3>필요하신 것이 있으신가요? 🙋</h3>
+    <div class="facts">
+      <div class="f ok"><div class="ic">🧻</div><div class="bd">
+        <div class="t">소모품 — 무료 보충</div>
+        <div class="d">화장지·쓰레기봉투·세제 등 생활 필수품은 <b>무료로 보충해 드립니다</b>. 부족해지면 언제든 메시지 주시기 바랍니다 — <b>왓츠앱</b>이 가장 빠릅니다.</div>
+      </div></div>
+      <div class="f"><div class="ic">🔧</div><div class="bd">
+        <div class="t">고장 · 불편 사항</div>
+        <div class="d">어떤 것이든 <b>왓츠앱으로 메시지</b> 주시면 신속히 처리해 드리겠습니다.</div>
+      </div></div>
+    </div>
+
+    <h3 id="rules">이용 수칙</h3>
+    <div class="facts">
+      <div class="f"><div class="ic">🅿️</div><div class="bd">
+        <div class="t">주차 (유료 주차만 가능)</div>
+        <div class="d">요금: <b>20분당 1,000원</b> (이후 <b>30분당 1,000원</b>) · 1일 최대 <b>50,000원</b>.<br>공항 인근의 엄격한 주차 규정으로 인해 숙소를 통한 무료 주차나 할인은 제공되지 않는 점 양해 부탁드립니다.</div>
+      </div></div>
+      <div class="f warn"><div class="ic">🚭</div><div class="bd">
+        <div class="t">전 구역 금연</div>
+        <div class="d">숙소 전체가 엄격한 금연 구역입니다. 실내 흡연으로 침구·가구·벽지에 냄새나 손상이 발생할 경우, 복구를 위한 전문 클리닝 비용이 부득이 청구됩니다. 또한 <b>담배 연기가 천장의 화재 감지기에 닿으면 건물 전체에 경보가 울리므로</b> 각별히 주의해 주시기 바랍니다. <b>건물 밖에서는 어디서든 흡연이 가능합니다</b>.</div>
+      </div></div>
+      <div class="f warn"><div class="ic">👥</div><div class="bd">
+        <div class="t">최대 2인</div>
+        <div class="d">객실당 최대 투숙 인원입니다.</div>
+      </div></div>
+      <div class="f"><div class="ic">🐾</div><div class="bd">
+        <div class="t">반려동물 동반 불가</div>
+        <div class="d">반려동물은 입실이 불가합니다.</div>
+      </div></div>
+      <div class="f warn"><div class="ic">🔇</div><div class="bd">
+        <div class="t">파티 · 소음 금지</div>
+        <div class="d">즉시 퇴실 조치 사유에 해당합니다.</div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="shopping">
+    <div class="sec-k">쇼핑 지원</div>
+    <div class="sec-h">온라인 쇼핑을 대신해 드립니다 🛒</div>
+    <p class="lead">한국 쇼핑몰은 국내 계정과 결제수단이 필요하므로, 필요하신 물품의 주문을 대행해 드립니다.</p>
+
+    <div class="facts">
+      <div class="f"><div class="ic">🛒</div><div class="bd">
+        <div class="t">이용 방법</div>
+        <div class="d">생수·식료품 등 생활용품이 필요하시면 <b>메시지로 알려주시기 바랍니다</b> — 알맞은 상품을 찾아 먼저 확인해 드립니다.</div>
+      </div></div>
+      <div class="f"><div class="ic">🚚</div><div class="bd">
+        <div class="t">문 앞까지 배송</div>
+        <div class="d">주문은 저희가 처리하며, <b>객실 문 앞까지</b> 배송됩니다.</div>
+      </div></div>
+      <div class="f"><div class="ic">💵</div><div class="bd">
+        <div class="t">결제</div>
+        <div class="d">상품 비용은 고객님께서 <b>현금으로</b> 부담하시며, 자세한 사항은 메시지로 안내해 드립니다.</div>
+      </div></div>
+    </div>
+    <div class="note warm">🚚 한국 내 배송은 보통 익일 도착입니다 — 가능하시면 하루 전에 미리 알려주시면 감사하겠습니다.</div>
+  </section>
+
+  </div><!-- /tab-living -->
+
+  <!-- ════════ TAB 3 — NEARBY ════════ -->
+  <div id="tab-nearby" hidden>
+
+  <section id="paradise">
+    <div class="sec-k">주변 이동</div>
+    <div class="sec-h">파라다이스시티 가는 길 🎰</div>
+    <p class="lead">파라다이스시티 리조트·카지노가 바로 옆에 있습니다 — <b>도보 1~2분</b> 거리입니다.</p>
+
+    <div class="route">
+      <div class="rt go"><span class="pill">도보</span> <span>PWR → 파라다이스시티 · 1~2분</span></div>
+      <ol class="steps">
+        <li><b>1층</b>으로 내려가 <b>이마트24 편의점 옆 출입문</b>으로 나갑니다.</li>
+        <li>아래 사진의 노란색 경로를 따라가시면 <b>바로 파라다이스시티</b>입니다.</li>
+        <li><b>1~2분</b>이면 도착합니다 — 가장 빠른 길입니다.</li>
+      </ol>
+    </div>
+
+    <div class="stack">
+    <div class="photo map">
+      <img src="assets/images/pc-walk-photo.jpg" alt="건물에서 본 전경 — 이마트24 옆 출입문에서 파라다이스시티 입구까지 노란색 경로" loading="lazy" decoding="async">
+      <div class="cap">가는 길 — 1층 이마트24 옆 출입문으로 나가 노란색 경로를 따라가세요</div>
+    </div>
+    <div class="photo map">
+      <img src="assets/images/pc-walk-map.jpg" alt="파라다이스시티까지 동일한 도보 경로 지도" loading="lazy" decoding="async">
+      <div class="cap">동일 경로 지도</div>
+    </div>
+    </div><!-- /stack -->
+
+  </section>
+
+  <section id="around">
+    <div class="sec-k">건물 주변</div>
+    <div class="sec-h">주변 안내 🗺️</div>
+    <div class="photo map">
+      <img src="assets/images/around-map.jpg" alt="주변 지도 — 이마트, IBC월드게이트, 파라다이스시티, 자기부상철도역" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'">
+      <div class="cap">지도의 모든 장소는 도보 5~10분 거리입니다</div>
+    </div>
+    <!-- 주변 안내 카드는 guide-data.js의 데이터로 자동 생성됩니다(한국어). 편집은 edit.html(관리자 에디터)에서. -->
+    <div id="aroundBody"></div>
+  </section>
+
+  </div><!-- /tab-nearby -->
+
+  <!-- ═══════════ SUPPORT & CONTACT ═══════════ -->
+  <section id="contact">
+    <div class="sec-k">지원 · 문의</div>
+    <div class="sec-h">언제든 도와드리겠습니다 💬</div>
+
+    <div class="support">
+      <div class="hrs">🕘 운영시간 <b>09:00–21:00 KST</b></div>
+      <div class="msgs">
+        <a class="wa-btn" href="https://wa.me/821082272845" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.943c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652a11.9 11.9 0 005.71 1.454h.006c6.585 0 11.946-5.359 11.949-11.945a11.86 11.86 0 00-3.48-8.418z"/></svg>
+          <span>왓츠앱 열기</span><span class="num">+82 10-8227-2845</span>
+        </a>
+        <button class="mchip" type="button" data-copy="pwresi">
+          <span class="badge line">LINE</span>
+          <span class="txt"><span class="k">라인 ID</span><span class="v">pwresi</span></span>
+          <span class="act">탭하여 복사</span>
+        </button>
+        <button class="mchip" type="button" data-copy="pwresi">
+          <span class="badge wechat">WeChat</span>
+          <span class="txt"><span class="k">위챗 ID</span><span class="v">pwresi</span></span>
+          <span class="act">탭하여 복사</span>
+        </button>
+      </div>
+      <div class="note info"><b>09:00–21:00 KST</b> 외 시간에 보내주신 메시지는 답변이 다소 지연될 수 있습니다 — 양해 부탁드립니다.</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="fm">PARADISE WALK RESIDENCE</div>
+    <div style="margin-top:6px;">장기 투숙 하우스 렌탈 · 인천공항</div>
+  </footer>
+
+</div>
+
+<script src="guide-data.js"></script>
+<script>
+(function(){
+  document.documentElement.lang = 'ko';
+
+  // 주변 안내(Around) — guide-data.js의 한국어 데이터로 렌더 (appt2026.html과 동일 로직, ko 고정)
+  var GD = window.GUIDE_DATA || { CATS: [], PLACES: {} };
+  var CATS = GD.CATS || [];
+  var PLACES = GD.PLACES || {};
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  (function renderAround(){
+    var host = document.getElementById('aroundBody');
+    if (!host) return;
+    var html = '';
+    for (var c=0;c<CATS.length;c++){
+      var cat = CATS[c], list = PLACES[cat.key] || [];
+      html += '<h3>' + cat.icon + ' ' + esc(cat.title.ko || cat.title.en) + '</h3>';
+      if (cat.intro){ html += '<p class="lead">' + esc(cat.intro.ko || cat.intro.en) + '</p>'; }
+      html += '<div class="places">';
+      for (var i=0;i<list.length;i++){
+        var p = list[i], dd = p.d || {}, desc = dd.ko || dd.en || '';
+        var body = '<div class="pbd"><div class="pn">' + esc(p.name) + '</div>' +
+                   (desc ? '<div class="pd">' + esc(desc) + '</div>' : '') + '</div>';
+        if (p.url){
+          html += '<a class="place" href="' + esc(p.url) + '" target="_blank" rel="noopener">' + body + '<div class="parrow" aria-hidden="true">↗</div></a>';
+        } else {
+          html += '<div class="place">' + body + '</div>';
+        }
+      }
+      html += '</div>';
+    }
+    host.innerHTML = html;
+  })();
+
+  // 탭 전환 (appt2026.html과 동일 — 저장 키 공유로 페이지 전환 시 같은 탭 유지)
+  var tabBtns = document.querySelectorAll('.tabbtn');
+  var panes = { checkin: document.getElementById('tab-checkin'), living: document.getElementById('tab-living'), nearby: document.getElementById('tab-nearby') };
+  var navs  = { checkin: document.getElementById('nav-checkin'), living: document.getElementById('nav-living'), nearby: document.getElementById('nav-nearby') };
+  function setTab(t){
+    for (var k in panes){ panes[k].hidden = (k !== t); navs[k].hidden = (k !== t); }
+    tabBtns.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-tab') === t); });
+    try { localStorage.setItem('pwr_appt_tab', t); } catch(e){}
+  }
+  tabBtns.forEach(function(b){
+    b.addEventListener('click', function(){ setTab(b.getAttribute('data-tab')); window.scrollTo(0,0); });
+  });
+  var savedTab = null; try { savedTab = localStorage.getItem('pwr_appt_tab'); } catch(e){}
+  setTab(panes[savedTab] ? savedTab : 'checkin');
+
+  // 탭하여 복사 (택시 주소, LINE/WeChat ID)
+  document.querySelectorAll('[data-copy]').forEach(function(el){
+    el.addEventListener('click', function(){
+      var val = el.getAttribute('data-copy');
+      var fb = el.querySelector('.act') || el;
+      var orig = fb.textContent;
+      var show = function(){ fb.textContent = '복사됨 ✓'; setTimeout(function(){ fb.textContent = orig; }, 1500); };
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(val).then(show).catch(show); }
+      else { show(); }
+    });
+  });
+})();
+</script>
