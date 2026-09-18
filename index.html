@@ -282,7 +282,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
     </div>
 
     <div class="photo map">
-      <img src="assets/images/Map-t2-4th-stop.jpg?v=2" alt="Map — 1st and 4th Hyatt stops; get off at the 4th, then a 1-minute walk to the crosswalk" loading="lazy" decoding="async">
+      <img id="t2map" src="assets/images/Map-t2-4th-stop.jpg?v=3" alt="Map — 1st and 4th Hyatt stops; get off at the 4th, then a 1-minute walk to the crosswalk" loading="lazy" decoding="async">
       <div class="cap" data-i18n="cap.t2map">The 1st stop is also a Grand Hyatt stop, but the 4th stop is closer — please get off at the 4th.</div>
     </div>
 
@@ -730,6 +730,8 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       var dict = I18N[lang];
       el.innerHTML = (lang === 'en' || !dict || dict[k] == null) ? base[k] : dict[k];
     });
+    var t2 = document.getElementById('t2map');   // T2 하차 지도 — 언어별 라벨판 (2026-09-18)
+    if (t2) t2.src = 'assets/images/Map-t2-4th-stop' + (lang === 'en' ? '' : '.' + lang) + '.jpg?v=3';
     renderAround(lang);
     document.documentElement.lang = lang;
     for (var i=0;i<btns.length;i++){ btns[i].classList.toggle('active', btns[i].getAttribute('data-lang') === lang); }
