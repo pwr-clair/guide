@@ -1,10 +1,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
-<title>Paradise Walk Residence — Extended Stay Guide</title>
+<title>Paradise Walk Residence — Stay Guide</title>
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png?v=red1">
 <link rel="icon" type="image/png" sizes="64x64" href="assets/icons/favicon-64.png?v=red1">
-<meta name="description" content="Extended stay guide for Paradise Walk Residence near Incheon Airport — check-in & payment, shuttle, daily living, shopping help, Paradise City, and neighborhood. EN / KO / JA / ZH.">
+<meta name="description" content="Stay guide for Paradise Walk Residence near Incheon Airport — free airport shuttle, finding the building, check-in and check-out, daily living, and the neighborhood.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,25 +12,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 
 <style>
-/* Editorial card reskin (2026-08-04, 클라라 지시) — 포커 미디어 톤을 '20%'만 차용.
+/* Editorial card reskin (2026-08-04, 클라라 지시) — 네이비·골드·연회색 하이엔드 팔레트 (2026-08-27 클라라 지시).
    차용분: 흰 카드 + 연분홍 배경 틴트, 크림슨 액센트 칩, 볼드 헤드라인, 부드러운 그림자, 넉넉한 라운드.
    과하지 않게: 다크 썸네일·풀블리드 그래픽은 쓰지 않음. index.html(아이보리)과 별개 테마. */
 :root{
-  --paper:#FBF7F8;      /* very light pink-gray */
-  --paper2:#F6F1F3;
+  --paper:#F2F4F8;      /* light gray ground */
+  --paper2:#E9ECF3;
   --card:#FFFFFF;
-  --ink:#1A1622;        /* near-black plum */
-  --ink2:#5B5566;
-  --muted:#9A93A3;
-  --line:#EBE5E9;
-  --rule:#E2DAE0;
-  --go:#1A1622;   --go-soft:#F4F1F7;
-  --night:#2A2440;--night-soft:#F3F1F8;   /* deep plum — 솔리드 바 */
-  --warn:#D81E4A; --warn-soft:#FDEFF3;    /* crimson accent */
-  --amber:#D81E4A;--amber-soft:#FDEFF3;
-  --yellow:#E8A317;
+  --ink:#0F1A33;        /* deep navy, near-black */
+  --ink2:#4B5670;
+  --muted:#8A94AC;
+  --line:#E1E5EE;
+  --rule:#D2D8E5;
+  --go:#0F1A33;   --go-soft:#EDF0F7;
+  --night:#16244C;--night-soft:#EDF1F9;   /* navy — solid bars */
+  --warn:#C39412; --warn-soft:#FDF7E4;    /* gold accent */
+  --amber:#C39412;--amber-soft:#FDF7E4;
+  --gold:#E0AE1F; --gold-hi:#F5D67E; --gold-ink:#6B4E05;
+  --shell:#0B142B;   /* navy ground behind the reading column */
+  --yellow:#E0AE1F;
   --wa:#25D366;
-  --r:16px; --rs:12px;  /* 라운드 복귀 */
+  --r:16px; --rs:12px;
   --mono:'Space Grotesk','Pretendard Variable',sans-serif;
   --sans:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Hiragino Sans','Yu Gothic',Meiryo,'PingFang SC','Microsoft YaHei','Noto Sans CJK KR','Segoe UI',sans-serif;
 }
@@ -38,7 +40,7 @@
 [hidden]{display:none!important;} /* nav.jump의 display:flex가 hidden 속성을 이기지 않도록 */
 html{-webkit-text-size-adjust:100%;}
 body{
-  background:var(--paper);color:var(--ink);
+  background:var(--shell);color:var(--ink);
   font-family:var(--sans);font-size:15.5px;line-height:1.62;
   -webkit-font-smoothing:antialiased;
 }
@@ -47,8 +49,8 @@ a{color:var(--night);text-decoration:none;}
 button{font-family:inherit;cursor:pointer;}
 
 /* ---- shell ---- */
-.wrap{max-width:460px;margin:0 auto;min-height:100vh;background:var(--paper);
-  box-shadow:0 0 60px rgba(26,22,34,.06);}
+.wrap{max-width:460px;margin:0 auto;min-height:100vh;background:var(--paper);border-top:3px solid var(--gold);
+  box-shadow: 0 0 80px rgba(0,0,0,.45);}
 
 /* ---- hero ---- */
 .hero{position:relative;padding:48px 22px 26px;
@@ -72,18 +74,18 @@ button{font-family:inherit;cursor:pointer;}
 .lg{width:30px;height:30px;padding:0;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   font-size:17px;line-height:1;background:var(--card);
-  border:1px solid var(--line);box-shadow:0 1px 3px rgba(26,22,34,.08);opacity:.55;}
+  border:1px solid var(--line);box-shadow:0 1px 3px rgba(15,26,51,.08);opacity:.55;}
 .lg.active{opacity:1;border:2px solid var(--warn);box-shadow:0 2px 8px rgba(216,30,74,.22);}
 
 /* ---- sticky topbar: tabs + section nav ---- */
-.topbar{position:sticky;top:0;z-index:6;background:rgba(251,247,248,.96);
+.topbar{position:sticky;top:0;z-index:6;background:rgba(242,244,248,.96);
   backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
 .tabs{display:flex;gap:7px;padding:11px 16px 0;}
 .tabbtn{flex:1;font-family:var(--sans);font-size:13px;font-weight:700;
   letter-spacing:-.1px;padding:11px 8px;border-radius:12px;
   border:1px solid var(--line);background:var(--card);color:var(--ink2);white-space:nowrap;}
 .tabbtn.active{background:var(--ink);color:#fff;border-color:var(--ink);
-  box-shadow:0 3px 10px rgba(26,22,34,.18);}
+  box-shadow:0 3px 10px rgba(15,26,51,.18);}
 /* 점프 메뉴: 타이포 인덱스 유지 + 소프트 구분점 */
 nav.jump{display:flex;align-items:center;gap:9px;overflow-x:auto;
   padding:0 18px;margin-top:9px;border-top:1px solid var(--line);scrollbar-width:none;}
@@ -99,7 +101,7 @@ nav.jump a+a::before{content:'';display:inline-block;width:4px;height:4px;border
 section{padding:30px 20px 8px;scroll-margin-top:128px;}
 /* 섹션 키커: 크림슨 칩 (뉴스 카드의 날짜 배지 느낌을 아주 옅게) */
 .sec-k{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;
-  letter-spacing:1.4px;text-transform:uppercase;color:#fff;background:var(--warn);
+  letter-spacing:1.4px;text-transform:uppercase;color:var(--gold-hi);background:var(--night);
   border-radius:100px;padding:4px 11px 5px;}
 .sec-h{font-size:23px;font-weight:800;line-height:1.22;margin:9px 0 16px;letter-spacing:-.5px;}
 p{margin-bottom:13px;color:var(--ink);}
@@ -108,7 +110,7 @@ h3{font-size:16px;font-weight:800;margin:22px 0 9px;letter-spacing:-.3px;}
 
 /* ---- cards / images ---- */
 .photo{border-radius:var(--rs);overflow:hidden;border:1px solid var(--line);
-  background:var(--card);margin:12px 0;box-shadow:0 2px 10px rgba(26,22,34,.06);}
+  background:var(--card);margin:12px 0;box-shadow:0 2px 10px rgba(15,26,51,.06);}
 .photo img{width:100%;height:220px;object-fit:cover;}
 /* 지도·도면류: 원본 비율 그대로(잘림 없음) */
 .photo.map img{height:auto;object-fit:contain;background:#fff;}
@@ -126,7 +128,7 @@ h3{font-size:16px;font-weight:800;margin:22px 0 9px;letter-spacing:-.3px;}
 /* ---- clean timetable ---- */
 .tt-title .tt-sub{display:block;font-weight:400;font-size:12.5px;color:var(--muted);margin-top:3px;letter-spacing:.2px;}
 .tt{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:12px 0;
-  box-shadow:0 2px 10px rgba(26,22,34,.06);}
+  box-shadow:0 2px 10px rgba(15,26,51,.06);}
 .tt .tt-h{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.4px;
   color:#fff;padding:12px 14px;background:var(--night);}
 .tt table{width:100%;border-collapse:collapse;}
@@ -139,7 +141,7 @@ h3{font-size:16px;font-weight:800;margin:22px 0 9px;letter-spacing:-.3px;}
 
 /* ---- route steps ---- */
 .route{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
-  padding:16px 16px 6px;margin:12px 0;box-shadow:0 2px 10px rgba(26,22,34,.06);}
+  padding:16px 16px 6px;margin:12px 0;box-shadow:0 2px 10px rgba(15,26,51,.06);}
 .route .rt{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.4px;
   color:#fff;background:var(--night);border-radius:12px;padding:11px 13px;
   margin-bottom:14px;display:flex;align-items:center;gap:8px;}
@@ -177,7 +179,7 @@ ol.steps li b{color:var(--ink);}
 .note b{font-weight:700;}
 
 /* ---- stack: 카드·사진·노트를 한 덩어리로 잇기 (바깥 모서리만 라운드) ---- */
-.stack{margin:12px 0;border-radius:var(--r);box-shadow:0 2px 10px rgba(26,22,34,.06);}
+.stack{margin:12px 0;border-radius:var(--r);box-shadow:0 2px 10px rgba(15,26,51,.06);}
 .stack>*{margin:0!important;border-radius:0!important;box-shadow:none!important;}
 .stack>*+*{border-top:none!important;}
 .stack>:first-child{border-radius:var(--r) var(--r) 0 0!important;}
@@ -185,12 +187,12 @@ ol.steps li b{color:var(--ink);}
 
 /* ---- address / taxi card ---- */
 .addr{background:var(--ink);color:#fff;border-radius:var(--r);padding:18px 18px 16px;margin:14px 0;
-  box-shadow:0 4px 16px rgba(26,22,34,.18);}
+  box-shadow:0 4px 16px rgba(15,26,51,.18);}
 .addr .lbl{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;
-  color:#B8AFC6;text-transform:uppercase;margin-bottom:10px;}
+  color:#9FB0D6;text-transform:uppercase;margin-bottom:10px;}
 .addr .kr{font-size:17px;font-weight:700;line-height:1.4;letter-spacing:-.2px;}
-.addr .drop{font-size:15.5px;font-weight:600;line-height:1.5;margin-top:9px;color:#FF9DB6;}
-.addr .en{font-size:13px;color:#C9C2D3;margin-top:10px;line-height:1.45;}
+.addr .drop{font-size:15.5px;font-weight:600;line-height:1.5;margin-top:9px;color:var(--gold-hi);}
+.addr .en{font-size:13px;color:#B7C2DA;margin-top:10px;line-height:1.45;}
 .addr .row{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap;}
 .addr .abtn{flex:1 1 auto;text-align:center;font-family:var(--mono);font-size:12px;
   font-weight:700;letter-spacing:.4px;border-radius:10px;padding:11px;
@@ -199,7 +201,7 @@ ol.steps li b{color:var(--ink);}
 
 /* ---- fact rows ---- */
 .facts{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
-  background:var(--card);margin:12px 0;box-shadow:0 2px 10px rgba(26,22,34,.06);}
+  background:var(--card);margin:12px 0;box-shadow:0 2px 10px rgba(15,26,51,.06);}
 .facts .f{display:flex;gap:12px;padding:13px 15px;border-top:1px solid var(--line);}
 .facts .f:first-child{border-top:none;}
 .facts .f .ic{flex:0 0 22px;font-size:17px;line-height:1.4;text-align:center;}
@@ -209,8 +211,8 @@ ol.steps li b{color:var(--ink);}
 .facts .f .d{font-size:13.5px;color:var(--ink2);line-height:1.5;}
 .facts .f .d b{color:var(--ink);}
 .facts .f.warn{background:var(--warn-soft);box-shadow:inset 3px 0 0 var(--warn);}
-.facts .f.warn .t,.facts .f.warn .d{color:#9A1436;}
-.facts .f.warn .d b{color:#7C0F2B;}
+.facts .f.warn .t,.facts .f.warn .d{color:var(--gold-ink);}
+.facts .f.warn .d b{color:#4E3B0F;}
 .facts .f.ok{background:var(--night-soft);box-shadow:inset 3px 0 0 var(--night);}
 .facts .f.ok .t,.facts .f.ok .d{color:var(--ink);}
 .facts .f.ok .d b{color:var(--night);}
@@ -223,7 +225,7 @@ ol.steps li b{color:var(--ink);}
 .place{display:flex;align-items:center;gap:11px;background:var(--card);
   border:1px solid var(--line);border-radius:13px;padding:13px;color:var(--ink);
   text-decoration:none;-webkit-tap-highlight-color:transparent;
-  box-shadow:0 1px 6px rgba(26,22,34,.05);
+  box-shadow:0 1px 6px rgba(15,26,51,.05);
   transition:border-color .15s ease, transform .05s ease;}
 .place:active{transform:scale(.99);}
 @media (hover:hover){ .place:hover{border-color:var(--warn);} }
@@ -235,7 +237,7 @@ ol.steps li b{color:var(--ink);}
 
 /* ---- support & contact ---- */
 .support{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
-  padding:16px;margin:12px 0 0;box-shadow:0 2px 10px rgba(26,22,34,.06);}
+  padding:16px;margin:12px 0 0;box-shadow:0 2px 10px rgba(15,26,51,.06);}
 .support .hrs{font-size:15px;font-weight:600;margin-bottom:13px;}
 .support .hrs b{font-family:var(--mono);font-weight:700;letter-spacing:.5px;}
 .support .ota{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);
@@ -272,35 +274,37 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
 
   <!-- ═══════════ 1. WELCOME ═══════════ -->
   <header class="hero">
-    <div class="langs">
-      <button type="button" class="lg" data-lang="en" title="English" aria-label="English">🇬🇧</button>
-      <button type="button" class="lg" data-lang="ko" title="한국어" aria-label="한국어">🇰🇷</button>
-      <button type="button" class="lg" data-lang="ja" title="日本語" aria-label="日本語">🇯🇵</button>
-      <button type="button" class="lg" data-lang="zh" title="中文" aria-label="中文">🇨🇳</button>
-    </div>
+    <div class="langs"><button type="button" class="lg active" data-lang="en" title="English" aria-label="English">🇬🇧</button><button type="button" class="lg" data-lang="ja" title="日本語" aria-label="日本語">🇯🇵</button><button type="button" class="lg" data-lang="zh" title="中文" aria-label="中文">🇨🇳</button></div>
     <img src="assets/images/PWR-logo-black.png" alt="PWR" class="logo">
     <div class="brandmark">Paradise Walk Residence</div>
     <h1 data-i18n="hero.h1">Welcome —<br>your extended stay guide</h1>
-    <p class="sub" data-i18n="hero.sub">🔑 This is an <b>unmanned residence</b> — there is no front desk. Everything you need, from arrival to daily living, is in this guide — use the <b>two tabs below</b>.</p>
+    <p class="sub" data-i18n="hero.sub">🔑 This is an <b>unmanned residence</b> — there is no front desk. Everything you need is here, across the <b>three tabs below</b>.</p>
     <div class="geo" aria-hidden="true"><span class="g-c"></span><span class="g-s"></span><span class="g-t"></span><span class="g-b"></span></div>
   </header>
 
   <div class="topbar">
     <div class="tabs">
       <button type="button" class="tabbtn active" data-tab="checkin" data-i18n="tab.checkin">🔑 Check-in / out</button>
-      <button type="button" class="tabbtn" data-tab="living" data-i18n="tab.living">🏠 Daily Living</button>
+      <button type="button" class="tabbtn" data-tab="living" data-i18n="tab.living">🏠 Your Stay</button>
+      <button type="button" class="tabbtn" data-tab="nearby" data-i18n="tab.nearby">📍 Nearby</button>
     </div>
     <nav class="jump" id="nav-checkin">
+      <a href="#checkin" data-i18n="nav.checkin">Check-in &amp; Check-out</a>
       <a href="#shuttle" data-i18n="nav.shuttle">Free Shuttle</a>
-      <a href="#building" data-i18n="nav.building">The Building</a>
-      <a href="#checkin" data-i18n="nav.checkin">Check-in</a>
+      <a href="#building" data-i18n="nav.building">Finding the Building</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
     <nav class="jump" id="nav-living" hidden>
       <a href="#living" data-i18n="nav.living">Living</a>
+      <a href="#room" data-i18n="nav.room">Your Room</a>
+      <a href="#kitchen" data-i18n="nav.kitchen">Kitchen</a>
+      <a href="#rules" data-i18n="nav.rules">House Rules</a>
       <a href="#shopping" data-i18n="nav.shopping">Shopping</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <nav class="jump" id="nav-nearby" hidden>
       <a href="#paradise" data-i18n="nav.paradise">Paradise City</a>
-      <a href="#around" data-i18n="nav.around">Around</a>
+      <a href="#around" data-i18n="nav.around">The Neighborhood</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
   </div>
@@ -309,6 +313,24 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
        TAB 1 — CHECK-IN / OUT
        ════════════════════════════════════════════ -->
   <div id="tab-checkin">
+
+  <!-- ─── CHECK-IN & CHECK-OUT ─── -->
+  <section id="checkin">
+    <div class="sec-k" data-i18n="ci.k">Check-in &amp; Check-out</div>
+    <div class="sec-h" data-i18n="ci.h">Check-in guide 🔑</div>
+    <p class="lead" data-i18n="ci.lead">Your stay begins here — please take a moment to look through the arrival and departure details below.</p>
+
+    <div class="facts">
+      <div class="f ok"><div class="ic">🕒</div><div class="bd">
+        <div class="t" data-i18n="checkin.t">Check-in</div>
+        <div class="d" data-i18n="checkin.d">From <b>3:00 PM</b>.<span class="subnote">Regular check-in is from 3:00 PM — but if you tell us your expected arrival time on the day, we'll have your room ready for that time. We'll do our best to make early check-in possible, so please just let us know what time suits you.</span></span></span></div>
+      </div></div>
+      <div class="f warn"><div class="ic">🕚</div><div class="bd">
+        <div class="t" data-i18n="checkout.t">Check-out</div>
+        <div class="d" data-i18n="checkout.d">By <b>11:00 AM</b>.<span class="subnote">On your last day: please close the windows and turn off the air conditioning, make sure you haven't left anything behind, and simply close the door on your way out.</span></span></span></div>
+      </div></div>
+    </div>
+  </section>
 
   <!-- ─── FREE SHUTTLE ─── -->
   <section id="shuttle">
@@ -345,7 +367,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
     </div>
 
     <div class="photo map">
-      <img id="t2map" src="assets/images/Map-t2-4th-stop.jpg?v=3" alt="Map — 1st and 4th Hyatt stops; get off at the 4th, then a 1-minute walk to the crosswalk" loading="lazy" decoding="async">
+      <img src="assets/images/Map-t2-4th-stop.jpg?v=3" alt="Map — 1st and 4th Hyatt stops; get off at the 4th, then a 1-minute walk to the crosswalk" loading="lazy" decoding="async">
       <div class="cap" data-i18n="cap.t2map">The 1st stop is also a Grand Hyatt stop, but the 4th stop is closer — please get off at the 4th.</div>
     </div>
 
@@ -410,7 +432,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
   <section id="building">
     <div class="sec-k" data-i18n="bld.k">Finding the Building</div>
     <div class="sec-h" data-i18n="bld.h">You've arrived 📍</div>
-    <p class="lead" data-i18n="bld.lead">Recognize the building from these photos, then head straight up by elevator.</p>
+    <p class="lead" data-i18n="bld.lead">Please recognize the building from the photos below, then head straight up by elevator.</p>
 
     <div class="photo">
       <img src="assets/images/Building.jpg" alt="Building exterior" loading="lazy" decoding="async">
@@ -435,37 +457,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       <img src="assets/images/Door.jpeg" alt="Room door with keypad lock" loading="lazy" decoding="async">
       <div class="cap" data-i18n="cap.door">YOUR ROOM DOOR — KEYPAD LOCK</div>
     </div>
-    <div class="note info" data-i18n="bld.door">🔢 Every room door has a keypad lock. Enter the keypad PIN you received by message.</div>
-  </section>
-
-  <!-- ─── CHECK-IN & PAYMENT ─── -->
-  <section id="checkin">
-    <div class="sec-k" data-i18n="ci.k">Check-in &amp; Payment</div>
-    <div class="sec-h" data-i18n="ci.h">Check-in guide 🔑</div>
-    <p class="lead" data-i18n="ci.lead">Your extended stay begins here — please check the payment part in advance.</p>
-
-    <div class="facts">
-      <div class="f ok"><div class="ic">🕒</div><div class="bd">
-        <div class="t" data-i18n="checkin.t">Check-in</div>
-        <div class="d" data-i18n="checkin.d">From <b>3:00 PM</b>.<span class="subnote">Regular check-in is from 3:00 PM — but if you tell us your expected arrival time on the day, we'll have your room ready for that time. We'll do our best to make early check-in possible, so just let us know what time suits you.</span></div>
-      </div></div>
-      <div class="f warn"><div class="ic">🕚</div><div class="bd">
-        <div class="t" data-i18n="checkout.t">Check-out</div>
-        <div class="d" data-i18n="checkout.d">By <b>11:00 AM</b>.<span class="subnote">On your last day: please close the windows and turn off the air conditioning, make sure you haven't left anything behind, and simply close the door on your way out.</span></div>
-      </div></div>
-      <div class="f"><div class="ic">🏦</div><div class="bd">
-        <div class="t" data-i18n="ci.bank.t">Paying by bank transfer</div>
-        <div class="d" data-i18n="ci.bank.d">Please complete the transfer <b>by one day before arrival</b>. From overseas, we recommend <b><a href="https://wise.com" target="_blank" rel="noopener">Wise</a></b> — fast international transfers in KRW with low fees. We'll send the transfer details by message.</div>
-      </div></div>
-      <div class="f"><div class="ic">💵</div><div class="bd">
-        <div class="t" data-i18n="ci.cash.t">Paying in cash on arrival day</div>
-        <div class="d" data-i18n="ci.cash.d">We'll meet you in person to complete the contract — since there is no front desk, please <b>arrange your arrival time with us in advance</b> by message.</div>
-      </div></div>
-      <div class="f ok"><div class="ic">🔑</div><div class="bd">
-        <div class="t" data-i18n="ci.code.t">Room number &amp; door code</div>
-        <div class="d" data-i18n="ci.code.d">Sent via your <b>booking platform's message</b> between <b>2:30–3:00 PM</b> on arrival day.</div>
-      </div></div>
-    </div>
+    <div class="note info" data-i18n="bld.door">🔢 Every room door has a keypad lock. Please enter the <b>keypad PIN for your room</b> that you were given.</div>
   </section>
 
   </div><!-- /tab-checkin -->
@@ -481,42 +473,30 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
     <div class="sec-h" data-i18n="live.h">Living here 🏠</div>
 
     <div class="facts">
-      <div class="f"><div class="ic">🔑</div><div class="bd">
-        <div class="t" data-i18n="home.rent.t">A house rental, by contract</div>
-        <div class="d" data-i18n="home.rent.d">Your stay is a <b>short-term house rental under your contract</b> — for its whole duration, the room is your own private home.</div>
-      </div></div>
-      <div class="f ok"><div class="ic">🚪</div><div class="bd">
-        <div class="t" data-i18n="home.priv.t">Complete privacy &amp; security</div>
-        <div class="d" data-i18n="home.priv.d">For the whole of your stay, the room is entirely your own space — no outside staff comes in for routine housekeeping. That also means <b>your valuables and personal belongings are safe to leave in the room</b>, exactly as you left them.</div>
+      <div class="f ok"><div class="ic">🔑</div><div class="bd">
+        <div class="t" data-i18n="home.priv.t">Your own private home, by contract</div>
+        <div class="d" data-i18n="home.priv.d">Your stay is a <b>short-term house rental under contract</b> — for its whole duration the room is entirely your own space. <b>No outside staff comes in for routine housekeeping</b>, which also means your valuables and personal belongings are safe to leave in the room, exactly as you left them.</div>
       </div></div>
       <div class="f"><div class="ic">⏰</div><div class="bd">
         <div class="t" data-i18n="home.clock.t">Freedom to live on your own clock</div>
-        <div class="d" data-i18n="home.clock.d">If your schedule turns nights into days, nothing here will wake you — <b>there is no morning housekeeping knock</b>. Every room has <b>blackout curtains</b>, and a <b>complimentary silk sleep mask</b> is provided — so whenever you turn in, a comfortable sleep is waiting.</div>
+        <div class="d" data-i18n="home.clock.d">If your schedule turns nights into days, nothing here will wake you — <b>there is no morning housekeeping knock</b>. Every room has <b>blackout curtains</b> — so whenever you turn in, a comfortable sleep is waiting.</div>
       </div></div>
     </div>
 
-    <h3 data-i18n="live.room.h">In your room</h3>
+    <h3 id="room" data-i18n="live.room.h">In your room</h3>
     <div class="stack">
     <div class="facts">
       <div class="f"><div class="ic">📶</div><div class="bd">
         <div class="t">Wi-Fi</div>
-        <div class="d" data-i18n="wifi.d">The Wi-Fi info sticker is <b>where the TV remote is</b>.</div>
+        <div class="d" data-i18n="wifi.d">The info sticker is <b>where the TV remote is</b>.</div>
       </div></div>
       <div class="f"><div class="ic">💧</div><div class="bd">
         <div class="t" data-i18n="water.t">Water</div>
-        <div class="d" data-i18n="water.d">The water in the <b>fridge and in the wardrobe</b> is complimentary.</div>
-      </div></div>
-      <div class="f"><div class="ic">🎁</div><div class="bd">
-        <div class="t" data-i18n="gift.t">Welcome treats, on us</div>
-        <div class="d" data-i18n="gift.d">A small welcome for our extended-stay guests — a hand-picked set of the Korean best-sellers visitors love most: the <b>drinks in the fridge</b> (yes, the famous <b>banana milk</b>!), Korea's classic <b>instant mix coffee</b>, <b>four best-selling cup noodles</b> — all complimentary. ⚠️ Some of the cup noodles are <b>seriously spicy</b> — if spice isn't your thing, please skip those.</div>
-      </div></div>
-      <div class="f"><div class="ic">🌙</div><div class="bd">
-        <div class="t" data-i18n="curt.t">Blackout curtains</div>
-        <div class="d" data-i18n="curt.d">The curtains are <b>blackout curtains</b> — draw them and the room stays dark and restful, so you can <b>sleep comfortably whenever you turn in</b>, day or night. (At midday a soft glow may come through, but it's a world of difference from leaving them open — and it helps keep the room cool in summer, too.)</div>
+        <div class="d" data-i18n="water.d">Water in the <b>fridge and wardrobe</b> is complimentary.</div>
       </div></div>
       <div class="f"><div class="ic">🌡️</div><div class="bd">
         <div class="t" data-i18n="hvac.t">Heating &amp; Cooling</div>
-        <div class="d" data-i18n="hvac.d">Fan-coil system — the control panel is <b>next to the bathroom door</b> (or beside the refrigerator).</div>
+        <div class="d" data-i18n="hvac.d">Fan-coil system — the panel is <b>next to the bathroom door</b> (or beside the fridge).</div>
       </div></div>
     </div>
 
@@ -527,7 +507,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
     <div class="note info" data-i18n="hvac.note">❄️ Seasonal update: as outdoor temperatures have dropped, government guidelines mean the building's air conditioning operates <b>only between 9:00 AM and 11:00 PM</b> starting <b>September 7</b>. Outside those hours the outside air is pleasantly cool — <b>open the window and run the fan</b> and your room stays comfortably cool. The photo above shows the panel at maximum cooling (COOL · 20.0°C · fan at max).</div>
     </div><!-- /stack -->
 
-    <h3 data-i18n="kit.h">Kitchen 🍳</h3>
+    <h3 id="kitchen" data-i18n="kit.h">Kitchen 🍳</h3>
     <div class="stack">
     <div class="photo">
       <img src="assets/images/kitchen.jpg" alt="The kitchen behind the folding doors — sink, stove, microwave and utensils" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'">
@@ -536,7 +516,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
     <div class="facts">
       <div class="f"><div class="ic">🍽️</div><div class="bd">
         <div class="t" data-i18n="kit.uten.t">Utensils</div>
-        <div class="d" data-i18n="kit.uten.d">Everything is washed and sanitized before your arrival, and we keep strict hygiene standards with regular cleaning. Please handle the utensils with care, and <b>wash and put them back in place after use</b>. Need anything beyond what's provided? Just message us.</div>
+        <div class="d" data-i18n="kit.uten.d">Everything is washed and sanitized before your arrival. Please handle the utensils with care, and <b>wash and put them back in place after use</b>. Need anything beyond what's provided? Just message us.</div>
       </div></div>
       <div class="f"><div class="ic">☕</div><div class="bd">
         <div class="t" data-i18n="kit.small.t">Kettle &amp; microwave</div>
@@ -544,7 +524,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       </div></div>
       <div class="f warn"><div class="ic">🔥</div><div class="bd">
         <div class="t" data-i18n="kit.stove.t">Stove — careful, it stays hot</div>
-        <div class="d" data-i18n="kit.stove.d">The surface stays <b>extremely hot until the residual-heat indicator (photo below) turns off</b> — beware of burns. Once it's off, please <b>wipe the surface</b> — stains that get reheated become very hard to remove, so we recommend wiping right after each use.</div>
+        <div class="d" data-i18n="kit.stove.d">The surface stays <b>extremely hot until the residual-heat indicator (photo below) turns off</b> — please beware of burns. Once it's off, please <b>wipe the surface</b> — stains that get reheated become very hard to remove, so we recommend wiping right after each use.</div>
       </div></div>
     </div>
     <div class="photo map">
@@ -560,8 +540,8 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
         <li data-i18n="ldy.s1">Press the power button to turn on the machine.</li>
         <li data-i18n="ldy.s2">Load your laundry and add the detergent.</li>
         <li data-i18n="ldy.s3">Close the washing machine door.</li>
-        <li data-i18n="ldy.s4">Select the water level, washing method and cycle according to the amount of laundry.</li>
-        <li data-i18n="ldy.s5">Press Start — that's it!</li>
+        <li data-i18n=\"ldy.s4\">Select the water level, washing method and cycle according to the amount of laundry.</li>
+        <li data-i18n=\"ldy.s5\">Press Start — that's it!</li>
       </ol>
     </div>
     <div class="facts">
@@ -574,8 +554,12 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
         <div class="d" data-i18n="ldy.rack.d">Tucked away <b>next to the refrigerator</b> — after use, please fold it neatly and slide it back!</div>
       </div></div>
       <div class="f"><div class="ic">🧺</div><div class="bd">
-        <div class="t" data-i18n="ldy.svc.t">Service, whenever you ask</div>
-        <div class="d" data-i18n="ldy.svc.d"><b>Towels, bedding and supplies</b> are replenished on request, and if you'd like a <b>mid-stay cleaning</b>, just let us know in advance and we'll arrange it (paid service: ₩30,000).</div>
+        <div class="t" data-i18n="ldy.svc.t">Towels, bedding &amp; supplies</div>
+        <div class="d" data-i18n="ldy.svc.d">Replenished on request at any time — please just let us know.</div>
+      </div></div>
+      <div class="f ok"><div class="ic">🧹</div><div class="bd">
+        <div class="t" data-i18n="clean.t">One free mid-stay cleaning</div>
+        <div class="d" data-i18n="clean.d"><b>One cleaning during your stay is complimentary</b> — just the one, so please use it whenever suits you best. We kindly ask that you book it through <b>WhatsApp</b> or another direct messenger <b>at least one day in advance</b>.</div>
       </div></div>
     </div>
 
@@ -589,8 +573,8 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       <div class="rt"><span data-i18n="tv.rt">📺 If the TV acts up</span></div>
       <ol class="steps">
         <li data-i18n="tv.t1">Check if the <b>set-top box under the TV</b> shows a red light — if so, press the <b>'Set-top Power' button (① in the photo)</b> to turn it blue.</li>
-        <li data-i18n="tv.t2">Check if the <b>small connector device behind the TV</b> shows a red light — if so, unplug it and plug it back in until it turns blue.</li>
-        <li data-i18n="tv.t3">Still not working? <b>Message us</b> — we'll sort it out!</li>
+        <li data-i18n="tv.t2">Check if the <b>small connector device behind the TV</b> shows a red light — if so, please unplug it and plug it back in until it turns blue.</li>
+        <li data-i18n="tv.t3">Still not working? <b>Please message us</b> — we'll sort it out right away.</li>
       </ol>
     </div>
 
@@ -615,15 +599,15 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
     <div class="facts">
       <div class="f ok"><div class="ic">🧻</div><div class="bd">
         <div class="t" data-i18n="help.sup.t">Supplies — free refills</div>
-        <div class="d" data-i18n="help.sup.d">Toilet paper, trash bags, detergent and the like are <b>refilled free of charge</b>. Just message us when you run low — <b>WhatsApp</b> reaches us fastest.</div>
+        <div class="d" data-i18n="help.sup.d">Toilet paper, trash bags, detergent and similar essentials are <b>refilled free of charge</b>. Please just message us whenever you run low — <b>WhatsApp</b> reaches us fastest.</div>
       </div></div>
       <div class="f"><div class="ic">🔧</div><div class="bd">
         <div class="t" data-i18n="help.fix.t">Something not working?</div>
-        <div class="d" data-i18n="help.fix.d">Anything at all — <b>message us on WhatsApp</b> and we'll take care of it.</div>
+        <div class="d" data-i18n="help.fix.d">Anything at all — please <b>message us on WhatsApp</b> and we'll take care of it.</div>
       </div></div>
     </div>
 
-    <h3 data-i18n="notice.h">Notice</h3>
+    <h3 id="rules" data-i18n="notice.h">Notice</h3>
     <div class="facts">
       <div class="f"><div class="ic">🅿️</div><div class="bd">
         <div class="t" data-i18n="park.t">Parking (Paid Parking Only)</div>
@@ -637,7 +621,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
         <div class="t" data-i18n="max2.t">Max 2 guests</div>
         <div class="d" data-i18n="max2.d">Per room.</div>
       </div></div>
-      <div class="f warn"><div class="ic">🐾</div><div class="bd">
+      <div class="f"><div class="ic">🐾</div><div class="bd">
         <div class="t" data-i18n="pets.t">No pets</div>
         <div class="d" data-i18n="pets.d">Pets are not allowed.</div>
       </div></div>
@@ -652,26 +636,32 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
   <section id="shopping">
     <div class="sec-k" data-i18n="shop.k">Shopping Help</div>
     <div class="sec-h" data-i18n="shop.h">Online shopping, arranged for you 🛒</div>
-    <p class="lead" data-i18n="shop.lead">Korean shopping sites need local accounts and payment — so for our extended stay guests, we're happy to order things for you.</p>
+    <p class="lead" data-i18n="shop.lead">Korean shopping sites require a local account and payment method, so we're always happy to place orders on your behalf.</p>
 
     <div class="facts">
       <div class="f"><div class="ic">🛒</div><div class="bd">
         <div class="t" data-i18n="shop.what.t">How it works</div>
-        <div class="d" data-i18n="shop.what.d">Bottled water, groceries and other daily items — <b>message us what you need</b>, and we'll find the right item and check it with you first.</div>
+        <div class="d" data-i18n="shop.what.d">Bottled water, groceries and other daily items — <b>please message us what you need</b>, and we'll find the right item and check it with you first.</div>
       </div></div>
       <div class="f"><div class="ic">🚚</div><div class="bd">
         <div class="t" data-i18n="shop.how.t">To your door</div>
-        <div class="d" data-i18n="shop.how.d">We handle the ordering for you — it's delivered <b>right to your room door</b>.</div>
+        <div class="d" data-i18n="shop.how.d">We handle the ordering for you, and it's delivered <b>right to your room door</b>.</div>
       </div></div>
       <div class="f"><div class="ic">💵</div><div class="bd">
         <div class="t" data-i18n="shop.pay.t">Payment</div>
-        <div class="d" data-i18n="shop.pay.d">The item cost is covered by the guest, <b>paid in cash</b> — we'll arrange the payment details with you by message.</div>
+        <div class="d" data-i18n="shop.pay.d">The item cost is covered by the guest, <b>paid in cash</b> — we'll arrange the details with you by message.</div>
       </div></div>
     </div>
-    <div class="note warm" data-i18n="shop.note">🚚 Delivery in Korea is usually next-day — when possible, tell us a day ahead.</div>
+    <div class="note warm" data-i18n="shop.note">🚚 Delivery in Korea is usually next-day — when possible, we\'d be grateful for a day\'s notice.</div>
   </section>
 
-  <!-- ─── TO PARADISE CITY ─── -->
+  </div><!-- /tab-living -->
+
+  <!-- ════════════════════════════════════════════
+       TAB 3 — NEARBY
+       ════════════════════════════════════════════ -->
+  <div id="tab-nearby" hidden>
+
   <section id="paradise">
     <div class="sec-k" data-i18n="pc.k">Getting Around</div>
     <div class="sec-h" data-i18n="pc.h">To Paradise City 🎰</div>
@@ -711,7 +701,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
     <div id="aroundBody"></div>
   </section>
 
-  </div><!-- /tab-living -->
+  </div><!-- /tab-nearby -->
 
   <!-- ═══════════ SUPPORT & CONTACT (both tabs) ═══════════ -->
   <section id="contact">
@@ -737,7 +727,6 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
         </button>
       </div>
       <div class="note info" data-i18n="note.delay">Messages sent outside <b>09:00–21:00 KST</b> may get a slightly delayed reply — thank you for your patience.</div>
-      <div class="ota" data-i18n="ota">Or simply reply in your <b>booking platform</b> message thread — Booking.com, Agoda, or Expedia.</div>
     </div>
   </section>
 
@@ -753,423 +742,371 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
 (function(){
   // ── translation dictionary (EN is the in-DOM baseline; KO/JA/ZH here) ──
   var I18N = {
-    ko: {
-      "hero.h1": `환영합니다 —<br>장기 숙박 가이드`,
-      "hero.sub": `🔑 저희는 <b>프런트가 없는 무인 레지던스</b>입니다. 도착부터 생활까지 필요한 내용을 이 가이드에 모두 담았습니다 — <b>아래 두 개의 탭</b>으로 나뉘어 있습니다.`,
-      "tab.checkin": `🔑 체크인/아웃 안내`, "tab.living": `🏠 생활 참고`,
-      "nav.shuttle": `무료 셔틀`, "nav.building": `건물 찾기`, "nav.checkin": `체크인`, "nav.contact": `연락`,
-      "nav.living": `생활`, "nav.shopping": `구매대행`, "nav.paradise": `파라다이스시티`, "nav.around": `주변`,
-      "shuttle.k": `오시는 길`, "shuttle.h": `무료 공항 셔틀 🚌`,
-      "shuttle.lead": `공항과 건물을 오가는 무료 순환버스가 있습니다. 아래에서 도착하시는 터미널을 선택해 주십시오.`,
-      "cap.overview": `T1 셔틀 경로 한눈에 보기`,
-      "cap.t2map": `첫 번째 정류장도 하얏트 호텔이지만, 네 번째 정류장이 더 가깝습니다. 네 번째 하얏트 호텔 정류장에서 내리시기 바랍니다.`,
-      "pill.t1": `T1에서`, "rt.t1": `터미널 1 → PWR`,
-      "s.t1.1": `<b>3층 출국장</b>의 <b>3번 또는 12번 게이트</b>로 가십시오.`,
-      "s.t1.2": `<b>03번 순환버스</b>(AICC 방면)에 탑승하십시오.`,
-      "s.t1.3": `<b>첫 번째 정류장</b>에서 하차하십시오 — <span class="stopname">그랜드 하얏트 호텔(Grand Hyatt Hotel)</span>.`,
-      "s.t1.time": `<table class="bt"><tr><td class="lbl">게이트</td><th>3</th><th>12</th></tr><tr><td class="lbl">🕒 첫차</td><td>05:08</td><td>05:10</td></tr><tr><td class="lbl">🕒 막차</td><td>00:30</td><td>00:32</td></tr></table><div class="foot">배차 간격 7–20분 · 2026년 7월 기준</div>`,
-      "s.walkcross": `버스가 가던 방향으로 조금 걸어가 횡단보도를 건너면 <b>바로 앞이 저희 건물입니다</b>.`,
-      "note.walk": `🧳 T1에서 도보 이동도 가능합니다(약 15분). 다만 짐이 있으시면 권해 드리지 않습니다.`,
-      "pill.t2": `T2에서`, "rt.t2": `터미널 2 → PWR`,
-      "s.t2.1": `<b>3층</b>의 <b>7번 게이트</b>로 가십시오.`,
-      "s.t2.2": `동일한 <b>03번 버스</b>에 탑승하십시오.`,
-      "s.t2.3": `<b>네 번째 정류장</b>에서 하차하십시오 — <span class="stopname">그랜드 하얏트 호텔(Grand Hyatt Hotel)</span>.<br><span class="stopalt">첫 번째 정류장도 하얏트 호텔이지만, 네 번째 정류장이 더 가깝습니다. 네 번째 하얏트 호텔 정류장에서 내리시기 바랍니다.</span>`,
-      "s.t2.time": `<table class="bt"><tr><td class="lbl">🕒 첫차</td><td>04:48</td></tr><tr><td class="lbl">🕒 막차</td><td>23:48</td></tr></table><div class="foot">배차 간격 7–20분 · 2026년 7월 기준</div>`,
-      "cap.recognize": `이 건물이 보이면 도착하신 것입니다`,
-      "pill.air": `공항으로`, "rt.air": `PWR → 터미널 (T1/T2)`,
-      "s.air.1": `정문으로 나와 <b>인천국제공항공사</b> 건물 쪽으로 길을 건너십시오.`,
-      "s.air.2": `오른쪽으로 걸어가 가장 가까운 정류장으로 이동하십시오.`,
-      "s.air.3": `<b>04번 버스</b>에 탑승하십시오.`,
-      "s.air.4": `<b>T1</b> 약 5분(2정거장) · <b>T2</b> 약 25분(4정거장).`,
-      "s.air.time": `<table class="bt"><tr><td class="lbl">🕒 첫차</td><td>05:01</td></tr><tr><td class="lbl">🕒 막차</td><td>23:51</td></tr></table><div class="foot">배차 간격 7–20분 · 2026년 7월 기준</div>`,
-      "cap.toairstop": `공항 방면 정류장 — 지도 오른쪽의 국제업무단지(Int'l Business Center) 정류장입니다. 시간표는 아래에 있습니다 ↓`,
-      "tt.title": `시간표: INT'L BUSINESS CENTER<span class="tt-sub">(오른쪽 정류장)</span>`,
-      "tt.head": `🕒 04번 버스 — 국제업무단지(Int'l Business Center) 정류장 출발`,
-      "tt.note": `왼쪽은 '시', 칸 안 숫자는 그 시각의 '분'입니다 (05:00–12:59).`,
-      "taxi.k": `택시 이용`, "taxi.h": `택시를 이용하시는 경우 🚕`, "taxi.lead": `기사님께 이 화면을 보여주십시오:`,
-      "addr.lbl": `기사님께 보여주십시오`, "addr.copy": `⧉ 복사`, "addr.maps": `구글 지도에서 열기 ↗`,
-      "bld.k": `건물 찾기`, "bld.h": `도착하셨습니다 📍`,
-      "bld.lead": `아래 사진으로 건물을 확인하시고, 엘리베이터로 올라오시면 됩니다.`,
-      "cap.exterior": `건물 외관`, "cap.entrance": `정문`, "cap.lobby": `로비`, "cap.elevator": `엘리베이터 — 1층`,
-      "cap.door": `객실 문 — 키패드 잠금`,
-      "bld.door": `🔢 모든 객실 문은 키패드 잠금 방식입니다. 메시지로 받으신 비밀번호를 입력해 주십시오.`,
-      "ci.k": `체크인·결제`, "ci.h": `체크인 안내 🔑`,
-      "ci.lead": `장기 숙박은 여기서 시작됩니다 — 결제 부분만 미리 확인해 주시기 바랍니다.`,
-      "checkin.t": `체크인`, "checkin.d": `<b>오후 3:00</b>부터입니다.<span class="subnote">정규 체크인 시간은 오후 3시이지만, 도착하시는 날 예상 시간을 알려주시면 해당 시간에 맞추어 객실을 준비해 드리고 있습니다. 이른 체크인도 가능할 수 있도록 최선을 다하겠으니 편하신 시간을 알려주시기 바랍니다.</span>`,
-      "checkout.t": `체크아웃`, "checkout.d": `<b>오전 11:00</b>까지입니다.<span class="subnote">마지막 날에는 창문을 닫고 에어컨을 꺼 주시기 바랍니다. 두고 가시는 물건이 없는지 확인하신 뒤 문을 닫고 나가시면 됩니다.</span>`,
-      "ci.bank.t": `입금(계좌이체)으로 결제하시는 경우`,
-      "ci.bank.d": `입금은 <b>도착 1일 전까지</b> 완료해 주시기 바랍니다. 해외에서는 국제 송금 앱 <b><a href="https://wise.com" target="_blank" rel="noopener">Wise</a></b>를 추천드립니다 — 원화(KRW)로 빠르고 수수료가 낮습니다. 입금 정보는 메시지로 보내드립니다.`,
-      "ci.cash.t": `도착 당일 현금으로 계약하시는 경우`,
-      "ci.cash.d": `직접 만나 계약을 진행합니다 — 프런트가 없는 곳이므로 <b>도착 시간을 미리 메시지로 조율</b>해 주셔야 합니다.`,
-      "ci.code.t": `객실 번호·도어코드`,
-      "ci.code.d": `도착일 <b>오후 2:30–3:00 사이</b>에 <b>예약하신 부킹 플랫폼 메시지</b>로 보내드립니다.`,
-      "live.k": `생활 참고`, "live.h": `이곳에서의 생활 🏠`,
-      "home.rent.t": `계약에 의한 하우스 렌탈`,
-      "home.rent.d": `장기 숙박은 <b>계약에 따른 단기 하우스 렌탈</b>입니다 — 머무시는 기간 내내 객실은 온전히 게스트분만의 집이 됩니다.`,
-      "home.priv.t": `완전한 프라이버시와 보안`,
-      "home.priv.d": `체류 기간 중 객실은 온전히 게스트분만의 공간입니다 — 정기 하우스키핑을 위해 외부 인력이 객실을 드나드는 일이 없습니다. 따라서 <b>귀중품이나 개인 소지품을 그대로 두고 외출하셔도 안전합니다</b>.`,
-      "home.clock.t": `생활 리듬에 맞춘 자유`,
-      "home.clock.d": `일정에 따라 밤낮이 바뀌셔도 <b>아침 청소에 잠을 깨실 일이 없습니다</b> — 늦은 시간까지 일정을 보내시고 낮에 편히 쉬시는 분들께는 이 점이 가장 큰 차이로 다가옵니다. 전 객실에 <b>암막커튼</b>을 완비해 두었으며, <b>실크 수면안대</b>도 무료로 제공해 드립니다. 언제 주무시더라도 편안한 수면 환경을 갖추었습니다.`,
-      "live.room.h": `객실 안내`,
-      "wifi.d": `<b>TV 리모컨이 있는 곳</b>에 와이파이 안내 스티커가 부착되어 있습니다.`,
-      "water.t": `생수`, "water.d": `<b>냉장고와 옷장 안의 생수</b>는 무료로 제공됩니다.`,
-      "gift.t": `웰컴 선물`, "gift.d": `장기 숙박 게스트를 위해 준비했습니다 — 한국을 찾는 외국인들이 가장 많이 찾는 베스트셀러로 골랐습니다. <b>냉장고 속 음료</b>, 한국의 국민 <b>믹스커피</b>, <b>베스트셀러 컵라면 4개</b>까지 전부 무료입니다. ⚠️ 컵라면 중에는 <b>매우 매운 제품</b>도 있습니다 — 매운 음식이 익숙하지 않으시다면 피해 주시기 바랍니다.`,
-      "curt.t": `암막커튼`, "curt.d": `<b>암막커튼</b>이 설치되어 있습니다. 커튼을 치면 방이 어둡고 아늑해져 <b>낮이든 밤이든 언제 주무셔도 편안하게</b> 쉬실 수 있습니다. 한낮에는 은은하게 빛이 들 수 있으나 커튼을 치지 않았을 때와는 큰 차이가 있으며, 여름철 실내 온도를 낮추는 데에도 도움이 됩니다.`,
-      "hvac.t": `냉난방`, "hvac.d": `팬코일 방식이며, 조절 패널은 <b>욕실 문 옆</b>(또는 냉장고 옆)에 있습니다.`,
-      "cap.hvac": `냉방 조절 패널 — 사진과 같은 상태가 최대 출력`,
-      "hvac.note": `❄️ 계절 안내: 바깥 기온이 낮아져 정부 지침에 따라 <b>9월 7일부터</b> 건물 에어컨(냉방)은 <b>오전 9시~오후 11시에만 가동</b>됩니다. 그 외 시간에는 바깥 공기가 차가워서 <b>창문을 열고 선풍기를 켜시면</b> 시원하게 지내실 수 있습니다. 위 사진 상태가 냉방 최대 출력입니다(COOL · 20.0°C · 팬 최대).`,
-      "kit.h": `주방 🍳`,
-      "cap.kitchen": `주방 — 접이문 안쪽에 있습니다`,
-      "kit.uten.t": `조리도구`,
-      "kit.uten.d": `모든 조리도구는 도착 전 세척·소독하며, 정기 청소로 위생을 엄격히 관리하고 있습니다. 소중히 다루어 주시고, <b>사용 후에는 세척하여 제자리에 정리</b>해 주시기 바랍니다. 추가 조리도구가 필요하시면 메신저로 알려주십시오.`,
-      "kit.small.t": `전기포트·전자레인지`,
-      "kit.small.d": `전기포트와 전자레인지가 준비되어 있습니다.`,
-      "kit.stove.t": `스토브 — 화상 주의`,
-      "kit.stove.d": `사용 후에도 <b>잔열 표시등(아래 사진)이 꺼질 때까지 상판이 매우 뜨겁습니다</b> — 화상에 주의하시기 바랍니다. 표시등이 꺼진 뒤에는 <b>상판을 닦아 주십시오</b> — 얼룩이 남은 채 다시 가열되면 제거가 어려워지므로, 사용 직후 닦아 주시기를 권해 드립니다.`,
-      "cap.stove": `잔열 표시등 — 켜져 있는 동안 상판이 매우 뜨겁습니다`,
-      "ldy.h": `세탁 🧺`,
-      "ldy.rt": `🧺 세탁기 사용법`,
-      "ldy.s1": `전원 버튼을 눌러 세탁기를 켜십시오.`,
-      "ldy.s2": `세탁물과 세제를 넣으십시오.`,
-      "ldy.s3": `세탁기 문을 닫으십시오.`,
-      "ldy.s4": `세탁량에 맞춰 물높이·세탁 방법·코스를 선택하십시오.`,
-      "ldy.s5": `시작 버튼을 누르면 완료됩니다.`,
-      "ldy.det.t": `세제·섬유유연제`,
-      "ldy.det.d": `욕실 문 바로 앞 <b>수납장 맨 아래 칸</b>에 있습니다.`,
-      "ldy.rack.t": `빨래 건조대`,
-      "ldy.rack.d": `<b>냉장고 옆</b>에 세워져 있습니다 — 사용 후에는 접어서 다시 냉장고 옆에 보관해 주시기 바랍니다.`,
-      "ldy.svc.t": `필요할 때 요청하는 서비스`,
-      "ldy.svc.d": `<b>수건·침구·소모품</b>은 요청 시 별도로 보충해 드리며, <b>중간 청소</b>가 필요하신 경우 사전에 말씀 주시면 별도로 조율해 드립니다 (유료: 30,000 KRW).`,
-      "help.h": `도움이 필요하실 때 🙋`,
-      "help.sup.t": `소모품`,
-      "help.sup.d": `휴지, 쓰레기봉투, 세제 등 소모품은 <b>무료로 보충해 드립니다</b>.`,
-      "help.fix.t": `고장이나 이상이 있는 경우`,
-      "help.fix.d": `<b>WhatsApp으로 메시지</b> 주시면 빠르게 확인해 드리겠습니다.`,
-      "tv.h": `TV — 넷플릭스·유튜브 📺`,
-      "tv.use": `📺 TV로 <b>넷플릭스와 유튜브</b>를 시청하실 수 있습니다 — 리모컨 아래쪽의 <b>넷플릭스·유튜브 버튼</b>을 누르시면 바로 열립니다.`,
-      "cap.remote": `리모컨 — ① 셋톱 전원 버튼`,
-      "tv.rt": `📺 TV가 작동하지 않을 때`,
-      "tv.t1": `TV 아래 <b>셋톱박스에 빨간불</b>이 들어와 있는지 확인하십시오 — 빨간불이면 리모컨의 <b>'셋톱 전원' 버튼(사진의 ①)</b>을 눌러 파란불로 바꿔 주십시오.`,
-      "tv.t2": `TV 뒤 <b>작은 커넥터 장치에 빨간불</b>이 있는지 확인하십시오 — 빨간불이면 플러그를 뽑았다가 파란불이 될 때까지 다시 꽂아 주십시오.`,
-      "tv.t3": `그래도 되지 않으면 <b>저희에게 연락 주시기 바랍니다</b> — 바로 도와드리겠습니다.`,
-      "trash.h": `쓰레기 버리기 🗑️`,
-      "trash.lead": `분리 배출은 간단합니다 — 객실에 수거함이 있으며, 배출 장소는 아래층 한 곳입니다.`,
-      "trash.gen.t": `일반 쓰레기`,
-      "trash.gen.d": `현관 <b>신발장에 있는 흰색 봉투</b>를 사용해 주시기 바랍니다.<br>🥕 음식물 쓰레기도 함께: <b>물기를 최대한 제거하고 비닐봉투에 밀봉</b>하여 일반 쓰레기 봉투에 넣어 주십시오 — 폭염철에는 냄새·누수 방지에 특히 중요합니다.`,
-      "trash.rec.t": `분리수거(재활용)`,
-      "trash.rec.d": `병·캔·플라스틱·종이는 <b>문 앞의 흰색 바구니</b>에 모아 주시기 바랍니다.`,
-      "trash.out.t": `버리는 곳`,
-      "trash.out.d": `<b>건물 후문으로 나가면 오른쪽에 쓰레기장</b>이 있습니다. 봉투나 바구니가 차면 그곳에 배출해 주시면 됩니다.`,
-      "notice.h": `안내 사항`,
-      "park.t": `주차 (유료 주차만 가능)`, "park.d": `요금: 최초 20분 <b>₩1,000</b> (이후 30분마다 <b>₩1,000</b> 추가) · 하루 최대 <b>₩50,000</b>.<br>안내: 공항 인근 규정이 엄격하여 숙소를 통한 무료 주차나 할인은 제공해 드리기 어렵습니다. 양해 부탁드립니다.`,
-      "smoke.t": `전면 금연`, "smoke.d": `숙소 전체가 엄격한 금연 구역입니다. 실내 흡연으로 침구·가구·벽지에 냄새나 손상이 발생하면, 복원에 필요한 전문 클리닝 비용이 부득이하게 청구됩니다. 특히 <b>담배 연기가 천장의 화재경보기에 닿으면 건물 전체에 경보가 울립니다</b> — 각별히 주의해 주시기 바랍니다. <b>건물 밖에서는 어디서든 흡연이 가능합니다</b>.`,
-      "max2.t": `최대 2인`, "max2.d": `한 객실 기준입니다.`,
-      "pets.t": `반려동물 불가`, "pets.d": `반려동물 동반은 불가합니다.`,
-      "party.t": `파티·소음 금지`, "party.d": `적발 시 즉시 퇴실 사유가 될 수 있습니다.`,
-      "shop.k": `구매 도움`, "shop.h": `온라인 구매대행 🛒`,
-      "shop.lead": `한국 쇼핑몰은 현지 계정과 결제수단이 필요하므로, 장기 게스트분들을 위해 저희가 대신 주문해 드립니다.`,
-      "shop.what.t": `이렇게 진행됩니다`,
-      "shop.what.d": `생수, 식재료 등 필요한 물품을 <b>메시지로 문의</b>해 주십시오 — 해당 물품을 찾아 먼저 안내해 드립니다.`,
-      "shop.how.t": `문앞까지 배송`,
-      "shop.how.d": `주문은 저희가 대신 진행하며, <b>객실 문앞까지 배송</b>해 드립니다.`,
-      "shop.pay.t": `결제`,
-      "shop.pay.d": `물품비는 게스트 부담이며 <b>현금으로 결제</b>하시면 됩니다 — 지불 방법은 메시지로 협의해 주시기 바랍니다.`,
-      "shop.note": `🚚 한국 택배는 보통 다음날 도착합니다 — 가능하면 하루 전에 미리 말씀해 주시기 바랍니다.`,
-      "pc.k": `주변 이동`, "pc.h": `파라다이스시티 가는 길 🎰`,
-      "pc.lead": `파라다이스시티 리조트·카지노는 바로 옆에 있습니다 — <b>도보 1~2분</b>이면 충분합니다.`,
-      "pc.pill.walk": `도보`, "pc.rt.walk": `PWR → 파라다이스시티 · 1~2분`,
-      "pc.w.1": `1층으로 내려와 <b>편의점 Emart24 옆에 있는 문</b>으로 나가십시오.`,
-      "pc.w.2": `아래 사진의 노란 경로를 따라 걸으면 <b>바로 파라다이스시티</b>입니다.`,
-      "pc.w.3": `<b>1~2분</b>이면 도착합니다 — 이 길이 최단거리입니다.`,
-      "cap.pcphoto": `가는 길 — 1층 Emart24 옆문으로 나와 노란 경로를 따라가십시오`,
-      "cap.pcmap": `같은 경로를 지도로 보기`,
-      "around.k": `건물 주변`, "around.h": `주변 안내 🗺️`,
-      "cap.aroundmap": `위 지도에 표시된 모든 장소는 도보 5~10분 이내에 있습니다`,
-      "contact.k": `지원·연락처`, "contact.h": `다이렉트 연락처 💬`,
-      "hrs": `🕘 운영 시간 <b>09:00–21:00 (KST)</b>`, "wa": `WhatsApp 바로가기`, "copy.tap": `탭하여 복사`,
-      "note.delay": `<b>09:00–21:00 (KST)</b> 외 시간에 주신 메시지는 답장이 다소 늦을 수 있습니다 — 양해 부탁드립니다.`,
-      "ota": `<b>예약하신 플랫폼</b> 메시지로 연락 주셔도 됩니다 — Booking.com, Agoda, Expedia.`,
-      "foot.tag": `장기 숙박 하우스 렌탈 · 인천공항`
-    },
     ja: {
-      "hero.h1": `ようこそ —<br>長期滞在ガイド`,
-      "hero.sub": `🔑 当施設は<b>フロントのない無人レジデンス</b>です。ご到着から日々の暮らしまで、必要な情報をこのガイドにまとめました — <b>下の2つのタブ</b>をご利用ください。`,
-      "tab.checkin": `🔑 チェックイン/アウト`, "tab.living": `🏠 暮らしの参考`,
-      "nav.shuttle": `無料シャトル`, "nav.building": `建物`, "nav.checkin": `チェックイン`, "nav.contact": `連絡先`,
-      "nav.living": `暮らし`, "nav.shopping": `購入代行`, "nav.paradise": `パラダイスシティ`, "nav.around": `周辺`,
-      "shuttle.k": `アクセス`, "shuttle.h": `無料空港シャトル 🚌`,
-      "shuttle.lead": `空港と建物を結ぶ無料の循環バスがあります。下でターミナルをお選びください。`,
+      "addr.copy": `⧉ コピー`,
+      "addr.lbl": `運転手にお見せください`,
+      "addr.maps": `Googleマップで開く ↗`,
+      "around.h": `近隣スポット 🗺️`,
+      "around.k": `周辺のご案内`,
+      "bld.door": `🔢 各部屋のドアはキーパッド錠です。お伝えした<b>お部屋のキーパッド暗証番号</b>を入力してください。`,
+      "bld.h": `到着です 📍`,
+      "bld.k": `建物を探す`,
+      "bld.lead": `下の写真で建物をご確認のうえ、そのままエレベーターでお上がりください。`,
+      "cap.aroundmap": `上の地図に表示されたすべての場所は、徒歩5〜10分圏内にあります`,
+      "cap.door": `客室ドア — キーパッドロック`,
+      "cap.elevator": `エレベーター — 1階`,
+      "cap.entrance": `正面玄関`,
+      "cap.exterior": `建物の外観`,
+      "cap.hvac": `冷房パネル — 写真の状態が最大出力`,
+      "cap.kitchen": `キッチン — 折れ戸を開けると現れます`,
+      "cap.lobby": `ロビー`,
       "cap.overview": `T1 シャトル経路の概要`,
-      "cap.t2map": `1つ目の停留所もハイアットホテルですが、4つ目の停留所の方が近いです。4つ目のハイアット停留所で下車してください。`,
-      "pill.t1": `T1から`, "rt.t1": `第1ターミナル → PWR`,
-      "s.t1.1": `<b>3F（出発フロア）</b>の<b>3番または12番ゲート</b>へ。`,
-      "s.t1.2": `循環<b>03番バス</b>（AICC方面）に乗車。`,
-      "s.t1.3": `<b>1つ目の停留所</b>で下車 — <span class="stopname">ハイアットホテル(Grand Hyatt Hotel)</span>。`,
-      "s.t1.time": `<table class="bt"><tr><td class="lbl">ゲート</td><th>3</th><th>12</th></tr><tr><td class="lbl">🕒 始発</td><td>05:08</td><td>05:10</td></tr><tr><td class="lbl">🕒 終発</td><td>00:30</td><td>00:32</td></tr></table><div class="foot">運行間隔 7〜20分。(2026年7月時点)</div>`,
-      "s.walkcross": `バスの進行方向へ少し歩き、横断歩道を渡ると — <b>目の前が当施設です</b>。`,
-      "note.walk": `🧳 T1から徒歩（約15分）も可能ですが、お荷物が多い場合はおすすめしません。`,
-      "pill.t2": `T2から`, "rt.t2": `第2ターミナル → PWR`,
-      "s.t2.1": `<b>3F</b>の<b>7番ゲート</b>へ。`,
-      "s.t2.2": `同じ<b>03番バス</b>に乗車。`,
-      "s.t2.3": `<b>4つ目の停留所</b>で下車 — <span class="stopname">ハイアットホテル(Grand Hyatt Hotel)</span>。<br><span class="stopalt">1つ目の停留所もハイアットホテルですが、4つ目の停留所の方が近いです。4つ目のハイアット停留所で下車してください。</span>`,
-      "s.t2.time": `<table class="bt"><tr><td class="lbl">🕒 始発</td><td>04:48</td></tr><tr><td class="lbl">🕒 終発</td><td>23:48</td></tr></table><div class="foot">運行間隔 7〜20分。(2026年7月時点)</div>`,
+      "cap.pcmap": `同じルートを地図で`,
+      "cap.pcphoto": `行き方 — 1階Emart24横のドアから出て、黄色いルートに沿って`,
       "cap.recognize": `この建物が見えたら到着です`,
-      "pill.air": `空港へ`, "rt.air": `PWR → ターミナル (T1/T2)`,
+      "cap.remote": `リモコン — ① セットトップ電源ボタン`,
+      "cap.stove": `残熱表示灯 — 点灯中は天板が非常に高温です`,
+      "cap.t2map": `1つ目の停留所もハイアットホテルですが、4つ目の停留所の方が近いです。4つ目のハイアット停留所で下車してください。`,
+      "cap.toairstop": `空港行きの停留所 — 地図右側の国際ビジネスセンター（Int'l Business Center）。時刻表は下にあります ↓`,
+      "checkin.d": `<b>15:00</b>から。<span class="subnote">通常のチェックインは15:00からですが、当日にご到着予定時刻をお知らせいただければ、その時間に合わせてお部屋をご用意いたします。アーリーチェックインもできる限り対応いたしますので、ご都合の良い時間をお知らせください。`,
+      "checkin.t": `チェックイン`,
+      "checkout.d": `<b>11:00</b>まで。<span class="subnote">最終日は、窓を必ず閉め、エアコンをお切りください。お忘れ物がないかご確認のうえ、ドアを閉めてお発ちいただければ大丈夫です。</span>`,
+      "checkout.t": `チェックアウト`,
+      "ci.bank.d": `お振込は<b>ご到着の1日前まで</b>にお願いします。海外からは国際送金アプリ<b><a href="https://wise.com" target="_blank" rel="noopener">Wise</a></b>がおすすめです — ウォン（KRW）建てで速く、手数料も低めです。振込先はメッセージでお送りします。`,
+      "ci.bank.t": `銀行振込でお支払いの場合`,
+      "ci.cash.d": `直接お会いして契約を行います — フロントがないため、<b>ご到着時間を事前にメッセージでご調整</b>ください。`,
+      "ci.cash.t": `ご到着当日に現金でご契約の場合`,
+      "ci.code.d": `ご到着日の<b>午後2:30〜3:00の間</b>に、<b>ご予約のプラットフォームのメッセージ</b>でお送りします。`,
+      "ci.code.t": `部屋番号・ドアコード`,
+      "ci.h": `チェックインのご案内 🔑`,
+      "ci.k": `チェックイン・チェックアウト`,
+      "ci.lead": `ご滞在はここから始まります — 到着と出発についての内容を、少しだけご確認ください。`,
+      "clean.d": `<b>ご滞在中、1回の清掃を無料でご提供します</b> — 1回のみですので、ご都合の良いタイミングでお使いください。<b>WhatsApp</b> などのメッセンジャーから<b>前日までに</b>ご予約をお願いいたします。`,
+      "clean.t": `滞在中1回の無料清掃`,
+      "contact.h": `お気軽にご連絡ください 💬`,
+      "contact.k": `サポート・連絡先`,
+      "copy.tap": `タップでコピー`,
+      "curt.d": `<b>遮光カーテン</b>を設置しています。カーテンを閉めるとお部屋が暗く落ち着いた雰囲気になり、<b>昼夜を問わず、いつでも快適に</b>お休みいただけます。（日中はほのかに光が入ることもありますが、開けている時とは大違いです。夏は室温を下げるのにも役立ちます。）`,
+      "curt.t": `遮光カーテン`,
+      "foot.tag": `長期滞在ハウスレンタル · 仁川空港`,
+      "help.fix.d": `どんなことでも — <b>WhatsApp でメッセージ</b>をいただければ、すぐに対応いたします。`,
+      "help.fix.t": `故障・不具合があれば`,
+      "help.h": `お困りのときは 🙋`,
+      "help.sup.d": `トイレットペーパー、ゴミ袋、洗剤などの消耗品は<b>無料で補充</b>いたします。少なくなりましたらいつでもご連絡ください — <b>WhatsApp</b> が一番早く届きます。`,
+      "help.sup.t": `消耗品 — 無料で補充します`,
+      "hero.h1": `ようこそ —<br>長期滞在ガイド`,
+      "hero.sub": `🔑 当施設は<b>フロントのない無人レジデンス</b>です。必要な情報はすべてこのガイドに、<b>下の3つのタブ</b>に分けてまとめてあります。`,
+      "home.clock.d": `昼夜が逆転する生活でも、ここでは何にも起こされません — <b>朝の清掃スタッフがノックすることはありません</b>。全室に<b>遮光カーテン</b>を備えていますので、いつお休みになっても快適な睡眠が待っています。`,
+      "home.clock.t": `生活リズムに合わせた自由`,
+      "home.priv.d": `ご滞在は<b>契約に基づく短期住宅賃貸</b>です — 期間中、お部屋は完全にお客様だけの空間になります。<b>定期清掃で外部スタッフが入ることはありません</b>ので、貴重品やお荷物もそのままお部屋に置いていただけます。`,
+      "home.priv.t": `契約に基づく、あなただけの住まい`,
+      "home.rent.d": `長期滞在は<b>契約に基づく短期ハウスレンタル</b>です — ご滞在の間、お部屋はまるごとご自身のお住まいになります。`,
+      "home.rent.t": `契約によるハウスレンタル`,
+      "hrs": `🕘 対応時間 <b>09:00–21:00（KST）</b>`,
+      "hvac.d": `ファンコイル方式 — 操作パネルは<b>浴室ドアの横</b>（または冷蔵庫の横）にあります。`,
+      "hvac.note": `❄️ 季節のご案内：外気温が下がってきたため、政府の指針により<b>9月7日から</b>建物の冷房は<b>午前9時〜午後11時のみ稼働</b>します。それ以外の時間帯は外の空気が涼しいので、<b>窓を開けて扇風機をつける</b>と快適にお過ごしいただけます。上の写真の状態が冷房の最大出力です（COOL · 20.0°C · ファン最大）。`,
+      "hvac.t": `冷暖房`,
+      "kit.h": `キッチン 🍳`,
+      "kit.small.d": `電気ケトルと電子レンジをご用意しています。`,
+      "kit.small.t": `電気ケトル・電子レンジ`,
+      "kit.stove.d": `<b>余熱表示（下の写真）が消えるまで表面は非常に熱い</b>ままです — やけどにご注意ください。消えましたら<b>表面を拭いて</b>ください。再加熱された汚れは落ちにくくなりますので、ご使用のたびにすぐ拭いていただくことをおすすめします。`,
+      "kit.stove.t": `コンロ — 高温にご注意`,
+      "kit.uten.d": `すべてご到着前に洗浄・消毒しております。食器類は丁寧にお取り扱いいただき、<b>ご使用後は洗って元の場所にお戻しください</b>。備品以外に必要なものがございましたら、お気軽にご連絡ください。`,
+      "kit.uten.t": `調理器具`,
+      "ldy.det.d": `浴室ドアのすぐ前にある<b>収納棚の一番下</b>にあります。`,
+      "ldy.det.t": `洗剤・柔軟剤`,
+      "ldy.h": `ランドリー 🧺`,
+      "ldy.rack.d": `<b>冷蔵庫の横</b>に収納されています — ご使用後はたたんで、また冷蔵庫の横に戻してください！`,
+      "ldy.rack.t": `物干しラック`,
+      "ldy.rt": `🧺 洗濯機の使い方`,
+      "ldy.s1": `電源ボタンを押して洗濯機をオンにします。</li> <li>洗濯物を入れ、洗剤を入れます。</li> <li>洗濯機のドアを閉めます。</li> <li>洗濯物の量に合わせて水位・洗濯方法・コースを選びます。</li> <li>スタートを押せば完了です！</li> </ol>`,
+      "ldy.s2": `洗濯物を入れ、洗剤を入れます。`,
+      "ldy.s3": `洗濯機のドアを閉めます。`,
+      "ldy.s4": `洗濯量に合わせて水位・洗い方・コースを選びます。`,
+      "ldy.s5": `スタートボタンを押せば完了！`,
+      "ldy.svc.d": `ご希望があればいつでも補充いたします — お気軽にお知らせください。`,
+      "ldy.svc.t": `タオル・寝具・備品`,
+      "live.h": `ここでの暮らし 🏠`,
+      "live.k": `暮らしの参考`,
+      "live.room.h": `お部屋について`,
+      "max2.d": `1部屋あたりの人数です。`,
+      "max2.t": `最大2名`,
+      "nav.around": `周辺`,
+      "nav.building": `建物を探す`,
+      "nav.checkin": `チェックイン・アウト`,
+      "nav.contact": `連絡先`,
+      "nav.kitchen": `キッチン`,
+      "nav.living": `暮らし`,
+      "nav.paradise": `パラダイスシティ`,
+      "nav.room": `お部屋`,
+      "nav.rules": `ハウスルール`,
+      "nav.shopping": `購入代行`,
+      "nav.shuttle": `無料シャトル`,
+      "note.delay": `<b>09:00–21:00（KST）</b>以外にいただいたメッセージは、返信が遅れる場合があります — ご了承ください。`,
+      "note.walk": `🧳 T1から徒歩（約15分）も可能ですが、お荷物が多い場合はおすすめしません。`,
+      "notice.h": `ご注意`,
+      "ota": `または<b>ご予約プラットフォーム</b>のメッセージからご返信いただいても構いません — Booking.com、Agoda、Expedia。`,
+      "park.d": `料金：最初の20分 <b>₩1,000</b>（以降30分ごとに<b>₩1,000</b>追加）・1日最大 <b>₩50,000</b>。<br>ご案内：空港周辺の規制が厳しいため、施設による無料駐車・割引はご提供できません。ご理解のほどお願いいたします。`,
+      "park.t": `駐車場（有料のみ）`,
+      "party.d": `違反は即時退去の対象となります。`,
+      "party.t": `パーティー・騒音禁止`,
+      "pc.h": `パラダイスシティへ 🎰`,
+      "pc.k": `周辺への移動`,
+      "pc.lead": `パラダイスシティ（リゾート＆カジノ）は文字通りすぐ隣です — <b>徒歩1〜2分</b>で到着します。`,
+      "pc.pill.walk": `徒歩`,
+      "pc.rt.walk": `PWR → パラダイスシティ · 1〜2分`,
+      "pc.w.1": `1階に降り、<b>コンビニEmart24の横にあるドア</b>から外に出てください。`,
+      "pc.w.2": `下の写真の黄色いルートに沿って歩くと、<b>すぐパラダイスシティ</b>です。`,
+      "pc.w.3": `所要時間は<b>1〜2分</b> — これが最短ルートです。`,
+      "pets.d": `ペットの入室はできません。`,
+      "pets.t": `ペット不可`,
+      "pill.air": `空港へ`,
+      "pill.t1": `T1から`,
+      "pill.t2": `T2から`,
+      "rt.air": `PWR → ターミナル (T1/T2)`,
+      "rt.t1": `第1ターミナル → PWR`,
+      "rt.t2": `第2ターミナル → PWR`,
       "s.air.1": `正面玄関を出て、<b>仁川国際空港公社</b>の建物へ向かって横断してください。`,
       "s.air.2": `右へ歩き、最寄りのバス停へ。`,
       "s.air.3": `<b>04番バス</b>に乗車。`,
       "s.air.4": `<b>T1</b> 約5分（2停留所）· <b>T2</b> 約25分（4停留所）。`,
       "s.air.time": `<table class="bt"><tr><td class="lbl">🕒 始発</td><td>05:01</td></tr><tr><td class="lbl">🕒 終発</td><td>23:51</td></tr></table><div class="foot">運行間隔 7〜20分。(2026年7月時点)</div>`,
-      "cap.toairstop": `空港行きの停留所 — 地図右側の国際ビジネスセンター（Int'l Business Center）。時刻表は下にあります ↓`,
-      "tt.title": `時刻表: INT'L BUSINESS CENTER<span class="tt-sub">(右側の停留所)</span>`,
-      "tt.head": `🕒 04番バス — 国際ビジネスセンター（Int'l Business Center）停留所発`,
-      "tt.note": `各行が「時」、数字がその時の「分」です（05:00–12:59の区間）。`,
-      "taxi.k": `タクシー`, "taxi.h": `タクシーをご利用ですか？🚕`, "taxi.lead": `運転手にこの画面をお見せください：`,
-      "addr.lbl": `運転手にお見せください`, "addr.copy": `⧉ コピー`, "addr.maps": `Googleマップで開く ↗`,
-      "bld.k": `建物を探す`, "bld.h": `到着です 📍`,
-      "bld.lead": `下の写真で建物を確認し、エレベーターでそのままお上がりください。`,
-      "cap.exterior": `建物の外観`, "cap.entrance": `正面玄関`, "cap.lobby": `ロビー`, "cap.elevator": `エレベーター — 1階`,
-      "cap.door": `客室ドア — キーパッドロック`,
-      "bld.door": `🔢 全ての客室のドアはキーパッド式です。メッセージで受け取った暗証番号を入力してください。`,
-      "ci.k": `チェックイン・お支払い`, "ci.h": `チェックインのご案内 🔑`,
-      "ci.lead": `長期滞在はここから始まります — お支払いの部分だけ事前にご確認ください。`,
-      "checkin.t": `チェックイン`, "checkin.d": `<b>15:00</b>から。<span class="subnote">正規のチェックインは15:00からですが、ご到着日のおおよその時間をお知らせいただければ、その時間に合わせてお部屋をご用意しています。アーリーチェックインもできる限り対応いたしますので、ご都合の良い時間をお知らせください。</span>`,
-      "checkout.t": `チェックアウト`, "checkout.d": `<b>11:00</b>まで。<span class="subnote">最終日は、窓を必ず閉め、エアコンをお切りください。お忘れ物がないかご確認のうえ、ドアを閉めてお発ちいただければ大丈夫です。</span>`,
-      "ci.bank.t": `銀行振込でお支払いの場合`,
-      "ci.bank.d": `お振込は<b>ご到着の1日前まで</b>にお願いします。海外からは国際送金アプリ<b><a href="https://wise.com" target="_blank" rel="noopener">Wise</a></b>がおすすめです — ウォン（KRW）建てで速く、手数料も低めです。振込先はメッセージでお送りします。`,
-      "ci.cash.t": `ご到着当日に現金でご契約の場合`,
-      "ci.cash.d": `直接お会いして契約を行います — フロントがないため、<b>ご到着時間を事前にメッセージでご調整</b>ください。`,
-      "ci.code.t": `部屋番号・ドアコード`,
-      "ci.code.d": `ご到着日の<b>午後2:30〜3:00の間</b>に、<b>ご予約のプラットフォームのメッセージ</b>でお送りします。`,
-      "live.k": `暮らしの参考`, "live.h": `ここでの暮らし 🏠`,
-      "home.rent.t": `契約によるハウスレンタル`,
-      "home.rent.d": `長期滞在は<b>契約に基づく短期ハウスレンタル</b>です — ご滞在の間、お部屋はまるごとご自身のお住まいになります。`,
-      "home.priv.t": `完全なプライバシーとセキュリティ`,
-      "home.priv.d": `ご滞在中、お部屋は完全にゲストだけの空間です — 定期ハウスキーピングのために外部スタッフが出入りすることはありません。そのため、<b>貴重品や私物をそのまま置いて外出されても安全</b>です。`,
-      "home.clock.t": `生活リズムに合わせた自由`,
-      "home.clock.d": `スケジュールで昼夜が逆転しても、<b>朝の清掃で起こされることはありません</b> — 遅くまで予定をこなし、昼間にゆっくり休む方には、これが一番大きな違いです。全室に<b>遮光カーテン</b>を完備し、<b>シルクのアイマスク</b>も無料でご用意しています。いつお休みになっても、快適な睡眠環境が整っています。`,
-      "live.room.h": `お部屋について`,
-      "wifi.d": `<b>テレビのリモコンがある場所</b>にWi-Fi案内のステッカーが貼ってあります。`,
-      "water.t": `お水`, "water.d": `<b>冷蔵庫とクローゼットの中のお水</b>は無料です。`,
-      "gift.t": `ウェルカムギフト`, "gift.d": `長期滞在のゲストのために、ささやかなプレゼントをご用意しました — 韓国を訪れる外国人に一番人気のベストセラーだけを選びました。<b>冷蔵庫のドリンク</b>（有名な<b>バナナウユ</b>も！）、韓国定番の<b>ミックスコーヒー</b>、<b>ベストセラーカップ麺4つ</b>まで — すべて無料です。⚠️ カップ麺の中には<b>とても辛いもの</b>もあります。辛いものが苦手な方はお控えください。`,
-      "curt.t": `遮光カーテン`, "curt.d": `<b>遮光カーテン</b>を設置しています。カーテンを閉めるとお部屋が暗く落ち着いた雰囲気になり、<b>昼夜を問わず、いつでも快適に</b>お休みいただけます。（日中はほのかに光が入ることもありますが、開けている時とは大違いです。夏は室温を下げるのにも役立ちます。）`,
-      "hvac.t": `冷暖房`, "hvac.d": `ファンコイル方式です。操作パネルは<b>浴室のドア横</b>（または冷蔵庫の横）にあります。`,
-      "cap.hvac": `冷房パネル — 写真の状態が最大出力`,
-      "hvac.note": `❄️ 季節のご案内：外気温が下がってきたため、政府の指針により<b>9月7日から</b>建物の冷房は<b>午前9時〜午後11時のみ稼働</b>します。それ以外の時間帯は外の空気が涼しいので、<b>窓を開けて扇風機をつける</b>と快適にお過ごしいただけます。上の写真の状態が冷房の最大出力です（COOL · 20.0°C · ファン最大）。`,
-      "kit.h": `キッチン 🍳`,
-      "cap.kitchen": `キッチン — 折れ戸を開けると現れます`,
-      "kit.uten.t": `調理器具`,
-      "kit.uten.d": `すべての調理器具はご到着前に洗浄・消毒し、定期清掃で衛生を厳格に管理しています。丁寧にお使いいただき、<b>使用後は洗って元の場所に戻して</b>ください。ご用意のもの以外に必要な調理器具があれば、メッセンジャーでお知らせください。`,
-      "kit.small.t": `電気ケトル・電子レンジ`,
-      "kit.small.d": `電気ケトルと電子レンジをご用意しています。`,
-      "kit.stove.t": `コンロ — 高温にご注意`,
-      "kit.stove.d": `ご使用後も<b>残熱表示灯（下の写真）が消えるまで天板は非常に熱く</b>、やけどにご注意ください。表示灯が消えたら<b>天板を拭いて</b>ください — 汚れが残ったまま再加熱すると落とすのが非常に難しくなるため、使用直後に拭き取ることを強くおすすめします。`,
-      "cap.stove": `残熱表示灯 — 点灯中は天板が非常に高温です`,
-      "ldy.h": `ランドリー 🧺`,
-      "ldy.rt": `🧺 洗濯機の使い方`,
-      "ldy.s1": `電源ボタンを押して洗濯機をつけます。`,
-      "ldy.s2": `洗濯物を入れ、洗剤を入れます。`,
-      "ldy.s3": `洗濯機のドアを閉めます。`,
-      "ldy.s4": `洗濯量に合わせて水位・洗い方・コースを選びます。`,
-      "ldy.s5": `スタートボタンを押せば完了！`,
-      "ldy.det.t": `洗剤・柔軟剤`,
-      "ldy.det.d": `浴室ドアのすぐ前にある<b>収納棚の一番下</b>にあります。`,
-      "ldy.rack.t": `物干しラック`,
-      "ldy.rack.d": `<b>冷蔵庫の横</b>に収納されています — ご使用後はたたんで、また冷蔵庫の横に戻してください！`,
-      "ldy.svc.t": `必要なときにリクエストするサービス`,
-      "ldy.svc.d": `<b>タオル・寝具・消耗品</b>はリクエストいただければ補充いたします。<b>滞在中の清掃</b>をご希望の場合は、事前にお知らせください — 個別に調整いたします（有料：30,000ウォン）。`,
-      "help.h": `お困りのときは 🙋`,
-      "help.sup.t": `消耗品 — 無料で補充します`,
-      "help.sup.d": `トイレットペーパー、ゴミ袋、洗剤などの消耗品は<b>無料で補充</b>いたします。少なくなったらお気軽にメッセージをどうぞ — <b>WhatsApp</b>が最も早くつながります。`,
-      "help.fix.t": `故障・不具合があれば`,
-      "help.fix.d": `どんなことでも<b>WhatsAppでメッセージ</b>をいただければすぐに対応いたします。`,
-      "tv.h": `テレビ — Netflix・YouTube 📺`,
-      "tv.use": `📺 テレビで<b>NetflixとYouTube</b>をお楽しみいただけます — リモコン下部の<b>Netflix・YouTubeボタン</b>を押すとすぐに開きます。`,
-      "cap.remote": `リモコン — ① セットトップ電源ボタン`,
-      "tv.rt": `📺 テレビの調子が悪いときは`,
-      "tv.t1": `テレビ下の<b>セットトップボックスに赤いランプ</b>が点いていないか確認してください — 赤い場合はリモコンの<b>「セットトップ電源」ボタン（写真の①）</b>を押して青に変えてください。`,
-      "tv.t2": `テレビ裏の<b>小さなコネクタ機器のランプが赤</b>になっていないか確認してください — 赤い場合は一度抜いて、青になるまで挿し直してください。`,
-      "tv.t3": `それでも直らない場合は、<b>ご連絡ください</b> — すぐに対応いたします！`,
+      "s.t1.1": `<b>3F（出発フロア）</b>の<b>3番または12番ゲート</b>へ。`,
+      "s.t1.2": `循環<b>03番バス</b>（AICC方面）に乗車。`,
+      "s.t1.3": `<b>1つ目の停留所</b>で下車 — <span class="stopname">ハイアットホテル(Grand Hyatt Hotel)</span>。`,
+      "s.t1.time": `<table class="bt"><tr><td class="lbl">ゲート</td><th>3</th><th>12</th></tr><tr><td class="lbl">🕒 始発</td><td>05:08</td><td>05:10</td></tr><tr><td class="lbl">🕒 終発</td><td>00:30</td><td>00:32</td></tr></table><div class="foot">運行間隔 7〜20分。(2026年7月時点)</div>`,
+      "s.t2.1": `<b>3F</b>の<b>7番ゲート</b>へ。`,
+      "s.t2.2": `同じ<b>03番バス</b>に乗車。`,
+      "s.t2.3": `<b>4つ目の停留所</b>で下車 — <span class="stopname">ハイアットホテル(Grand Hyatt Hotel)</span>。<br><span class="stopalt">1つ目の停留所もハイアットホテルですが、4つ目の停留所の方が近いです。4つ目のハイアット停留所で下車してください。</span>`,
+      "s.t2.time": `<table class="bt"><tr><td class="lbl">🕒 始発</td><td>04:48</td></tr><tr><td class="lbl">🕒 終発</td><td>23:48</td></tr></table><div class="foot">運行間隔 7〜20分。(2026年7月時点)</div>`,
+      "s.walkcross": `バスの進行方向へ少し歩き、横断歩道を渡ると — <b>目の前が当施設です</b>。`,
+      "shop.h": `オンライン購入代行 🛒`,
+      "shop.how.d": `ご注文は私どもが代行し、<b>お部屋のドアまで</b>お届けします。`,
+      "shop.how.t": `お部屋の前までお届け`,
+      "shop.k": `お買い物サポート`,
+      "shop.lead": `韓国のショッピングサイトは現地のアカウントと決済手段が必要なため、代わりにご注文いたします。お気軽にどうぞ。`,
+      "shop.note": `🚚 韓国の配送は通常、翌日到着です — 可能であれば1日前にお知らせいただけますと助かります。`,
+      "shop.pay.d": `商品代金はゲスト様のご負担で、<b>現金でのお支払い</b>となります — 詳細はメッセージで調整いたします。`,
+      "shop.pay.t": `お支払い`,
+      "shop.what.d": `飲料水、食料品、その他の日用品など — <b>必要なものをメッセージでお知らせください</b>。こちらで商品をお探しし、先にご確認いただきます。`,
+      "shop.what.t": `ご利用の流れ`,
+      "shuttle.h": `無料空港シャトル 🚌`,
+      "shuttle.k": `アクセス`,
+      "shuttle.lead": `空港と建物を結ぶ無料の循環バスがあります。下でターミナルをお選びください。`,
+      "smoke.d": `施設全体が厳格な禁煙です。室内での喫煙により寝具・家具・壁紙ににおいや損傷が生じた場合、復元に必要な専門クリーニング費用をやむを得ずご請求いたします。特に<b>タバコの煙が天井の火災報知器に届くと、建物全体に警報が鳴ります</b>ので、くれぐれもご注意ください。<b>建物の外であれば、どこでも喫煙いただけます</b>。`,
+      "smoke.t": `全面禁煙`,
+      "tab.checkin": `🔑 チェックイン/アウト`,
+      "tab.living": `🏠 暮らしの参考`,
+      "tab.nearby": `📍 周辺`,
+      "taxi.h": `タクシーをご利用ですか？🚕`,
+      "taxi.k": `タクシー`,
+      "taxi.lead": `運転手にこの画面をお見せください：`,
+      "trash.gen.d": `玄関の<b>靴箱に入っている白い袋</b>をお使いください。<br>🥕 生ごみもこちらへ：<b>水気をできるだけ切り、ビニール袋にしっかり密封</b>してから一般ごみの袋に入れてください — この猛暑では、においや液漏れ防止に特に大切です。`,
+      "trash.gen.t": `一般ごみ`,
       "trash.h": `ゴミの出し方 🗑️`,
       "trash.lead": `分別は簡単です — お部屋に容器があり、出す場所は下の1か所だけです。`,
-      "trash.gen.t": `一般ごみ`,
-      "trash.gen.d": `玄関の<b>靴箱に入っている白い袋</b>をお使いください。<br>🥕 生ごみもこちらへ：<b>水気をできるだけ切り、ビニール袋にしっかり密封</b>してから一般ごみの袋に入れてください — この猛暑では、においや液漏れ防止に特に大切です。`,
-      "trash.rec.t": `分別ごみ（リサイクル）`,
-      "trash.rec.d": `びん・缶・プラスチック・紙は<b>ドアの前の白いかご</b>にまとめてください。`,
-      "trash.out.t": `出す場所`,
       "trash.out.d": `<b>建物の裏口を出るとすぐ右手にごみ置き場</b>が見えます。袋やかごがいっぱいになったら、そちらへお出しください。`,
-      "notice.h": `ご注意`,
-      "park.t": `駐車場（有料のみ）`, "park.d": `料金：最初の20分 <b>₩1,000</b>（以降30分ごとに<b>₩1,000</b>追加）・1日最大 <b>₩50,000</b>。<br>ご案内：空港周辺の規制が厳しいため、施設による無料駐車・割引はご提供できません。ご理解のほどお願いいたします。`,
-      "smoke.t": `全面禁煙`, "smoke.d": `施設全体が厳格な禁煙です。室内での喫煙により寝具・家具・壁紙ににおいや損傷が生じた場合、復元に必要な専門クリーニング費用をやむを得ずご請求いたします。特に<b>タバコの煙が天井の火災報知器に届くと、建物全体に警報が鳴ります</b>ので、くれぐれもご注意ください。<b>建物の外であれば、どこでも喫煙いただけます</b>。`,
-      "max2.t": `最大2名`, "max2.d": `1部屋あたりの人数です。`,
-      "pets.t": `ペット不可`, "pets.d": `ペットの入室はできません。`,
-      "party.t": `パーティー・騒音禁止`, "party.d": `違反は即時退去の対象となります。`,
-      "shop.k": `お買い物サポート`, "shop.h": `オンライン購入代行 🛒`,
-      "shop.lead": `韓国の通販サイトは現地アカウントと決済手段が必要なため、長期滞在のゲストにはこちらで代わりにご注文します。`,
-      "shop.what.t": `ご利用の流れ`,
-      "shop.what.d": `ミネラルウォーターや食材など必要な物を<b>メッセージでお知らせ</b>ください — 該当する商品を探して、先にご案内します。`,
-      "shop.how.t": `お部屋の前までお届け`,
-      "shop.how.d": `ご注文はこちらで代行し、<b>お部屋のドアの前までお届け</b>します。`,
-      "shop.pay.t": `お支払い`,
-      "shop.pay.d": `商品代金はゲストのご負担で、<b>現金でのお支払い</b>となります — お支払い方法はメッセージでご相談ください。`,
-      "shop.note": `🚚 韓国の宅配は通常翌日に届きます — できれば1日前にお知らせください。`,
-      "pc.k": `周辺への移動`, "pc.h": `パラダイスシティへ 🎰`,
-      "pc.lead": `パラダイスシティ（リゾート＆カジノ）は文字通りすぐ隣です — <b>徒歩1〜2分</b>で到着します。`,
-      "pc.pill.walk": `徒歩`, "pc.rt.walk": `PWR → パラダイスシティ · 1〜2分`,
-      "pc.w.1": `1階に降り、<b>コンビニEmart24の横にあるドア</b>から外に出てください。`,
-      "pc.w.2": `下の写真の黄色いルートに沿って歩くと、<b>すぐパラダイスシティ</b>です。`,
-      "pc.w.3": `所要時間は<b>1〜2分</b> — これが最短ルートです。`,
-      "cap.pcphoto": `行き方 — 1階Emart24横のドアから出て、黄色いルートに沿って`,
-      "cap.pcmap": `同じルートを地図で`,
-      "around.k": `周辺のご案内`, "around.h": `近隣スポット 🗺️`,
-      "cap.aroundmap": `上の地図に表示されたすべての場所は、徒歩5〜10分圏内にあります`,
-      "contact.k": `サポート・連絡先`, "contact.h": `お気軽にご連絡ください 💬`,
-      "hrs": `🕘 対応時間 <b>09:00–21:00（KST）</b>`, "wa": `WhatsAppを開く`, "copy.tap": `タップでコピー`,
-      "note.delay": `<b>09:00–21:00（KST）</b>以外にいただいたメッセージは、返信が遅れる場合があります — ご了承ください。`,
-      "ota": `または<b>ご予約プラットフォーム</b>のメッセージからご返信いただいても構いません — Booking.com、Agoda、Expedia。`,
-      "foot.tag": `長期滞在ハウスレンタル · 仁川空港`
+      "trash.out.t": `出す場所`,
+      "trash.rec.d": `びん・缶・プラスチック・紙は<b>ドアの前の白いかご</b>にまとめてください。`,
+      "trash.rec.t": `分別ごみ（リサイクル）`,
+      "tt.head": `🕒 04番バス — 国際ビジネスセンター（Int'l Business Center）停留所発`,
+      "tt.note": `各行が「時」、数字がその時の「分」です（05:00–12:59の区間）。`,
+      "tt.title": `時刻表: INT'L BUSINESS CENTER<span class="tt-sub">(右側の停留所)</span>`,
+      "tv.h": `テレビ — Netflix・YouTube 📺`,
+      "tv.rt": `📺 テレビの調子が悪いときは`,
+      "tv.t1": `<b>テレビ下のセットトップボックス</b>に赤いランプが点いていないか確認し、点いていれば<b>「セットトップ電源」ボタン（写真の①）</b>を押して青に変えてください。</li> <li><b>テレビ裏の小さな接続機器</b>に赤いランプが点いていないか確認し、点いていれば一度抜いて差し直し、青になるまでお待ちください。</li> <li>それでも映らない場合は<b>ご連絡ください</b> — すぐに対応いたします。</li> </ol>`,
+      "tv.t2": `テレビ裏の<b>小さなコネクタ機器のランプが赤</b>になっていないか確認してください — 赤い場合は一度抜いて、青になるまで挿し直してください。`,
+      "tv.t3": `それでも直らない場合は、<b>ご連絡ください</b> — すぐに対応いたします！`,
+      "tv.use": `📺 テレビで<b>NetflixとYouTube</b>をお楽しみいただけます — リモコン下部の<b>Netflix・YouTubeボタン</b>を押すとすぐに開きます。`,
+      "wa": `WhatsAppを開く`,
+      "water.d": `<b>冷蔵庫とクローゼットの中のお水</b>は無料です。`,
+      "water.t": `お水`,
+      "wifi.d": `<b>テレビのリモコンがある場所</b>に案内ステッカーが貼ってあります。`,
     },
     zh: {
-      "hero.h1": `欢迎 —<br>长住指南`,
-      "hero.sub": `🔑 本处为<b>无人值守公寓</b>，没有前台。从抵达到日常生活所需的信息都在本指南中 — 请使用<b>下方两个标签页</b>。`,
-      "tab.checkin": `🔑 入住/退房`, "tab.living": `🏠 生活参考`,
-      "nav.shuttle": `免费班车`, "nav.building": `建筑物`, "nav.checkin": `入住`, "nav.contact": `联系`,
-      "nav.living": `生活`, "nav.shopping": `代购`, "nav.paradise": `百乐达斯城`, "nav.around": `周边`,
-      "shuttle.k": `如何抵达`, "shuttle.h": `免费机场班车 🚌`,
-      "shuttle.lead": `有免费循环巴士往返机场与本楼。请在下方选择您的航站楼。`,
+      "addr.copy": `⧉ 复制`,
+      "addr.lbl": `请给司机看`,
+      "addr.maps": `在Google地图中打开 ↗`,
+      "around.h": `周边一带 🗺️`,
+      "around.k": `建筑周边`,
+      "bld.door": `🔢 每间客房门都是密码锁。请输入我们提供给您的<b>房间密码</b>。`,
+      "bld.h": `您已抵达 📍`,
+      "bld.k": `找到建筑物`,
+      "bld.lead": `请通过下方照片确认建筑外观，然后直接乘电梯上楼。`,
+      "cap.aroundmap": `上方地图中标注的所有地点均在步行5–10分钟范围内`,
+      "cap.door": `客房门 — 键盘密码锁`,
+      "cap.elevator": `电梯 — 1层`,
+      "cap.entrance": `正门`,
+      "cap.exterior": `建筑外观`,
+      "cap.hvac": `空调面板 — 图中状态即为最大制冷`,
+      "cap.kitchen": `厨房 — 打开折叠门即可使用`,
+      "cap.lobby": `大堂`,
       "cap.overview": `T1 班车路线概览`,
-      "cap.t2map": `第1站也是凯悦酒店站，但第4站更近。请在第4站的凯悦酒店站下车。`,
-      "pill.t1": `从T1`, "rt.t1": `1号航站楼 → PWR`,
-      "s.t1.1": `前往<b>3层(出发层)</b>的<b>3号或12号门</b>。`,
-      "s.t1.2": `乘坐循环<b>03路巴士</b>（开往AICC）。`,
-      "s.t1.3": `在<b>第1站</b>下车 — <span class="stopname">凯悦酒店(Grand Hyatt Hotel)</span>。`,
-      "s.t1.time": `<table class="bt"><tr><td class="lbl">登机口</td><th>3</th><th>12</th></tr><tr><td class="lbl">🕒 首班</td><td>05:08</td><td>05:10</td></tr><tr><td class="lbl">🕒 末班</td><td>00:30</td><td>00:32</td></tr></table><div class="foot">每7–20分钟一班。(截至2026年7月)</div>`,
-      "s.walkcross": `沿巴士行进方向走一小段，过人行横道 — <b>本楼就在正前方</b>。`,
-      "note.walk": `🧳 从T1步行(约15分钟)也可以，但携带行李时不建议。`,
-      "pill.t2": `从T2`, "rt.t2": `2号航站楼 → PWR`,
-      "s.t2.1": `前往<b>3层</b>的<b>7号门</b>。`,
-      "s.t2.2": `乘坐同一趟<b>03路巴士</b>。`,
-      "s.t2.3": `在<b>第4站</b>下车 — <span class="stopname">凯悦酒店(Grand Hyatt Hotel)</span>。<br><span class="stopalt">第1站也是凯悦酒店站，但第4站更近。请在第4站的凯悦酒店站下车。</span>`,
-      "s.t2.time": `<table class="bt"><tr><td class="lbl">🕒 首班</td><td>04:48</td></tr><tr><td class="lbl">🕒 末班</td><td>23:48</td></tr></table><div class="foot">每7–20分钟一班。(截至2026年7月)</div>`,
+      "cap.pcmap": `地图上的同一路线`,
+      "cap.pcphoto": `路线 — 从1层Emart24旁的门出去，沿黄色路线前行`,
       "cap.recognize": `看到这栋建筑就到了`,
-      "pill.air": `前往机场`, "rt.air": `PWR → 航站楼 (T1/T2)`,
+      "cap.remote": `遥控器 — ① 机顶盒电源键`,
+      "cap.stove": `余热指示灯 — 亮起时面板非常烫`,
+      "cap.t2map": `第1站也是凯悦酒店站，但第4站更近。请在第4站的凯悦酒店站下车。`,
+      "cap.toairstop": `前往机场的巴士站 — 地图右侧的国际商务中心（Int'l Business Center）；时刻表见下方 ↓`,
+      "checkin.d": `<b>15:00</b>起。<span class="subnote">常规入住时间为15:00之后，但如果您当天告知预计抵达时间，我们会按该时间为您准备好房间。我们会尽力安排提前入住，请告诉我们您方便的时间。`,
+      "checkin.t": `入住`,
+      "checkout.d": `<b>上午11:00</b>前。<span class="subnote">离开当天，请务必关好窗户并关闭空调。确认没有遗留物品后，把门关好即可离开。</span>`,
+      "checkout.t": `退房`,
+      "ci.bank.d": `请<b>在抵达前1天</b>完成付款。海外汇款推荐使用<b><a href="https://wise.com" target="_blank" rel="noopener">Wise</a></b> — 以韩元（KRW）汇款，快捷且手续费低。收款信息将通过消息发送给您。`,
+      "ci.bank.t": `通过银行转账付款`,
+      "ci.cash.d": `我们会与您当面办理合同 — 因没有前台，请<b>提前通过消息与我们约好抵达时间</b>。`,
+      "ci.cash.t": `抵达当日现金签约`,
+      "ci.code.d": `抵达当日<b>下午2:30–3:00之间</b>，通过<b>您预订平台的消息</b>发送。`,
+      "ci.code.t": `房间号与门锁密码`,
+      "ci.h": `入住指南 🔑`,
+      "ci.k": `入住与退房`,
+      "ci.lead": `您的住宿从这里开始 — 请花点时间看看下面的抵达与离店须知。`,
+      "clean.d": `<b>入住期间可免费清洁一次</b> — 仅限一次，请在方便的时候使用。请通过 <b>WhatsApp</b> 等即时通讯<b>至少提前一天</b>预约。`,
+      "clean.t": `入住期间免费清洁一次`,
+      "contact.h": `我们随时为您服务 💬`,
+      "contact.k": `支持与联系`,
+      "copy.tap": `点按复制`,
+      "curt.d": `房间配有<b>遮光窗帘</b>。拉上窗帘后房间会变得昏暗舒适，<b>无论白天还是夜晚，随时都能安心入睡</b>。（正午时分可能会透进些许柔光，但和不拉窗帘相比是天壤之别 — 夏天还有助于降低室温。）`,
+      "curt.t": `遮光窗帘`,
+      "foot.tag": `长住房屋租赁 · 仁川机场`,
+      "help.fix.d": `任何问题都可以 — 请<b>通过 WhatsApp 联系我们</b>，我们会立即处理。`,
+      "help.fix.t": `设备故障或异常`,
+      "help.h": `需要帮助时 🙋`,
+      "help.sup.d": `卫生纸、垃圾袋、洗涤剂等日常用品<b>免费补充</b>。用完时请随时告诉我们 — <b>WhatsApp</b> 联系最快。`,
+      "help.sup.t": `消耗品 — 免费补充`,
+      "hero.h1": `欢迎 —<br>长住指南`,
+      "hero.sub": `🔑 本住宿是<b>没有前台的无人式公寓</b>。您需要的所有信息都在这里，分为<b>下方三个标签页</b>。`,
+      "home.clock.d": `即使作息昼夜颠倒，这里也不会有人打扰 — <b>早上不会有清洁人员敲门</b>。所有房间均配有<b>遮光窗帘</b>，无论何时入睡，舒适的睡眠都在等着您。`,
+      "home.clock.t": `自由随心的生活节奏`,
+      "home.priv.d": `您的住宿是<b>基于合同的短期房屋租赁</b> — 在整个期间，房间完全属于您的私人空间。<b>不会有外部人员进入做例行清洁</b>，因此贵重物品和个人物品都可以放心留在房间里。`,
+      "home.priv.t": `合同保障的专属private空间`,
+      "home.rent.d": `长期入住是<b>基于合同的短期房屋租赁（house rental）</b> — 在整个入住期间，房间完全是您自己的家。`,
+      "home.rent.t": `合同制房屋租赁`,
+      "hrs": `🕘 服务时间 <b>09:00–21:00（KST）</b>`,
+      "hvac.d": `风机盘管系统 — 控制面板在<b>浴室门旁</b>（或冰箱旁）。`,
+      "hvac.note": `❄️ 季节提示：随着室外气温下降，根据政府指引，<b>自9月7日起</b>本楼空调（制冷）<b>仅在上午9点至晚上11点运行</b>。其余时间室外空气凉爽，<b>打开窗户并使用电风扇</b>即可保持室内舒适。上图所示为最大制冷状态（COOL · 20.0°C · 风速最大）。`,
+      "hvac.t": `空调/暖气`,
+      "kit.h": `厨房 🍳`,
+      "kit.small.d": `备有电热水壶和微波炉。`,
+      "kit.small.t": `电热水壶·微波炉`,
+      "kit.stove.d": `<b>在余热指示灯（见下图）熄灭前，表面温度很高</b> — 请小心烫伤。熄灭后请<b>擦拭台面</b>。污渍一旦被再次加热就很难清除，建议每次使用后立即擦拭。`,
+      "kit.stove.t": `电陶炉 — 小心高温`,
+      "kit.uten.d": `所有餐具在您抵达前都已清洗消毒。请小心使用，<b>用后请清洗并放回原位</b>。需要配备以外的物品吗？随时联系我们。`,
+      "kit.uten.t": `厨具`,
+      "ldy.det.d": `位于浴室门正前方<b>储物柜的最底层</b>。`,
+      "ldy.det.t": `洗衣液·柔顺剂`,
+      "ldy.h": `洗衣 🧺`,
+      "ldy.rack.d": `收在<b>冰箱旁边</b> — 用后请折叠好放回冰箱旁！`,
+      "ldy.rack.t": `晾衣架`,
+      "ldy.rt": `🧺 洗衣机使用方法`,
+      "ldy.s1": `按电源键开启洗衣机。</li> <li>放入衣物并加入洗涤剂。</li> <li>关上洗衣机门。</li> <li>根据衣物多少选择水位、洗涤方式和程序。</li> <li>按下启动键，完成！</li> </ol>`,
+      "ldy.s2": `放入衣物并加入洗衣液。`,
+      "ldy.s3": `关上洗衣机门。`,
+      "ldy.s4": `根据衣物量选择水位、洗涤方式和程序。`,
+      "ldy.s5": `按开始键即可！`,
+      "ldy.svc.d": `随时可应要求补充 — 请告诉我们就好。`,
+      "ldy.svc.t": `毛巾、床品与备品`,
+      "live.h": `在这里的生活 🏠`,
+      "live.k": `生活参考`,
+      "live.room.h": `客房内`,
+      "max2.d": `每间客房。`,
+      "max2.t": `最多2人`,
+      "nav.around": `周边`,
+      "nav.building": `找到建筑`,
+      "nav.checkin": `入住与退房`,
+      "nav.contact": `联系`,
+      "nav.kitchen": `厨房`,
+      "nav.living": `生活`,
+      "nav.paradise": `百乐达斯城`,
+      "nav.room": `客房`,
+      "nav.rules": `住宿守则`,
+      "nav.shopping": `代购`,
+      "nav.shuttle": `免费班车`,
+      "note.delay": `在<b>09:00–21:00（KST）</b>之外发送的消息回复可能稍有延迟 — 敬请谅解。`,
+      "note.walk": `🧳 从T1步行(约15分钟)也可以，但携带行李时不建议。`,
+      "notice.h": `注意事项`,
+      "ota": `或直接在<b>您的预订平台</b>消息中回复 — Booking.com、Agoda 或 Expedia。`,
+      "park.d": `收费：前20分钟<b>₩1,000</b>（此后每30分钟加收<b>₩1,000</b>）· 每日上限<b>₩50,000</b>。<br>请注意：因机场周边规定严格，无法通过本住宿提供免费停车或折扣，敬请谅解。`,
+      "park.t": `停车（仅限付费）`,
+      "party.d": `违反将被立即要求离店。`,
+      "party.t": `禁止聚会/喧哗`,
+      "pc.h": `前往百乐达斯城 🎰`,
+      "pc.k": `周边出行`,
+      "pc.lead": `百乐达斯城（Paradise City）度假村·娱乐场就在隔壁 — <b>步行1–2分钟</b>即到。`,
+      "pc.pill.walk": `步行`,
+      "pc.rt.walk": `PWR → 百乐达斯城 · 1–2分钟`,
+      "pc.w.1": `下到1层，从<b>便利店Emart24旁边的门</b>出去。`,
+      "pc.w.2": `沿下方照片中的黄色路线步行，<b>百乐达斯城就在眼前</b>。`,
+      "pc.w.3": `只需<b>1–2分钟</b> — 这是最短路线。`,
+      "pets.d": `不允许携带宠物入住。`,
+      "pets.t": `禁止携带宠物`,
+      "pill.air": `前往机场`,
+      "pill.t1": `从T1`,
+      "pill.t2": `从T2`,
+      "rt.air": `PWR → 航站楼 (T1/T2)`,
+      "rt.t1": `1号航站楼 → PWR`,
+      "rt.t2": `2号航站楼 → PWR`,
       "s.air.1": `从正门出来，朝<b>仁川国际机场公社</b>大楼方向过马路。`,
       "s.air.2": `向右步行至最近的巴士站。`,
       "s.air.3": `乘坐<b>04路巴士</b>。`,
       "s.air.4": `<b>T1</b> 约5分钟(2站) · <b>T2</b> 约25分钟(4站)。`,
       "s.air.time": `<table class="bt"><tr><td class="lbl">🕒 首班</td><td>05:01</td></tr><tr><td class="lbl">🕒 末班</td><td>23:51</td></tr></table><div class="foot">每7–20分钟一班。(截至2026年7月)</div>`,
-      "cap.toairstop": `前往机场的巴士站 — 地图右侧的国际商务中心（Int'l Business Center）；时刻表见下方 ↓`,
-      "tt.title": `时刻表: INT'L BUSINESS CENTER<span class="tt-sub">(右侧的车站)</span>`,
-      "tt.head": `🕒 04路巴士 — 从国际商务中心（Int'l Business Center）站发车`,
-      "tt.note": `每行代表"小时"，数字为该小时的"分钟"（涵盖05:00–12:59）。`,
-      "taxi.k": `乘坐出租车`, "taxi.h": `要乘出租车吗？🚕`, "taxi.lead": `请把此屏幕给司机看：`,
-      "addr.lbl": `请给司机看`, "addr.copy": `⧉ 复制`, "addr.maps": `在Google地图中打开 ↗`,
-      "bld.k": `找到建筑物`, "bld.h": `您已抵达 📍`,
-      "bld.lead": `请对照下方照片认准建筑物，然后乘电梯直接上楼。`,
-      "cap.exterior": `建筑外观`, "cap.entrance": `正门`, "cap.lobby": `大堂`, "cap.elevator": `电梯 — 1层`,
-      "cap.door": `客房门 — 键盘密码锁`,
-      "bld.door": `🔢 所有客房的门均为键盘密码锁。请输入您通过消息收到的密码。`,
-      "ci.k": `入住·付款`, "ci.h": `入住指南 🔑`,
-      "ci.lead": `长住从这里开始 — 请提前确认付款相关内容。`,
-      "checkin.t": `入住`, "checkin.d": `<b>下午3:00</b>起。<span class="subnote">正式入住时间为下午3点，但如果您告知抵达当天的预计时间，我们会按该时间为您准备好房间。我们会尽力安排提前入住，请随时告诉我们您方便的时间。</span>`,
-      "checkout.t": `退房`, "checkout.d": `<b>上午11:00</b>前。<span class="subnote">离开当天，请务必关好窗户并关闭空调。确认没有遗留物品后，把门关好即可离开。</span>`,
-      "ci.bank.t": `通过银行转账付款`,
-      "ci.bank.d": `请<b>在抵达前1天</b>完成付款。海外汇款推荐使用<b><a href="https://wise.com" target="_blank" rel="noopener">Wise</a></b> — 以韩元（KRW）汇款，快捷且手续费低。收款信息将通过消息发送给您。`,
-      "ci.cash.t": `抵达当日现金签约`,
-      "ci.cash.d": `我们会与您当面办理合同 — 因没有前台，请<b>提前通过消息与我们约好抵达时间</b>。`,
-      "ci.code.t": `房间号与门锁密码`,
-      "ci.code.d": `抵达当日<b>下午2:30–3:00之间</b>，通过<b>您预订平台的消息</b>发送。`,
-      "live.k": `生活参考`, "live.h": `在这里的生活 🏠`,
-      "home.rent.t": `合同制房屋租赁`,
-      "home.rent.d": `长期入住是<b>基于合同的短期房屋租赁（house rental）</b> — 在整个入住期间，房间完全是您自己的家。`,
-      "home.priv.t": `完全的隐私与安全`,
-      "home.priv.d": `入住期间，房间完全是您的专属空间 — 不会有外部人员因定期客房清扫而进出。因此，<b>贵重物品和个人物品放在房间里外出也很安全</b>，一切都会保持原样。`,
-      "home.clock.t": `自由随心的生活节奏`,
-      "home.clock.d": `即使因日程昼夜颠倒，也<b>不会被早晨的客房清扫吵醒</b> — 对于活动到深夜、白天休息的客人来说，这是最大的不同。全部房间均配备<b>遮光窗帘</b>，并免费提供<b>真丝睡眠眼罩</b>，无论何时入睡，舒适的睡眠环境都已备好。`,
-      "live.room.h": `客房内`,
-      "wifi.d": `<b>放电视遥控器的地方</b>贴有Wi-Fi信息贴纸。`,
-      "water.t": `饮用水`, "water.d": `<b>冰箱和衣柜里的水</b>免费提供。`,
-      "gift.t": `欢迎礼物`, "gift.d": `我们为长住客人准备了小小的心意 — 精选了外国游客来韩国最爱的畅销品：<b>冰箱里的饮料</b>（包括著名的<b>香蕉牛奶</b>！）、韩国经典<b>速溶混合咖啡</b>、<b>畅销杯面4个</b> — 全部免费。⚠️ 请注意：有些杯面<b>非常辣</b>，不太能吃辣的话请避开。`,
-      "curt.t": `遮光窗帘`, "curt.d": `房间配有<b>遮光窗帘</b>。拉上窗帘后房间会变得昏暗舒适，<b>无论白天还是夜晚，随时都能安心入睡</b>。（正午时分可能会透进些许柔光，但和不拉窗帘相比是天壤之别 — 夏天还有助于降低室温。）`,
-      "hvac.t": `空调/暖气`, "hvac.d": `为风机盘管系统，控制面板在<b>浴室门旁</b>（或冰箱旁）。`,
-      "cap.hvac": `空调面板 — 图中状态即为最大制冷`,
-      "hvac.note": `❄️ 季节提示：随着室外气温下降，根据政府指引，<b>自9月7日起</b>本楼空调（制冷）<b>仅在上午9点至晚上11点运行</b>。其余时间室外空气凉爽，<b>打开窗户并使用电风扇</b>即可保持室内舒适。上图所示为最大制冷状态（COOL · 20.0°C · 风速最大）。`,
-      "kit.h": `厨房 🍳`,
-      "cap.kitchen": `厨房 — 打开折叠门即可使用`,
-      "kit.uten.t": `厨具`,
-      "kit.uten.d": `所有厨具在您抵达前均已清洗消毒，并通过定期清洁严格保持卫生。请小心使用，<b>用后请清洗并归位</b>。如需备置以外的其他厨具，请通过通讯软件告诉我们。`,
-      "kit.small.t": `电热水壶·微波炉`,
-      "kit.small.d": `备有电热水壶和微波炉。`,
-      "kit.stove.t": `电陶炉 — 小心高温`,
-      "kit.stove.d": `使用后，<b>在余热指示灯（下图）熄灭之前，面板仍然非常烫</b>，请小心烫伤。指示灯熄灭后请<b>擦拭面板</b> — 污渍若残留并再次加热，将非常难以清除，强烈建议每次使用后立即擦拭。`,
-      "cap.stove": `余热指示灯 — 亮起时面板非常烫`,
-      "ldy.h": `洗衣 🧺`,
-      "ldy.rt": `🧺 洗衣机使用方法`,
-      "ldy.s1": `按电源键开机。`,
-      "ldy.s2": `放入衣物并加入洗衣液。`,
-      "ldy.s3": `关上洗衣机门。`,
-      "ldy.s4": `根据衣物量选择水位、洗涤方式和程序。`,
-      "ldy.s5": `按开始键即可！`,
-      "ldy.det.t": `洗衣液·柔顺剂`,
-      "ldy.det.d": `位于浴室门正前方<b>储物柜的最底层</b>。`,
-      "ldy.rack.t": `晾衣架`,
-      "ldy.rack.d": `收在<b>冰箱旁边</b> — 用后请折叠好放回冰箱旁！`,
-      "ldy.svc.t": `按需提供的服务`,
-      "ldy.svc.d": `<b>毛巾、床品和消耗品</b>可按需补充；如需<b>入住期间的清扫</b>，请提前告知 — 我们会另行安排（收费：30,000韩元）。`,
-      "help.h": `需要帮助时 🙋`,
-      "help.sup.t": `消耗品 — 免费补充`,
-      "help.sup.d": `卫生纸、垃圾袋、洗涤剂等消耗品<b>均免费补充</b>。快用完时请随时给我们发消息 — <b>WhatsApp</b> 联系最快。`,
-      "help.fix.t": `设备故障或异常`,
-      "help.fix.d": `任何问题都<b>请通过 WhatsApp 联系我们</b>，我们会立即处理。`,
-      "tv.h": `电视 — Netflix·YouTube 📺`,
-      "tv.use": `📺 电视上可观看<b>Netflix和YouTube</b> — 按遥控器下方的<b>Netflix·YouTube按键</b>即可直接打开。`,
-      "cap.remote": `遥控器 — ① 机顶盒电源键`,
-      "tv.rt": `📺 电视偶尔失灵时`,
-      "tv.t1": `请检查电视下方的<b>机顶盒是否亮红灯</b> — 若为红灯，请按遥控器上的<b>"机顶盒电源"键（图中①）</b>使其变蓝。`,
-      "tv.t2": `请检查电视后方的<b>小型连接器设备是否亮红灯</b> — 若为红灯，请拔下再重新插上，直到变为蓝灯。`,
-      "tv.t3": `若仍无法正常使用，请<b>联系我们</b> — 我们会尽快解决！`,
+      "s.t1.1": `前往<b>3层(出发层)</b>的<b>3号或12号门</b>。`,
+      "s.t1.2": `乘坐循环<b>03路巴士</b>（开往AICC）。`,
+      "s.t1.3": `在<b>第1站</b>下车 — <span class="stopname">凯悦酒店(Grand Hyatt Hotel)</span>。`,
+      "s.t1.time": `<table class="bt"><tr><td class="lbl">登机口</td><th>3</th><th>12</th></tr><tr><td class="lbl">🕒 首班</td><td>05:08</td><td>05:10</td></tr><tr><td class="lbl">🕒 末班</td><td>00:30</td><td>00:32</td></tr></table><div class="foot">每7–20分钟一班。(截至2026年7月)</div>`,
+      "s.t2.1": `前往<b>3层</b>的<b>7号门</b>。`,
+      "s.t2.2": `乘坐同一趟<b>03路巴士</b>。`,
+      "s.t2.3": `在<b>第4站</b>下车 — <span class="stopname">凯悦酒店(Grand Hyatt Hotel)</span>。<br><span class="stopalt">第1站也是凯悦酒店站，但第4站更近。请在第4站的凯悦酒店站下车。</span>`,
+      "s.t2.time": `<table class="bt"><tr><td class="lbl">🕒 首班</td><td>04:48</td></tr><tr><td class="lbl">🕒 末班</td><td>23:48</td></tr></table><div class="foot">每7–20分钟一班。(截至2026年7月)</div>`,
+      "s.walkcross": `沿巴士行进方向走一小段，过人行横道 — <b>本楼就在正前方</b>。`,
+      "shop.h": `网购代购 🛒`,
+      "shop.how.d": `我们代您下单，并<b>直接送到您的房门口</b>。`,
+      "shop.how.t": `送到房门口`,
+      "shop.k": `购物帮助`,
+      "shop.lead": `韩国购物网站需要本地账号和支付方式，我们很乐意为您代为下单。`,
+      "shop.note": `🚚 韩国的配送通常为次日送达 — 如果可以，提前一天告知我们会很有帮助。`,
+      "shop.pay.d": `商品费用由客人承担，<b>以现金支付</b> — 具体细节我们会通过消息与您确认。`,
+      "shop.pay.t": `付款`,
+      "shop.what.d": `瓶装水、食品杂货及其他日用品 — <b>请发消息告诉我们您需要什么</b>，我们会找到合适的商品并先与您确认。`,
+      "shop.what.t": `流程说明`,
+      "shuttle.h": `免费机场班车 🚌`,
+      "shuttle.k": `如何抵达`,
+      "shuttle.lead": `有免费循环巴士往返机场与本楼。请在下方选择您的航站楼。`,
+      "smoke.d": `整栋住宿严格禁烟。若因室内吸烟导致床品、家具或壁纸产生异味或损坏，我们将不得不收取恢复所需的专业清洁费用。特别提醒：<b>烟雾一旦触达天花板上的火灾报警器，整栋楼都会响起警报</b>，请务必注意。<b>在建筑外，任何地方均可吸烟</b>。`,
+      "smoke.t": `严禁吸烟`,
+      "tab.checkin": `🔑 入住/退房`,
+      "tab.living": `🏠 住宿须知`,
+      "tab.nearby": `📍 周边`,
+      "taxi.h": `要乘出租车吗？🚕`,
+      "taxi.k": `乘坐出租车`,
+      "taxi.lead": `请把此屏幕给司机看：`,
+      "trash.gen.d": `请使用玄关<b>鞋柜里的白色垃圾袋</b>。<br>🥕 厨余垃圾也放这里：<b>尽量沥干水分，用塑料袋密封</b>后放入一般垃圾袋中 — 在当下酷暑中，这对防止异味和渗漏尤为重要。`,
+      "trash.gen.t": `一般垃圾`,
       "trash.h": `倒垃圾 🗑️`,
       "trash.lead": `分类很简单 — 房间里有容器，楼下一个投放点。`,
-      "trash.gen.t": `一般垃圾`,
-      "trash.gen.d": `请使用玄关<b>鞋柜里的白色垃圾袋</b>。<br>🥕 厨余垃圾也放这里：<b>尽量沥干水分，用塑料袋密封</b>后放入一般垃圾袋中 — 在当下酷暑中，这对防止异味和渗漏尤为重要。`,
-      "trash.rec.t": `可回收垃圾`,
-      "trash.rec.d": `瓶、罐、塑料、纸类请放入<b>门前的白色篮子</b>。`,
-      "trash.out.t": `投放地点`,
       "trash.out.d": `从<b>楼的后门出去，右侧就能看到垃圾投放区</b>。垃圾袋或篮子装满后，拿到那里投放即可。`,
-      "notice.h": `注意事项`,
-      "park.t": `停车（仅限付费）`, "park.d": `收费：前20分钟<b>₩1,000</b>（此后每30分钟加收<b>₩1,000</b>）· 每日上限<b>₩50,000</b>。<br>请注意：因机场周边规定严格，无法通过本住宿提供免费停车或折扣，敬请谅解。`,
-      "smoke.t": `严禁吸烟`, "smoke.d": `整栋住宿严格禁烟。若因室内吸烟导致床品、家具或壁纸产生异味或损坏，我们将不得不收取恢复所需的专业清洁费用。特别提醒：<b>烟雾一旦触达天花板上的火灾报警器，整栋楼都会响起警报</b>，请务必注意。<b>在建筑外，任何地方均可吸烟</b>。`,
-      "max2.t": `最多2人`, "max2.d": `每间客房。`,
-      "pets.t": `禁止携带宠物`, "pets.d": `不允许携带宠物入住。`,
-      "party.t": `禁止聚会/喧哗`, "party.d": `违反将被立即要求离店。`,
-      "shop.k": `购物帮助`, "shop.h": `网购代购 🛒`,
-      "shop.lead": `韩国购物网站需要本地账号和支付方式，因此我们乐意为长住客人代为下单。`,
-      "shop.what.t": `流程说明`,
-      "shop.what.d": `瓶装水、食材等所需物品，<b>通过消息告诉我们</b> — 我们会找到相应商品并先与您确认。`,
-      "shop.how.t": `送到房门口`,
-      "shop.how.d": `我们代为下单，<b>直接送到您的房间门口</b>。`,
-      "shop.pay.t": `付款`,
-      "shop.pay.d": `商品费用由客人承担，<b>以现金支付</b> — 具体支付方式可通过消息与我们商定。`,
-      "shop.note": `🚚 韩国快递通常次日送达 — 如有需要请尽量提前一天告知。`,
-      "pc.k": `周边出行`, "pc.h": `前往百乐达斯城 🎰`,
-      "pc.lead": `百乐达斯城（Paradise City）度假村·娱乐场就在隔壁 — <b>步行1–2分钟</b>即到。`,
-      "pc.pill.walk": `步行`, "pc.rt.walk": `PWR → 百乐达斯城 · 1–2分钟`,
-      "pc.w.1": `下到1层，从<b>便利店Emart24旁边的门</b>出去。`,
-      "pc.w.2": `沿下方照片中的黄色路线步行，<b>百乐达斯城就在眼前</b>。`,
-      "pc.w.3": `只需<b>1–2分钟</b> — 这是最短路线。`,
-      "cap.pcphoto": `路线 — 从1层Emart24旁的门出去，沿黄色路线前行`,
-      "cap.pcmap": `地图上的同一路线`,
-      "around.k": `建筑周边`, "around.h": `周边一带 🗺️`,
-      "cap.aroundmap": `上方地图中标注的所有地点均在步行5–10分钟范围内`,
-      "contact.k": `支持与联系`, "contact.h": `我们随时为您服务 💬`,
-      "hrs": `🕘 服务时间 <b>09:00–21:00（KST）</b>`, "wa": `打开WhatsApp`, "copy.tap": `点按复制`,
-      "note.delay": `在<b>09:00–21:00（KST）</b>之外发送的消息回复可能稍有延迟 — 敬请谅解。`,
-      "ota": `或直接在<b>您的预订平台</b>消息中回复 — Booking.com、Agoda 或 Expedia。`,
-      "foot.tag": `长住房屋租赁 · 仁川机场`
-    }
+      "trash.out.t": `投放地点`,
+      "trash.rec.d": `瓶、罐、塑料、纸类请放入<b>门前的白色篮子</b>。`,
+      "trash.rec.t": `可回收垃圾`,
+      "tt.head": `🕒 04路巴士 — 从国际商务中心（Int'l Business Center）站发车`,
+      "tt.note": `每行代表"小时"，数字为该小时的"分钟"（涵盖05:00–12:59）。`,
+      "tt.title": `时刻表: INT'L BUSINESS CENTER<span class="tt-sub">(右侧的车站)</span>`,
+      "tv.h": `电视 — Netflix·YouTube 📺`,
+      "tv.rt": `📺 电视偶尔失灵时`,
+      "tv.t1": `查看<b>电视下方的机顶盒</b>是否亮红灯，如果亮红灯，请按<b>「机顶盒电源」键（图中①）</b>使其变为蓝灯。</li> <li>查看<b>电视背后的小型连接设备</b>是否亮红灯，如果亮红灯，请拔下再插上，直到变为蓝灯。</li> <li>仍然无法观看？<b>请联系我们</b> — 我们会马上处理。</li> </ol>`,
+      "tv.t2": `请检查电视后方的<b>小型连接器设备是否亮红灯</b> — 若为红灯，请拔下再重新插上，直到变为蓝灯。`,
+      "tv.t3": `若仍无法正常使用，请<b>联系我们</b> — 我们会尽快解决！`,
+      "tv.use": `📺 电视上可观看<b>Netflix和YouTube</b> — 按遥控器下方的<b>Netflix·YouTube按键</b>即可直接打开。`,
+      "wa": `打开WhatsApp`,
+      "water.d": `<b>冰箱和衣柜里的水</b>免费提供。`,
+      "water.t": `饮用水`,
+      "wifi.d": `<b>放电视遥控器的地方</b>贴有信息贴纸。`,
+    },
   };
-  var COPIED = { en:'Copied ✓', ko:'복사됨 ✓', ja:'コピーしました ✓', zh:'已复制 ✓' };
-  var LANGS = ['en','ko','ja','zh'];
+  var COPIED = { en:'Copied ✓', ja:'コピーしました ✓', zh:'已复制 ✓' };
+  var LANGS = ['en','ja','zh'];
 
   // 주변 안내(Around) 데이터는 guide-data.js에서 불러옵니다 (index.html과 동일 데이터·동일 렌더).
   var GD = window.GUIDE_DATA || { CATS: [], PLACES: {} };
@@ -1214,12 +1151,9 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       var dict = I18N[lang];
       el.innerHTML = (lang === 'en' || !dict || dict[k] == null) ? base[k] : dict[k];
     });
-    var t2 = document.getElementById('t2map');   // T2 하차 지도 — 언어별 라벨판 (2026-09-18)
-    if (t2) t2.src = 'assets/images/Map-t2-4th-stop' + (lang === 'en' ? '' : '.' + lang) + '.jpg?v=3';
     renderAround(lang);
     document.documentElement.lang = lang;
     for (var i=0;i<btns.length;i++){ btns[i].classList.toggle('active', btns[i].getAttribute('data-lang') === lang); }
-    try { localStorage.setItem('pwr_lang', lang); } catch(e){}
   }
 
   for (var i=0;i<btns.length;i++){
@@ -1227,23 +1161,22 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
   }
 
   // shares the saved-language key with the main guide, so guests keep their language across pages
-  var saved = null; try { saved = localStorage.getItem('pwr_lang'); } catch(e){}
-  apply(saved && LANGS.indexOf(saved) >= 0 ? saved : 'en');
+  apply('en');
 
   // ── tabs: check-in/out vs daily living ──
   var tabBtns = document.querySelectorAll('.tabbtn');
-  var panes = { checkin: document.getElementById('tab-checkin'), living: document.getElementById('tab-living') };
-  var navs  = { checkin: document.getElementById('nav-checkin'), living: document.getElementById('nav-living') };
+  var panes = { checkin: document.getElementById('tab-checkin'), living: document.getElementById('tab-living'), nearby: document.getElementById('tab-nearby') };
+  var navs  = { checkin: document.getElementById('nav-checkin'), living: document.getElementById('nav-living'), nearby: document.getElementById('nav-nearby') };
   function setTab(t){
     for (var k in panes){ panes[k].hidden = (k !== t); navs[k].hidden = (k !== t); }
     tabBtns.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-tab') === t); });
-    try { localStorage.setItem('pwr_long_tab', t); } catch(e){}
+    try { localStorage.setItem('pwr_appt_tab', t); } catch(e){}
   }
   tabBtns.forEach(function(b){
     b.addEventListener('click', function(){ setTab(b.getAttribute('data-tab')); window.scrollTo(0,0); });
   });
-  var savedTab = null; try { savedTab = localStorage.getItem('pwr_long_tab'); } catch(e){}
-  setTab(savedTab === 'living' ? 'living' : 'checkin');
+  var savedTab = null; try { savedTab = localStorage.getItem('pwr_appt_tab'); } catch(e){}
+  setTab(panes[savedTab] ? savedTab : 'checkin');
 
   // tap-to-copy (taxi addresses, LINE/WeChat IDs); transient label localized to current language
   document.querySelectorAll('[data-copy]').forEach(function(el){
