@@ -86,6 +86,10 @@ h3{font-size:15.5px;font-weight:700;margin:22px 0 9px;}
   background:var(--paper2);margin:12px 0;}
 .photo img{width:100%;height:220px;object-fit:cover;}
 .photo.map img{height:auto;object-fit:contain;background:#fff;}
+/* 건물 도착 사진: 세로 사진 2장을 잘림 없이 세로로 잇고 캡션은 아래 한 번만 (2026-10-06 클라라).
+   기존 .photo img의 height:220px 크롭을 덮어쓴다 — 자르면 건물이 날아간다. */
+.photo.stack img{height:auto;object-fit:contain;display:block;}
+.photo.stack img+img{border-top:1px solid var(--line);}
 .cap{font-family:var(--mono);font-size:10px;letter-spacing:.6px;color:var(--muted);
   padding:8px 12px;border-top:1px solid var(--line);background:var(--card);}
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:12px 0;}
@@ -286,8 +290,9 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       <div class="cap" data-i18n="cap.t2map">The 1st stop is also a Grand Hyatt stop, but the 4th stop is closer — please get off at the 4th.</div>
     </div>
 
-    <div class="photo">
-      <img src="assets/images/Building.jpg" alt="Our building — when you see it, you've arrived" loading="lazy" decoding="async">
+    <div class="photo stack">
+      <img src="assets/images/building-arrive-1.jpg" alt="The crosswalk in front of our building — cross here" loading="lazy" decoding="async">
+      <img src="assets/images/building-arrive-2.jpg" alt="Our building up close — when you see it, you've arrived" loading="lazy" decoding="async">
       <div class="cap" data-i18n="cap.recognize">WHEN YOU SEE THIS BUILDING, YOU'VE ARRIVED</div>
     </div>
 
