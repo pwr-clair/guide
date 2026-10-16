@@ -182,21 +182,6 @@ window.GUIDE_DATA = {
         }
       },
       {
-        "name": "전주 현대옥",
-        "url": "https://maps.app.goo.gl/L6KffS5Ww9U9e83M7",
-        "d": {
-          "ko": "한식 콩나물국밥 전문점",
-          "en": "Korean · specializes in bean-sprout soup rice (kongnamul-gukbap)",
-          "ja": "韓国料理 · 豆もやしクッパの専門店",
-          "zh": "韩餐 · 豆芽汤饭专门店"
-        },
-        "alt": {
-          "en": "Jeonju Hyundaiok",
-          "ja": "チョンジュ・ヒョンデオク",
-          "zh": "全州现代屋"
-        }
-      },
-      {
         "name": "용경향",
         "url": "https://maps.app.goo.gl/SCPkwBrDs7LpgLDv7",
         "d": {
