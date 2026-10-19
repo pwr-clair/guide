@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Invoice — Panorama Walk Residence</title>
+<style>
+  :root{--navy:#1A3A5C;--bg:#F0F3F6;--fg:#1A3A5C;--muted:#666}
+  body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+  main{max-width:720px;margin:0 auto;padding:24px 16px 48px}
+  h1{font-size:18px;font-weight:600;margin:0 0 4px}
+  p{margin:0 0 16px;color:var(--muted)}
+  img{display:block;width:100%;height:auto;background:#fff;box-shadow:0 2px 12px rgba(26,58,92,.15);border-radius:4px}
+  a.btn{display:inline-block;margin-top:16px;padding:12px 20px;background:var(--navy);color:#fff;text-decoration:none;border-radius:6px;font-weight:600}
+  #msg{padding:24px;background:#fff;border-radius:6px}
+</style>
+<main>
+  <h1>Panorama Walk Residence — Invoice</h1>
+  <p id="sub">Loading your invoice…</p>
+  <div id="msg" hidden></div>
+  <img id="img" alt="Invoice" hidden>
+  <a id="dl" class="btn" hidden download>Download PNG</a>
+</main>
+<script>
+(async()=>{
+  const GAS='https://script.google.com/macros/s/AKfycbw2N-2KAKcbp0hSWcU3qt21Y3GwML3SaJgXbiQdC0ulTm8rnfCu7sBuYdnP5_MBWCDM/exec';
+  const t=new URLSearchParams(location.search).get('t')||'', sub=document.getElementById('sub'), msg=document.getElementById('msg');
+  const fail=s=>{sub.textContent='';msg.hidden=false;msg.textContent=s;};
+  if(!/^[0-9a-f]{64}$/.test(t))return fail('This invoice link is not valid. Please contact Panorama Walk Residence.');
+  try{
+    const r=await fetch(GAS+'?inv='+t), j=await r.json();
+    if(!j.png)return fail('We could not find this invoice. Please contact Panorama Walk Residence.');
+    const src='data:image/png;base64,'+j.png, img=document.getElementById('img'), dl=document.getElementById('dl');
+    img.src=src; img.hidden=false; dl.href=src; dl.download='Invoice_'+j.bookingId+'.png'; dl.hidden=false;
+    sub.textContent='Booking ref. '+j.bookingId+(j.name?' · '+j.name:'')+'. Tap and hold the image to save it, or use the button below.';
+  }catch(e){fail('The invoice could not be loaded right now. Please try again in a minute.');}
+})();
+</script>
