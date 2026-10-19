@@ -19,20 +19,25 @@
   <p id="sub">Loading your invoice…</p>
   <div id="msg" hidden></div>
   <img id="img" alt="Invoice" hidden>
-  <a id="dl" class="btn" hidden download>Download PNG</a>
+  <div id="btns" hidden><a id="dlpdf" class="btn" download>Download PDF</a> <a id="dl" class="btn" download style="background:#fff;color:var(--navy);border:1px solid var(--navy)">Download PNG</a></div>
+  <p id="exp" style="margin-top:12px;font-size:13px"></p>
 </main>
 <script>
 (async()=>{
   const GAS='https://script.google.com/macros/s/AKfycbw2N-2KAKcbp0hSWcU3qt21Y3GwML3SaJgXbiQdC0ulTm8rnfCu7sBuYdnP5_MBWCDM/exec';
   const t=new URLSearchParams(location.search).get('t')||'', sub=document.getElementById('sub'), msg=document.getElementById('msg');
   const fail=s=>{sub.textContent='';msg.hidden=false;msg.textContent=s;};
-  if(!/^[0-9a-f]{64}$/.test(t))return fail('This invoice link is not valid. Please contact Panorama Walk Residence.');
+  if(!/^[a-z0-9]{10}$/.test(t))return fail('This invoice link is not valid. Please contact Panorama Walk Residence.');
   try{
     const r=await fetch(GAS+'?inv='+t), j=await r.json();
+    if(j.error==='expired')return fail('This invoice link has expired (links are valid for 14 days). Please message us and we will send you a new one.');
     if(!j.png)return fail('We could not find this invoice. Please contact Panorama Walk Residence.');
-    const src='data:image/png;base64,'+j.png, img=document.getElementById('img'), dl=document.getElementById('dl');
-    img.src=src; img.hidden=false; dl.href=src; dl.download='Invoice_'+j.bookingId+'.png'; dl.hidden=false;
-    sub.textContent='Booking ref. '+j.bookingId+(j.name?' · '+j.name:'')+'. Tap and hold the image to save it, or use the button below.';
+    const src='data:image/png;base64,'+j.png, img=document.getElementById('img'), dl=document.getElementById('dl'), pdf=document.getElementById('dlpdf');
+    img.src=src; img.hidden=false; dl.href=src; dl.download='Invoice_'+j.bookingId+'.png';
+    if(j.pdf){pdf.href='data:application/pdf;base64,'+j.pdf; pdf.download='Invoice_'+j.bookingId+'.pdf';} else pdf.hidden=true;
+    document.getElementById('btns').hidden=false;
+    sub.textContent='Booking ref. '+j.bookingId+(j.name?' · '+j.name:'')+'. Download as PDF or PNG below.';
+    if(j.expiresAt)document.getElementById('exp').textContent='This link is valid until '+j.expiresAt.slice(0,10)+'.';
   }catch(e){fail('The invoice could not be loaded right now. Please try again in a minute.');}
 })();
 </script>
