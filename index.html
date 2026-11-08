@@ -408,13 +408,21 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
         <div class="t" data-i18n="hvac.t">Heating &amp; Cooling</div>
         <div class="d" data-i18n="hvac.d">Fan-coil system — the control panel is <b>next to the bathroom door</b>.</div>
       </div></div>
+      <div class="f"><div class="ic">🛏️</div><div class="bd">
+        <div class="t" data-i18n="blanket.t">Electric blanket</div>
+        <div class="d" data-i18n="blanket.d">The bed has an <b>electric blanket</b>. <b>Turn the dial</b> on the controller to switch it on or off — <b>OFF ↔ levels 1–7</b>. It switches itself off after 15 hours.</div>
+      </div></div>
     </div>
 
     <div class="photo map">
-      <img src="aircon-max.jpg" alt="Aircon control panel — the setting shown is maximum cooling" style="max-height:340px;margin:0 auto;" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'">
-      <div class="cap" data-i18n="cap.hvac">AIRCON PANEL — THE SETTING SHOWN = MAXIMUM COOLING</div>
+      <img src="heating-max.jpg" alt="Heating control panel — the setting shown is maximum heating" style="max-height:340px;margin:0 auto;" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'">
+      <div class="cap" data-i18n="cap.hvac">HEATING PANEL — THE SETTING SHOWN = MAXIMUM HEAT (HEAT · 32.0°C · MANUAL)</div>
     </div>
-    <div class="note info" data-i18n="hvac.note">❄️ Seasonal update: as outdoor temperatures have dropped, government guidelines mean the building's air conditioning operates <b>only between 9:00 AM and 11:00 PM</b> starting <b>September 7</b>. Outside those hours the outside air is pleasantly cool — <b>open the window and run the fan</b> and your room stays comfortably cool. The photo above shows the panel at maximum cooling (COOL · 20.0°C · fan at max).</div>
+    <div class="photo map">
+      <img src="blanket-dial.jpg" alt="Electric blanket controller — turn the dial to switch on/off" style="max-height:340px;margin:0 auto;" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'">
+      <div class="cap" data-i18n="cap.blanket">ELECTRIC BLANKET DIAL — TURN TO SWITCH ON/OFF (OFF · SLEEP · 1–7)</div>
+    </div>
+    <div class="note info" data-i18n="hvac.note">🔥 Seasonal update: from <b>November 2</b>, the building's heating runs <b>between 5:00 PM and 9:00 AM</b>. Warm air comes from the <b>vent in front of the window</b>. When the <b>OFF</b> mark at the top right of the panel disappears, the heating is on. The photo above shows the panel at maximum heating (HEAT · SET 32.0°C · MANUAL). Outside those hours, the electric blanket on the bed keeps you warm.</div>
 
     <h3 data-i18n="notice.h">Notice</h3>
     <div class="facts">
@@ -543,8 +551,9 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "checkout.t": `체크아웃`, "checkout.d": `<b>오전 11:00</b>까지예요.`,
       "wifi.d": `<b>TV 리모컨이 있는 곳</b>에 와이파이 안내 스티커가 붙어있어요.`,
       "hvac.t": `냉난방`, "hvac.d": `팬코일 방식이고, 조절 패널은 <b>욕실 문 옆</b>에 있어요.`,
-      "cap.hvac": `냉방 조절 패널 — 사진과 같은 상태가 최대 출력`,
-      "hvac.note": `❄️ 계절 안내: 바깥 기온이 낮아져 정부 지침에 따라 <b>9월 7일부터</b> 건물 에어컨(냉방)은 <b>오전 9시~오후 11시에만 가동</b>돼요. 그 외 시간에는 바깥 공기가 차가워서 <b>창문을 열고 선풍기를 켜시면</b> 시원하게 지내실 수 있어요. 위 사진과 같이 되어 있는 것이 <b>냉방 최대 출력</b>이에요(COOL · 20.0°C · 팬 최대).`,
+      "cap.hvac": `난방 조절 패널 — 사진과 같은 상태가 최대 난방(HEAT · 32.0°C · MANUAL)`,
+      "blanket.t": `전기장판`, "blanket.d": `침대에 <b>전기장판</b>이 깔려 있어요. 조절기의 <b>다이얼을 돌리면</b> 켜고 끌 수 있어요 — <b>꺼짐 ↔ 1~7단</b>. 15시간이 지나면 자동으로 꺼져요.`, "cap.blanket": `전기장판 조절기 — 다이얼을 돌려 켜고 끄세요(꺼짐 · 취침 · 1~7)`,
+      "hvac.note": `🔥 계절 안내: <b>11월 2일부터</b> 건물 난방은 <b>오후 5시~오전 9시</b>에 가동돼요. 따뜻한 바람은 <b>창문 앞 송풍구</b>에서 나와요. 패널 오른쪽 위의 <b>OFF 표시가 사라지면</b> 난방이 켜진 거예요. 위 사진과 같이 되어 있는 것이 <b>최대 난방</b>이에요(HEAT · 설정 32.0°C · MANUAL). 그 외 시간에는 침대의 전기장판을 이용해 주세요.`,
       "water.t": `생수`, "water.d": `냉장고 안의 물은 <b>무료로 드실 수 있어요</b>.`,
       "notice.h": `안내 사항`,
       "lug.t": `짐 보관`, "lug.d": `현장에 사무실이 없어서 체크인 전이나 체크아웃 후에는 짐을 맡아드리기 어려워요.`,
@@ -605,8 +614,9 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "checkout.t": `チェックアウト`, "checkout.d": `<b>11:00</b>まで。`,
       "wifi.d": `<b>テレビのリモコンがある場所</b>にWi-Fi案内のステッカーが貼ってあります。`,
       "hvac.t": `冷暖房`, "hvac.d": `ファンコイル方式です。操作パネルは<b>浴室のドア横</b>にあります。`,
-      "cap.hvac": `冷房パネル — 写真の状態が最大出力`,
-      "hvac.note": `❄️ 季節のご案内：外気温が下がってきたため、政府の指針により<b>9月7日から</b>建物の冷房は<b>午前9時〜午後11時のみ稼働</b>します。それ以外の時間帯は外の空気が涼しいので、<b>窓を開けて扇風機をつける</b>と快適にお過ごしいただけます。上の写真の状態が<b>冷房の最大出力</b>です（COOL · 20.0°C · ファン最大）。`,
+      "cap.hvac": `暖房パネル — 写真の状態が最大出力（HEAT · 32.0°C · MANUAL）`,
+      "blanket.t": `電気毛布`, "blanket.d": `ベッドには<b>電気毛布</b>（敷きタイプ）が敷いてあります。コントローラーの<b>ダイヤルを回す</b>とオン・オフできます — <b>オフ（꺼짐）↔ 1〜7</b>。15時間で自動的に切れます。`, "cap.blanket": `電気毛布のダイヤル — 回してオン／オフ（オフ · おやすみ · 1〜7）`,
+      "hvac.note": `🔥 季節のご案内：<b>11月2日から</b>建物の暖房は<b>午後5時〜午前9時</b>に稼働します。暖かい風は<b>窓の前の吹き出し口</b>から出ます。パネル右上の<b>OFF表示が消えていれば</b>暖房が入っています。上の写真の状態が<b>暖房の最大出力</b>です（HEAT · 設定32.0°C · MANUAL）。それ以外の時間帯はベッドの電気毛布をご利用ください。`,
       "water.t": `お水`, "water.d": `冷蔵庫のお水は<b>無料</b>です。`,
       "notice.h": `ご注意`,
       "lug.t": `お荷物`, "lug.d": `チェックイン前・チェックアウト後のお荷物のお預かりはできません（現地オフィスはございません）。`,
@@ -667,8 +677,9 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink2);font-siz
       "checkout.t": `退房`, "checkout.d": `<b>上午11:00</b>前。`,
       "wifi.d": `<b>放电视遥控器的地方</b>贴有Wi-Fi信息贴纸。`,
       "hvac.t": `空调/暖气`, "hvac.d": `为风机盘管系统，控制面板在<b>浴室门旁</b>。`,
-      "cap.hvac": `空调面板 — 图中状态即为最大制冷`,
-      "hvac.note": `❄️ 季节提示：随着室外气温下降，根据政府指引，<b>自9月7日起</b>本楼空调（制冷）<b>仅在上午9点至晚上11点运行</b>。其余时间室外空气凉爽，<b>打开窗户并使用电风扇</b>即可保持室内舒适。上图所示为<b>最大制冷输出</b>（COOL · 20.0°C · 风速最大）。`,
+      "cap.hvac": `暖气面板 — 图中状态即为最大制热（HEAT · 32.0°C · MANUAL）`,
+      "blanket.t": `电热毯`, "blanket.d": `床上铺有<b>电热毯</b>。<b>转动控制器上的旋钮</b>即可开关 — <b>关（꺼짐）↔ 1~7档</b>。15小时后会自动关闭。`, "cap.blanket": `电热毯旋钮 — 转动即可开/关（关 · 睡眠 · 1~7）`,
+      "hvac.note": `🔥 季节提示：<b>自11月2日起</b>，本楼暖气在<b>下午5点至上午9点</b>运行。暖风从<b>窗前的出风口</b>吹出。面板右上角的<b>OFF标志消失</b>即表示暖气已开启。上图所示为<b>最大制热</b>（HEAT · 设定32.0°C · MANUAL）。其余时间请使用床上的电热毯。`,
       "water.t": `饮用水`, "water.d": `冰箱里的水<b>免费提供</b>。`,
       "notice.h": `注意事项`,
       "lug.t": `行李`, "lug.d": `入住前及退房后不提供行李寄存（现场无办公室）。`,

@@ -331,7 +331,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       </div></div>
       <div class="f warn"><div class="ic">🕚</div><div class="bd">
         <div class="t" data-i18n="checkout.t">Check-out</div>
-        <div class="d" data-i18n="checkout.d">By <b>11:00 AM</b>.<span class="subnote">On your last day: please close the windows and turn off the air conditioning, make sure you haven't left anything behind, and simply close the door on your way out.</span></span></span></div>
+        <div class="d" data-i18n="checkout.d">By <b>11:00 AM</b>.<span class="subnote">On your last day: please close the windows and turn off the heating, make sure you haven't left anything behind, and simply close the door on your way out.</span></span></span></div>
       </div></div>
     </div>
   </section>
@@ -484,7 +484,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       </div></div>
       <div class="f"><div class="ic">⏰</div><div class="bd">
         <div class="t" data-i18n="home.clock.t">Freedom to live on your own clock</div>
-        <div class="d" data-i18n="home.clock.d">If your schedule turns nights into days, nothing here will wake you — <b>there is no morning housekeeping knock</b>. Every room has <b>blackout curtains</b> — so whenever you turn in, a comfortable sleep is waiting.</div>
+        <div class="d" data-i18n="home.clock.d">If your schedule turns nights into days, nothing here will wake you — <b>there is no morning housekeeping knock</b>. Every room has <b>blackout curtains</b> — so whenever you turn in, a comfortable sleep is waiting. In winter, keeping them drawn also helps hold the warmth in.</div>
       </div></div>
     </div>
 
@@ -503,13 +503,21 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
         <div class="t" data-i18n="hvac.t">Heating &amp; Cooling</div>
         <div class="d" data-i18n="hvac.d">Fan-coil system — the panel is <b>next to the bathroom door</b> (or beside the fridge).</div>
       </div></div>
+      <div class="f"><div class="ic">🛏️</div><div class="bd">
+        <div class="t" data-i18n="blanket.t">Electric blanket</div>
+        <div class="d" data-i18n="blanket.d">The bed has an <b>electric blanket</b>. <b>Turn the dial</b> on the controller to switch it on or off — <b>OFF ↔ levels 1–7</b>. It switches itself off after 15 hours.</div>
+      </div></div>
     </div>
 
     <div class="photo tall">
-      <img src="aircon-max.jpg" alt="Aircon control panel — the setting shown is maximum cooling" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'">
-      <div class="cap" data-i18n="cap.hvac">AIRCON PANEL — THE SETTING SHOWN = MAXIMUM COOLING</div>
+      <img src="heating-max.jpg" alt="Heating control panel — the setting shown is maximum heating" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'">
+      <div class="cap" data-i18n="cap.hvac">HEATING PANEL — THE SETTING SHOWN = MAXIMUM HEAT (HEAT · 32.0°C · MANUAL)</div>
     </div>
-    <div class="note info" data-i18n="hvac.note">❄️ Seasonal update: as outdoor temperatures have dropped, government guidelines mean the building's air conditioning operates <b>only between 9:00 AM and 11:00 PM</b> starting <b>September 7</b>. Outside those hours the outside air is pleasantly cool — <b>open the window and run the fan</b> and your room stays comfortably cool. The photo above shows the panel at maximum cooling (COOL · 20.0°C · fan at max).</div>
+    <div class="photo tall">
+      <img src="blanket-dial.jpg" alt="Electric blanket controller — turn the dial to switch on/off" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'">
+      <div class="cap" data-i18n="cap.blanket">ELECTRIC BLANKET DIAL — TURN TO SWITCH ON/OFF (OFF · SLEEP · 1–7)</div>
+    </div>
+    <div class="note info" data-i18n="hvac.note">🔥 Seasonal update: from <b>November 2</b>, the building's heating runs <b>between 5:00 PM and 9:00 AM</b>. Warm air comes from the <b>vent in front of the window</b>. When the <b>OFF</b> mark at the top right of the panel disappears, the heating is on. The photo above shows the panel at maximum heating (HEAT · SET 32.0°C · MANUAL). Outside those hours, the electric blanket on the bed keeps you warm.</div>
     </div><!-- /stack -->
 
     <h3 id="kitchen" data-i18n="kit.h">Kitchen 🍳</h3>
@@ -588,7 +596,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
     <div class="facts">
       <div class="f"><div class="ic">🗑️</div><div class="bd">
         <div class="t" data-i18n="trash.gen.t">General waste</div>
-        <div class="d" data-i18n="trash.gen.d">Use the <b>white bags in the shoe cabinet</b> by the entrance.<br>🥕 Food waste goes in too: <b>drain the liquid as much as you can and seal it in a plastic bag</b> before putting it in the general-waste bag — it keeps smells and leaks away, especially in this heat.</div>
+        <div class="d" data-i18n="trash.gen.d">Use the <b>white bags in the shoe cabinet</b> by the entrance.<br>🥕 Food waste goes in too: <b>drain the liquid as much as you can and seal it in a plastic bag</b> before putting it in the general-waste bag — it keeps smells and leaks away.</div>
       </div></div>
       <div class="f"><div class="ic">♻️</div><div class="bd">
         <div class="t" data-i18n="trash.rec.t">Recyclables</div>
@@ -762,7 +770,8 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "cap.elevator": `エレベーター — 1階`,
       "cap.entrance": `正面玄関`,
       "cap.exterior": `建物の外観`,
-      "cap.hvac": `冷房パネル — 写真の状態が最大出力`,
+      "cap.hvac": `暖房パネル — 写真の状態が最大出力（HEAT · 32.0°C · MANUAL）`,
+      "blanket.t": `電気毛布`, "blanket.d": `ベッドには<b>電気毛布</b>（敷きタイプ）が敷いてあります。コントローラーの<b>ダイヤルを回す</b>とオン・オフできます — <b>オフ（꺼짐）↔ 1〜7</b>。15時間で自動的に切れます。`, "cap.blanket": `電気毛布のダイヤル — 回してオン／オフ（オフ · おやすみ · 1〜7）`,
       "cap.kitchen": `キッチン — 折れ戸を開けると現れます`,
       "cap.lobby": `ロビー`,
       "cap.overview": `T1 シャトル経路の概要`,
@@ -775,7 +784,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "cap.toairstop": `空港行きの停留所 — 地図右側の国際ビジネスセンター（Int'l Business Center）。時刻表は下にあります ↓`,
       "checkin.d": `<b>15:00</b>から。<span class="subnote">通常のチェックインは15:00からですが、当日にご到着予定時刻をお知らせいただければ、その時間に合わせてお部屋をご用意いたします。アーリーチェックインもできる限り対応いたしますので、ご都合の良い時間をお知らせください。`,
       "checkin.t": `チェックイン`,
-      "checkout.d": `<b>11:00</b>まで。<span class="subnote">最終日は、窓を必ず閉め、エアコンをお切りください。お忘れ物がないかご確認のうえ、ドアを閉めてお発ちいただければ大丈夫です。</span>`,
+      "checkout.d": `<b>11:00</b>まで。<span class="subnote">最終日は、窓を必ず閉め、暖房をお切りください。お忘れ物がないかご確認のうえ、ドアを閉めてお発ちいただければ大丈夫です。</span>`,
       "checkout.t": `チェックアウト`,
       "ci.bank.d": `お振込は<b>ご到着の1日前まで</b>にお願いします。海外からは国際送金アプリ<b><a href="https://wise.com" target="_blank" rel="noopener">Wise</a></b>がおすすめです — ウォン（KRW）建てで速く、手数料も低めです。振込先はメッセージでお送りします。`,
       "ci.bank.t": `銀行振込でお支払いの場合`,
@@ -791,7 +800,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "contact.h": `お気軽にご連絡ください 💬`,
       "contact.k": `サポート・連絡先`,
       "copy.tap": `タップでコピー`,
-      "curt.d": `<b>遮光カーテン</b>を設置しています。カーテンを閉めるとお部屋が暗く落ち着いた雰囲気になり、<b>昼夜を問わず、いつでも快適に</b>お休みいただけます。（日中はほのかに光が入ることもありますが、開けている時とは大違いです。夏は室温を下げるのにも役立ちます。）`,
+      "curt.d": `<b>遮光カーテン</b>を設置しています。カーテンを閉めるとお部屋が暗く落ち着いた雰囲気になり、<b>昼夜を問わず、いつでも快適に</b>お休みいただけます。（日中はほのかに光が入ることもありますが、開けている時とは大違いです。冬はカーテンを閉めておくと暖かさを保つのにも役立ちます。）`,
       "curt.t": `遮光カーテン`,
       "foot.tag": `長期滞在ハウスレンタル · 仁川空港`,
       "help.fix.d": `どんなことでも — <b>WhatsApp でメッセージ</b>をいただければ、すぐに対応いたします。`,
@@ -801,7 +810,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "help.sup.t": `消耗品 — 無料で補充します`,
       "hero.h1": `ようこそ —<br>長期滞在ガイド`,
       "hero.sub": `🔑 当施設は<b>フロントのない無人レジデンス</b>です。必要な情報はすべてこのガイドに、<b>下の3つのタブ</b>に分けてまとめてあります。`,
-      "home.clock.d": `昼夜が逆転する生活でも、ここでは何にも起こされません — <b>朝の清掃スタッフがノックすることはありません</b>。全室に<b>遮光カーテン</b>を備えていますので、いつお休みになっても快適な睡眠が待っています。`,
+      "home.clock.d": `昼夜が逆転する生活でも、ここでは何にも起こされません — <b>朝の清掃スタッフがノックすることはありません</b>。全室に<b>遮光カーテン</b>を備えていますので、いつお休みになっても快適な睡眠が待っています。冬はカーテンを閉めておくと暖かさを保つのにも役立ちます。`,
       "home.clock.t": `生活リズムに合わせた自由`,
       "home.priv.d": `ご滞在は<b>契約に基づく短期住宅賃貸</b>です — 期間中、お部屋は完全にお客様だけの空間になります。<b>定期清掃で外部スタッフが入ることはありません</b>ので、貴重品やお荷物もそのままお部屋に置いていただけます。`,
       "home.priv.t": `契約に基づく、あなただけの住まい`,
@@ -809,7 +818,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "home.rent.t": `契約によるハウスレンタル`,
       "hrs": `🕘 対応時間 <b>09:00–21:00（KST）</b>`,
       "hvac.d": `ファンコイル方式 — 操作パネルは<b>浴室ドアの横</b>（または冷蔵庫の横）にあります。`,
-      "hvac.note": `❄️ 季節のご案内：外気温が下がってきたため、政府の指針により<b>9月7日から</b>建物の冷房は<b>午前9時〜午後11時のみ稼働</b>します。それ以外の時間帯は外の空気が涼しいので、<b>窓を開けて扇風機をつける</b>と快適にお過ごしいただけます。上の写真の状態が冷房の最大出力です（COOL · 20.0°C · ファン最大）。`,
+      "hvac.note": `🔥 季節のご案内：<b>11月2日から</b>建物の暖房は<b>午後5時〜午前9時</b>に稼働します。暖かい風は<b>窓の前の吹き出し口</b>から出ます。パネル右上の<b>OFF表示が消えていれば</b>暖房が入っています。上の写真の状態が<b>暖房の最大出力</b>です（HEAT · 設定32.0°C · MANUAL）。それ以外の時間帯はベッドの電気毛布をご利用ください。`,
       "hvac.t": `冷暖房`,
       "kit.h": `キッチン 🍳`,
       "kit.small.d": `電気ケトルと電子レンジをご用意しています。`,
@@ -906,7 +915,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "taxi.h": `タクシーをご利用ですか？🚕`,
       "taxi.k": `タクシー`,
       "taxi.lead": `運転手にこの画面をお見せください：`,
-      "trash.gen.d": `玄関の<b>靴箱に入っている白い袋</b>をお使いください。<br>🥕 生ごみもこちらへ：<b>水気をできるだけ切り、ビニール袋にしっかり密封</b>してから一般ごみの袋に入れてください — この猛暑では、においや液漏れ防止に特に大切です。`,
+      "trash.gen.d": `玄関の<b>靴箱に入っている白い袋</b>をお使いください。<br>🥕 生ごみもこちらへ：<b>水気をできるだけ切り、ビニール袋にしっかり密封</b>してから一般ごみの袋に入れてください — においや液漏れの防止になります。`,
       "trash.gen.t": `一般ごみ`,
       "trash.h": `ゴミの出し方 🗑️`,
       "trash.lead": `分別は簡単です — お部屋に容器があり、出す場所は下の1か所だけです。`,
@@ -943,7 +952,8 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "cap.elevator": `电梯 — 1层`,
       "cap.entrance": `正门`,
       "cap.exterior": `建筑外观`,
-      "cap.hvac": `空调面板 — 图中状态即为最大制冷`,
+      "cap.hvac": `暖气面板 — 图中状态即为最大制热（HEAT · 32.0°C · MANUAL）`,
+      "blanket.t": `电热毯`, "blanket.d": `床上铺有<b>电热毯</b>。<b>转动控制器上的旋钮</b>即可开关 — <b>关（꺼짐）↔ 1~7档</b>。15小时后会自动关闭。`, "cap.blanket": `电热毯旋钮 — 转动即可开/关（关 · 睡眠 · 1~7）`,
       "cap.kitchen": `厨房 — 打开折叠门即可使用`,
       "cap.lobby": `大堂`,
       "cap.overview": `T1 班车路线概览`,
@@ -956,7 +966,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "cap.toairstop": `前往机场的巴士站 — 地图右侧的国际商务中心（Int'l Business Center）；时刻表见下方 ↓`,
       "checkin.d": `<b>15:00</b>起。<span class="subnote">常规入住时间为15:00之后，但如果您当天告知预计抵达时间，我们会按该时间为您准备好房间。我们会尽力安排提前入住，请告诉我们您方便的时间。`,
       "checkin.t": `入住`,
-      "checkout.d": `<b>上午11:00</b>前。<span class="subnote">离开当天，请务必关好窗户并关闭空调。确认没有遗留物品后，把门关好即可离开。</span>`,
+      "checkout.d": `<b>上午11:00</b>前。<span class="subnote">离开当天，请务必关好窗户并关闭暖气。确认没有遗留物品后，把门关好即可离开。</span>`,
       "checkout.t": `退房`,
       "ci.bank.d": `请<b>在抵达前1天</b>完成付款。海外汇款推荐使用<b><a href="https://wise.com" target="_blank" rel="noopener">Wise</a></b> — 以韩元（KRW）汇款，快捷且手续费低。收款信息将通过消息发送给您。`,
       "ci.bank.t": `通过银行转账付款`,
@@ -972,7 +982,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "contact.h": `我们随时为您服务 💬`,
       "contact.k": `支持与联系`,
       "copy.tap": `点按复制`,
-      "curt.d": `房间配有<b>遮光窗帘</b>。拉上窗帘后房间会变得昏暗舒适，<b>无论白天还是夜晚，随时都能安心入睡</b>。（正午时分可能会透进些许柔光，但和不拉窗帘相比是天壤之别 — 夏天还有助于降低室温。）`,
+      "curt.d": `房间配有<b>遮光窗帘</b>。拉上窗帘后房间会变得昏暗舒适，<b>无论白天还是夜晚，随时都能安心入睡</b>。（正午时分可能会透进些许柔光，但和不拉窗帘相比是天壤之别 — 冬天拉上窗帘也有助于保暖。）`,
       "curt.t": `遮光窗帘`,
       "foot.tag": `长住房屋租赁 · 仁川机场`,
       "help.fix.d": `任何问题都可以 — 请<b>通过 WhatsApp 联系我们</b>，我们会立即处理。`,
@@ -982,7 +992,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "help.sup.t": `消耗品 — 免费补充`,
       "hero.h1": `欢迎 —<br>长住指南`,
       "hero.sub": `🔑 本住宿是<b>没有前台的无人式公寓</b>。您需要的所有信息都在这里，分为<b>下方三个标签页</b>。`,
-      "home.clock.d": `即使作息昼夜颠倒，这里也不会有人打扰 — <b>早上不会有清洁人员敲门</b>。所有房间均配有<b>遮光窗帘</b>，无论何时入睡，舒适的睡眠都在等着您。`,
+      "home.clock.d": `即使作息昼夜颠倒，这里也不会有人打扰 — <b>早上不会有清洁人员敲门</b>。所有房间均配有<b>遮光窗帘</b>，无论何时入睡，舒适的睡眠都在等着您。冬天拉上窗帘也有助于保暖。`,
       "home.clock.t": `自由随心的生活节奏`,
       "home.priv.d": `您的住宿是<b>基于合同的短期房屋租赁</b> — 在整个期间，房间完全属于您的私人空间。<b>不会有外部人员进入做例行清洁</b>，因此贵重物品和个人物品都可以放心留在房间里。`,
       "home.priv.t": `合同保障的专属private空间`,
@@ -990,7 +1000,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "home.rent.t": `合同制房屋租赁`,
       "hrs": `🕘 服务时间 <b>09:00–21:00（KST）</b>`,
       "hvac.d": `风机盘管系统 — 控制面板在<b>浴室门旁</b>（或冰箱旁）。`,
-      "hvac.note": `❄️ 季节提示：随着室外气温下降，根据政府指引，<b>自9月7日起</b>本楼空调（制冷）<b>仅在上午9点至晚上11点运行</b>。其余时间室外空气凉爽，<b>打开窗户并使用电风扇</b>即可保持室内舒适。上图所示为最大制冷状态（COOL · 20.0°C · 风速最大）。`,
+      "hvac.note": `🔥 季节提示：<b>自11月2日起</b>，本楼暖气在<b>下午5点至上午9点</b>运行。暖风从<b>窗前的出风口</b>吹出。面板右上角的<b>OFF标志消失</b>即表示暖气已开启。上图所示为<b>最大制热</b>（HEAT · 设定32.0°C · MANUAL）。其余时间请使用床上的电热毯。`,
       "hvac.t": `空调/暖气`,
       "kit.h": `厨房 🍳`,
       "kit.small.d": `备有电热水壶和微波炉。`,
@@ -1087,7 +1097,7 @@ footer .fm{font-family:var(--mono);letter-spacing:2px;color:var(--ink);font-weig
       "taxi.h": `要乘出租车吗？🚕`,
       "taxi.k": `乘坐出租车`,
       "taxi.lead": `请把此屏幕给司机看：`,
-      "trash.gen.d": `请使用玄关<b>鞋柜里的白色垃圾袋</b>。<br>🥕 厨余垃圾也放这里：<b>尽量沥干水分，用塑料袋密封</b>后放入一般垃圾袋中 — 在当下酷暑中，这对防止异味和渗漏尤为重要。`,
+      "trash.gen.d": `请使用玄关<b>鞋柜里的白色垃圾袋</b>。<br>🥕 厨余垃圾也放这里：<b>尽量沥干水分，用塑料袋密封</b>后放入一般垃圾袋中 — 可防止异味和渗漏。`,
       "trash.gen.t": `一般垃圾`,
       "trash.h": `倒垃圾 🗑️`,
       "trash.lead": `分类很简单 — 房间里有容器，楼下一个投放点。`,
